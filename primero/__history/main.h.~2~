@@ -1,0 +1,10 @@
+#include <16F877A.h>   //Esto es un comentario sobre el microcontrolador a usar
+#device ADC=10          //informacion sobre el ADC
+#use delay(crystal=20MHz) //el uso del cristal es de 20Mhz
+#use FIXED_IO( B_outputs=PIN_B7,PIN_B6 )
+#define salida1   PIN_B6
+#define salida2   PIN_B7
+
+#define DELAY 1000
+
+

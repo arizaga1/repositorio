@@ -1,0 +1,165 @@
+CCS PCM C Compiler, Version 5.091, 13314               31-ene.-22 14:35
+
+               Filename:   C:\Users\j_ari\Documents\CCS C Projects\Proyectos\CCS_2022\primero\main.lst
+
+               ROM used:   97 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   8 (2%) at main() level
+                           9 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   018
+0003:  NOP
+.................... #include <main.h>
+.................... #include <16F877A.h>   //Esto es un comentario sobre el microcontrolador a usar
+.................... //////////// Standard Header file for the PIC16F877A device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F877A
+.................... 
+.................... #list
+.................... 
+.................... #device ADC=10          //informacion sobre el ADC
+.................... #use delay(crystal=20MHz) //el uso del cristal es de 20Mhz
+0004:  MOVLW  24
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  06
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  7B
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  RETURN
+.................... #use FIXED_IO( B_outputs=PIN_B7,PIN_B6 )
+.................... #define salida1   PIN_B6
+.................... #define salida2   PIN_B7
+.................... #define entrada   PIN_B2
+.................... 
+.................... #define DELAY 1000
+.................... 
+.................... 
+.................... 
+.................... 
+.................... void main()
+0018:  MOVF   03,W
+0019:  ANDLW  1F
+001A:  MOVWF  03
+001B:  BSF    03.5
+001C:  BSF    1F.0
+001D:  BSF    1F.1
+001E:  BSF    1F.2
+001F:  BCF    1F.3
+0020:  MOVLW  07
+0021:  MOVWF  1C
+0022:  BCF    03.7
+0023:  MOVLW  03
+0024:  BCF    03.5
+0025:  MOVWF  22
+0026:  MOVLW  E8
+0027:  MOVWF  21
+.................... {
+.................... int16 retraso = 1000;  //variable entera (int) con valor de 1000
+.................... 
+.................... 
+.................... 
+....................    while(TRUE)
+....................    {
+....................    
+....................    if (input_state(entrada))   //  if es una sentencia condiciona, que sirve para cambiar
+0028:  BTFSS  06.2
+0029:  GOTO   02F
+....................          retraso=500;        // la configuracion del programa principal
+002A:  MOVLW  01
+002B:  MOVWF  22
+002C:  MOVLW  F4
+002D:  MOVWF  21
+002E:  GOTO   033
+....................          else                 // else <- forma parte del condicional cuando no se cumple con la condicion
+....................          retraso=2000;
+002F:  MOVLW  07
+0030:  MOVWF  22
+0031:  MOVLW  D0
+0032:  MOVWF  21
+.................... 
+....................       //Example blinking LED program
+....................       output_low(salida1);  // poner en cero lógico (0 volts) el pin 39 del microcontrolador
+0033:  MOVLW  3F
+0034:  BSF    03.5
+0035:  MOVWF  06
+0036:  BCF    03.5
+0037:  BCF    06.6
+....................       output_high(salida2); // poner en uno lógico (5 Volts) el pin 40 del microcontrolador
+0038:  BSF    03.5
+0039:  MOVWF  06
+003A:  BCF    03.5
+003B:  BSF    06.7
+....................       delay_ms(retraso);     //delay_ms es una función que retrasa el microcntrolador por 1000 milisegundos
+003C:  MOVF   22,W
+003D:  MOVWF  23
+003E:  INCF   23,F
+003F:  DECF   23,F
+0040:  BTFSC  03.2
+0041:  GOTO   046
+0042:  MOVLW  FF
+0043:  MOVWF  24
+0044:  CALL   004
+0045:  GOTO   03F
+0046:  MOVF   21,W
+0047:  MOVWF  24
+0048:  CALL   004
+....................       output_high(salida1);
+0049:  MOVLW  3F
+004A:  BSF    03.5
+004B:  MOVWF  06
+004C:  BCF    03.5
+004D:  BSF    06.6
+....................       output_low(salida2);
+004E:  BSF    03.5
+004F:  MOVWF  06
+0050:  BCF    03.5
+0051:  BCF    06.7
+....................       delay_ms(retraso); //delay_ms es una función que retrasa el microcntrolador por 1000 milisegundos
+0052:  MOVF   22,W
+0053:  MOVWF  23
+0054:  INCF   23,F
+0055:  DECF   23,F
+0056:  BTFSC  03.2
+0057:  GOTO   05C
+0058:  MOVLW  FF
+0059:  MOVWF  24
+005A:  CALL   004
+005B:  GOTO   055
+005C:  MOVF   21,W
+005D:  MOVWF  24
+005E:  CALL   004
+005F:  GOTO   028
+.................... 
+....................       
+....................    }
+.................... 
+.................... }
+0060:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

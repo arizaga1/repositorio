@@ -1,0 +1,28 @@
+#include <main.h>
+
+void main()
+{
+int16 retraso = 1000;  //variable entera (int) con valor de 1000
+
+
+
+   while(TRUE)
+   {
+   
+   if (input_state(entrada))   //  if es una sentencia condiciona, que sirve para cambiar
+         retraso=500;        // la configuracion del programa principal
+         else                 // else <- forma parte del condicional cuando no se cumple con la condicion
+         retraso=2000;
+
+      //Example blinking LED program
+      output_low(salida1);  // poner en cero lógico (0 volts) el pin 39 del microcontrolador
+      output_high(salida2); // poner en uno lógico (5 Volts) el pin 40 del microcontrolador
+      delay_ms(retraso);     //delay_ms es una función que retrasa el microcntrolador por 1000 milisegundos
+      output_high(salida1);
+      output_low(salida2);
+      delay_ms(retraso); //delay_ms es una función que retrasa el microcntrolador por 1000 milisegundos
+
+      
+   }
+
+}

@@ -1,0 +1,61 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.091
+Compiler=PCM
+CCSVersion=5.091
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\j_ari\Documents\CCS C Projects\Proyectos\CCS_2022\primero\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=31-01-2022
+D1_L=14
+D1_L1=[49775]Project Opened.
+D1_L2=[49815]Project Closed.
+D1_L3=[49867]Project Opened.
+D1_L4=[50163]Started Editing.
+D1_L5=[50793]Stopped Editing.
+D1_L6=[51638]Started Editing.
+D1_L7=[51762]Stopped Editing.
+TotalEdit=14
+TotalDebug=0
+D1_E=14
+D1_D=0
+D1_L8=[51765]Project Closed.
+D1_L9=[51837]Project Opened.
+D1_L10=[51840]Started Editing.
+D1_L11=[52335]Stopped Editing.
+D1_L12=[52368]Started Editing.
+D1_L13=[52799]Stopped Editing.
+D1_L14=[58125]Project Closed.
+D2=04-02-2022
+D2_L=4
+D2_L1=[57704]Project Opened.
+D2_L2=[59387]Project Closed.
+D2_L3=[59387]Project Opened.
+D2_L4=[59436]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=5
+[Units]
+Count=1
+1=main (main)

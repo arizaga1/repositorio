@@ -1,0 +1,17 @@
+#include <main.h>
+
+void main()
+{
+
+   while(TRUE)
+   {
+
+      //Example blinking LED program
+   
+      delay_ms(DELAY);
+     
+
+      //TODO: User Code
+   }
+
+}

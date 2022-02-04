@@ -1,0 +1,20 @@
+#include <main.h>
+
+void main()
+{
+
+   while(TRUE)
+   {
+
+      //Example blinking LED program
+      output_low(salida1);  // poner en cero lógico (0 volts) el pin 39 del microcontrolador
+      output_high(salida2); // poner en uno lógico (5 Volts) el pin 40 del microcontrolador
+      delay_ms(1000);     //delay_ms es una función que retrasa el microcntrolador por 1000 milisegundos
+      output_high(salida1);
+      output_low(salida2);
+      delay_ms(DELAY); //delay_ms es una función que retrasa el microcntrolador por 1000 milisegundos
+
+      
+   }
+
+}

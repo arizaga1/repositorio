@@ -1,0 +1,12 @@
+#include <16F877A.h>
+#device ADC=10
+#use delay(crystal=20MHz)
+#use FIXED_IO( B_outputs=PIN_B7,PIN_B6 )
+#define salida1	PIN_B6
+#define salida2	PIN_B7
+
+
+#define LED PIN_None
+#define DELAY 1000
+
+
