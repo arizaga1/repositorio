@@ -2,3 +2,5 @@
 ## Repositorio de archivos para trabajar con microcontroladores programados en C ##
 
 **carpeta primero tiene un programa que hace parpadear dos led**
+
+**carpeta segundo tiene un ejemplo con pantalla LCD**
