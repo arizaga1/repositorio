@@ -1,0 +1,3 @@
+#include <16C54.h>
+#use delay(crystal=20000000)
+

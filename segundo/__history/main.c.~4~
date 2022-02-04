@@ -1,0 +1,22 @@
+#include <main.h>
+
+#include <LCD.C>
+
+void main()
+{
+   lcd_init();
+   lcd_putc("Ejemplo LCD \n");
+   delay_ms(5000);
+   
+   lcd_putc("Hola Mundo");
+   
+   while(TRUE)
+   {
+      
+      #ASM
+      NOP
+      #ENDASM//no hacer nada
+      //TODO: User Code
+   }
+
+}
