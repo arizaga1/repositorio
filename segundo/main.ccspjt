@@ -38,7 +38,9 @@ D1_L1=[61098]Started Editing.
 D1_L2=[61655]Stopped Editing.
 D1_L3=[62043]Started Editing.
 D1_L4=[62763]Stopped Editing.
-TotalEdit=24
+TotalEdit=60
+TotalDebug=0
+D1_E=12
 [Units]
 Count=1
 1=main (main)
