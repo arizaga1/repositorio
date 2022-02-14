@@ -1,0 +1,59 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.091
+Compiler=PCM
+CCSVersion=5.091
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=11-02-2022
+D1_L=18
+D1_L1=[61825]Project Opened.
+D1_L2=[61834]Started Editing.
+D1_L3=[62134]Stopped Editing.
+D1_L4=[62189]Started Editing.
+D1_L5=[63023]Stopped Editing.
+D1_L6=[63444]Started Editing.
+D1_L7=[63758]Stopped Editing.
+D1_L8=[63805]Started Editing.
+D1_L9=[64841]Stopped Editing.
+TotalEdit=32
+TotalDebug=0
+D1_E=32
+D1_D=0
+D1_L10=[64841]Project Closed.
+D1_L11=[64853]Project Opened.
+D1_L12=[64856]Started Editing.
+D1_L13=[64967]Stopped Editing.
+D1_L14=[64970]Project Closed.
+D1_L15=[64980]Project Opened.
+D1_L16=[64984]Started Editing.
+D1_L17=[65157]Stopped Editing.
+D1_L18=[65157]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=20
+[Units]
+Count=1
+1=main (main)

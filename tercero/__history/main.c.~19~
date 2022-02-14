@@ -1,0 +1,37 @@
+#include <main.h>
+int8 cuenta=77;
+int8 segundos;
+#INT_RTCC   //interrupcion por Tmr0 
+void  RTCC_isr(void) 
+{
+cuenta--;
+set_timer0(2);//cargando un valor al tmr0
+if (cuenta == 0){
+cuenta=77; 
+
+segundos++;
+
+printf(LCD_PUTC, "seg:=%d",segundos);
+}
+
+}
+ 
+#include <lcd.c>
+
+void main()
+{
+   setup_timer_0(RTCC_INTERNAL|RTCC_DIV_128|RTCC_8_BIT);      //13.1 ms overflow
+  SET_RTCC(2);
+   
+   enable_interrupts(INT_RTCC);
+   enable_interrupts(GLOBAL);
+
+   lcd_init();
+
+   while(TRUE)
+   {
+   
+      //TODO: User Code
+   }
+
+}
