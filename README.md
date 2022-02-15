@@ -4,3 +4,5 @@
 **carpeta primero tiene un programa que hace parpadear dos led**
 
 **carpeta segundo tiene un ejemplo con pantalla LCD**
+
+**carpeta segundo tiene un ejemplo con pantalla LCD Y TEMPORIZADO**
