@@ -1,0 +1,57 @@
+
+ROM used:   598/8192 (7%)
+            598/8192 (7%) including unused fragments
+
+            0.7 Average locations per line
+            49.8 Average locations per statement
+
+RAM used:   10/368 (3%) at main() level
+            19/368 (5%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   25    12 100  main.c
+    7     0   0  main.h
+  796     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
+----- -----
+  828    12 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0    136  23    0    243  2.6  main
+0     14   2    0             @const680
+0     88  15    4             @PSTRINGC7_1
+0     14   2    0             @const685
+0     14   2    0             @const686
+0     14   2    0             @const687
+0     89  15    5             @PSTRINGCN7_9600_62_63
+0    120  20    9             @PRINTF_LD_9600_62_63
+0     15   3    0             @const692
+0     90  15    4             @PSTRINGC7_9600_62_63
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              12
+    Comments                139
+    Volume (V)              263
+    Difficulty (D)          1.9
+    Effort to implement (E) 495
+    Time to implement (T)   0 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    74
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   594  1450  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+
