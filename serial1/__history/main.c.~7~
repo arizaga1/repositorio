@@ -17,7 +17,8 @@ printf("Escribir en el puerto serial");
    while(TRUE)
    {
 ch = getc();
-  putc(ch) ;   
+
+  putc(ch) ;   //TODO: User Code
    }
 
 }

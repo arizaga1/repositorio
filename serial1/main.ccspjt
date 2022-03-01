@@ -27,3 +27,19 @@ buildcount=4
 [Units]
 Count=1
 1=main (main)
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=28-02-2022
+D1_L=4
+D1_L1=[49161]Project Opened.
+D1_L2=[49482]Started Editing.
+D1_L3=[49784]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L4=[55405]Project Closed.
