@@ -15,7 +15,7 @@ Type=4
 
 [Opened Files]
 1=main.c
-t1=12
+t1=1
 Count=2
 2=main.h
 t2=1
@@ -32,7 +32,7 @@ Count=1
 forcecoff=0
 
 [ProjectLog]
-Days=1
+Days=2
 D1=28-02-2022
 D1_L=4
 D1_L1=[49161]Project Opened.
@@ -43,3 +43,7 @@ TotalDebug=0
 D1_E=1
 D1_D=0
 D1_L4=[55405]Project Closed.
+D2=04-03-2022
+D2_L=2
+D2_L1=[58597]Project Opened.
+D2_L2=[59977]Project Closed.

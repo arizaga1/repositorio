@@ -1,0 +1,41 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.091
+Compiler=PCM
+CCSVersion=5.091
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Convertidor_ADC\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=04-03-2022
+D1_L=4
+D1_L1=[59977]Project Opened.
+D1_L2=[59985]Started Editing.
+D1_L3=[60987]Stopped Editing.
+D1_L4=[61084]Started Editing.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=4
+[Units]
+Count=1
+1=main (main)

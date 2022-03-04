@@ -1,0 +1,18 @@
+#include <main.h>
+
+#include <LCD.C>
+
+void main()
+{
+	setup_adc_ports(AN0_VREF_VREF);
+	setup_adc(ADC_CLOCK_DIV_64);
+	lcd_init();
+
+	while(TRUE)
+	{
+
+
+		//TODO: User Code
+	}
+
+}
