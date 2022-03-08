@@ -1,0 +1,11 @@
+읕main
+   읕main  0/136  Ram=0
+      쳐@cinit1  (Inline)  Ram=0
+      쳐@cinit2  (Inline)  Ram=0
+      쳐@PSTRINGC7_1  0/88  Ram=4
+      쳐@PSTRINGC7_1  0/88  Ram=4
+      쳐@PSTRINGC7_1  0/88  Ram=4
+      쳐@PSTRINGCN7_9600_62_63  0/89  Ram=5
+      쳐@PRINTF_LD_9600_62_63  0/120  Ram=9
+      쳐@PSTRINGCN7_9600_62_63  0/89  Ram=5
+      읕@PSTRINGC7_9600_62_63  0/90  Ram=4
