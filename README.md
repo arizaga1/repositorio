@@ -7,3 +7,9 @@
 **carpeta segundo tiene un ejemplo con pantalla LCD**
 
 **carpeta segundo tiene un ejemplo con pantalla LCD Y TEMPORIZADO**
+
+**Carpeta tercero tiene un proyecto sobre temporizador e Interrupciones**
+
+**Agregada carpeta de proyecto de puerto serial  RS232**
+
+**Agregado proyecto de COnvertidor ADC**
