@@ -10,4 +10,4 @@
 
 **Carpeta tercero tiene un proyecto sobre temporizador e Interrupciones**
 
-** Agregada carpeta de proyecto de puerto serial**
+**Agregada carpeta de proyecto de puerto serial**
