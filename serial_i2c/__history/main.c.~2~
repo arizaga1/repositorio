@@ -1,0 +1,23 @@
+#include <main.h>
+BYTE data;    
+void main()
+{
+   setup_adc_ports(NO_ANALOGS, VSS_VDD);
+i2c_start();                                 // Issues a start command when in
+
+                                             // the I2C master mode.
+
+i2c_write(data);                             // Sends a single byte over the I2C interface.
+
+i2c_stop();                                 // Issues a stop command when in the I2C master mode                 
+
+                        
+
+   while(TRUE)
+   {
+
+
+      //TODO: User Code
+   }
+
+}

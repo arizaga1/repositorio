@@ -1,0 +1,29 @@
+#include <main.h>
+BYTE direccion;    
+Byte segundos,minutos,horas;
+void main()
+{
+direccion=0xD0;
+   setup_adc_ports(NO_ANALOGS, VSS_VDD);
+i2c_start();                                 // Issues a start command when in
+ 
+                                             // the I2C master mode.
+
+i2c_write(0xD1);                             // Sends a single byte over the I2C interface.
+//i2c_write(0x00); 
+
+segundos=i2c_read(1);
+minutos=i2c_read(1);
+horas=i2c_read(1);
+i2c_stop();                                 // Issues a stop command when in the I2C master mode                 
+
+                        
+
+   while(TRUE)
+   {
+
+
+      //TODO: User Code
+   }
+
+}

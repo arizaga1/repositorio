@@ -1,0 +1,42 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC18F4550
+CCSVerions=5.091
+Compiler=PCH
+CCSVersion=5.091
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=14-03-2022
+D1_L=5
+D1_L1=[50434]Project Opened.
+D1_L2=[50558]Started Editing.
+D1_L3=[52015]Stopped Editing.
+D1_L4=[52034]Started Editing.
+D1_L5=[53240]Stopped Editing.
+
+[Opened Files]
+1=main.c
+t1=17
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=13
+[Units]
+Count=1
+1=main (main)

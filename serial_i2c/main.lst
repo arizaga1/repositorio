@@ -1,0 +1,235 @@
+CCS PCH C Compiler, Version 5.091, 13314               14-mar.-22 14:42
+
+               Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main.lst
+
+               ROM used:   314 bytes (1%)
+                           Largest free fragment is 32454
+               RAM used:   9 (0%) at main() level
+                           10 (0%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+0000:  GOTO   00B0
+.................... #include <main.h>
+.................... #include <18F4550.h>
+.................... //////////// Standard Header file for the PIC18F4550 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC18F4550
+*
+0042:  BTFSC  09.7
+0044:  BRA    0066
+0046:  MOVLW  0F
+0048:  MOVWF  00
+004A:  SWAPF  08,W
+004C:  ANDWF  00,F
+004E:  MOVLW  0A
+0050:  SUBWF  00,W
+0052:  BC    005A
+0054:  MOVLW  30
+0056:  ADDWF  00,F
+0058:  BRA    005E
+005A:  MOVF   09,W
+005C:  ADDWF  00,F
+005E:  MOVF   00,W
+0060:  BTFSS  F9E.4
+0062:  BRA    0060
+0064:  MOVWF  FAD
+0066:  MOVLW  0F
+0068:  ANDWF  08,F
+006A:  MOVLW  0A
+006C:  SUBWF  08,W
+006E:  BC    0074
+0070:  MOVLW  30
+0072:  BRA    0078
+0074:  BCF    09.7
+0076:  MOVF   09,W
+0078:  ADDWF  08,F
+007A:  MOVF   08,W
+007C:  BTFSS  F9E.4
+007E:  BRA    007C
+0080:  MOVWF  FAD
+0082:  GOTO   0128 (RETURN)
+.................... 
+.................... #list
+.................... 
+.................... #device ADC=10
+.................... 
+.................... #FUSES NOWDT                 	//No Watch Dog Timer
+.................... 
+.................... #use delay(crystal=4000000)
+0086:  CLRF   FEA
+0088:  MOVLW  09
+008A:  MOVWF  FE9
+008C:  MOVF   FEF,W
+008E:  BZ    00AC
+0090:  MOVLW  01
+0092:  MOVWF  01
+0094:  CLRF   00
+0096:  DECFSZ 00,F
+0098:  BRA    0096
+009A:  DECFSZ 01,F
+009C:  BRA    0094
+009E:  MOVLW  4A
+00A0:  MOVWF  00
+00A2:  DECFSZ 00,F
+00A4:  BRA    00A2
+00A6:  BRA    00A8
+00A8:  DECFSZ FEF,F
+00AA:  BRA    0090
+00AC:  GOTO   0132 (RETURN)
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8,stream=PORT1)
+.................... #use i2c(Master,Fast,sda=PIN_B0,scl=PIN_B1,force_hw)
+*
+0004:  BCF    FC6.7
+0006:  BCF    F9E.3
+0008:  MOVFF  08,FC9
+000C:  MOVLW  02
+000E:  BTFSC  FC6.7
+0010:  GOTO   0020
+0014:  BTFSS  F9E.3
+0016:  GOTO   0014
+001A:  MOVLW  00
+001C:  BTFSC  FC5.6
+001E:  MOVLW  01
+0020:  MOVWF  01
+0022:  GOTO   00FC (RETURN)
+0026:  BCF    FC6.6
+0028:  BSF    FC5.3
+002A:  BTFSC  FC5.3
+002C:  BRA    002A
+002E:  BTFSC  00.0
+0030:  BCF    FC5.5
+0032:  BTFSS  00.0
+0034:  BSF    FC5.5
+0036:  BSF    FC5.4
+0038:  BTFSC  FC5.4
+003A:  BRA    0038
+003C:  MOVFF  FC9,01
+0040:  RETURN 0
+.................... 
+.................... 
+.................... BYTE direccion;    
+.................... Byte segundos,minutos,horas;
+.................... void main()
+*
+00B0:  CLRF   FF8
+00B2:  BCF    FD0.7
+00B4:  BCF    FB8.3
+00B6:  MOVLW  19
+00B8:  MOVWF  FAF
+00BA:  MOVLW  A6
+00BC:  MOVWF  FAC
+00BE:  MOVLW  90
+00C0:  MOVWF  FAB
+00C2:  BSF    F93.1
+00C4:  BSF    F93.0
+00C6:  MOVLW  02
+00C8:  MOVWF  FC8
+00CA:  MOVLW  28
+00CC:  MOVWF  FC6
+00CE:  BCF    FC7.7
+00D0:  BCF    FC7.6
+00D2:  MOVF   FC1,W
+00D4:  ANDLW  C0
+00D6:  IORLW  0F
+00D8:  MOVWF  FC1
+00DA:  MOVLW  07
+00DC:  MOVWF  FB4
+.................... {
+.................... direccion=0xD0;
+00DE:  MOVLW  D0
+00E0:  MOVWF  04
+....................    setup_adc_ports(NO_ANALOGS, VSS_VDD);
+00E2:  MOVF   FC1,W
+00E4:  ANDLW  C0
+00E6:  IORLW  0F
+00E8:  MOVWF  FC1
+.................... i2c_start();                                 // Issues a start command when in
+00EA:  BSF    FC5.0
+00EC:  BTFSC  FC5.0
+00EE:  BRA    00EC
+....................  
+....................                                              // the I2C master mode.
+.................... 
+.................... //!i2c_write(0xD1);                             // Sends a single byte over the I2C interface.
+.................... //!//i2c_write(0x00); 
+.................... //!
+.................... //!segundos=i2c_read(1);
+.................... //!minutos=i2c_read(1);
+.................... //!horas=i2c_read(1);
+.................... //!i2c_stop();                                 // Issues a stop command when in the I2C master mode                 
+.................... //!
+....................                         
+.................... 
+....................    while(TRUE)
+....................    {
+.................... i2c_start();                                 // Issues a start command when in
+00F0:  BSF    FC5.1
+00F2:  BTFSC  FC5.1
+00F4:  BRA    00F2
+....................  
+....................                                              // the I2C master mode.
+.................... 
+.................... i2c_write(0xD1);                             // Sends a single byte over the I2C interface.
+00F6:  MOVLW  D1
+00F8:  MOVWF  08
+00FA:  BRA    0004
+.................... //i2c_write(0x00); 
+.................... 
+.................... segundos=i2c_read(1);
+00FC:  MOVLW  01
+00FE:  MOVWF  00
+0100:  RCALL  0026
+0102:  MOVFF  01,05
+.................... minutos=i2c_read(1);
+0106:  MOVLW  01
+0108:  MOVWF  00
+010A:  RCALL  0026
+010C:  MOVFF  01,06
+.................... horas=i2c_read(0);
+0110:  CLRF   00
+0112:  RCALL  0026
+0114:  MOVFF  01,07
+.................... i2c_stop();    
+0118:  BSF    FC5.2
+011A:  BTFSC  FC5.2
+011C:  BRA    011A
+.................... 
+.................... printf("%x",segundos);
+011E:  MOVFF  05,08
+0122:  MOVLW  57
+0124:  MOVWF  09
+0126:  BRA    0042
+.................... // Issues a stop command when in the I2C master mode
+.................... delay_ms(1000);
+0128:  MOVLW  04
+012A:  MOVWF  08
+012C:  MOVLW  FA
+012E:  MOVWF  09
+0130:  BRA    0086
+0132:  DECFSZ 08,F
+0134:  BRA    012C
+0136:  BRA    00F0
+.................... 
+....................       //TODO: User Code
+....................    }
+.................... 
+.................... }
+0138:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C000   PLL1 CPUDIV1 NOUSBDIV XT FCMEN IESO
+   Word  2: 1E26   PUT BROWNOUT VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
