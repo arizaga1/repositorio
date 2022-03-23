@@ -1,15 +1,15 @@
-CCS PCH C Compiler, Version 5.091, 13314               14-mar.-22 14:42
+CCS PCH C Compiler, Version 5.091, 13314               18-mar.-22 16:48
 
                Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main.lst
 
-               ROM used:   314 bytes (1%)
-                           Largest free fragment is 32454
-               RAM used:   9 (0%) at main() level
-                           10 (0%) worst case
+               ROM used:   466 bytes (1%)
+                           Largest free fragment is 32302
+               RAM used:   11 (1%) at main() level
+                           12 (1%) worst case
                Stack used: 1 locations
                Stack size: 31
 
-0000:  GOTO   00B0
+0000:  GOTO   016A
 .................... #include <main.h>
 .................... #include <18F4550.h>
 .................... //////////// Standard Header file for the PIC18F4550 device ////////////////
@@ -23,207 +23,286 @@ CCS PCH C Compiler, Version 5.091, 13314               14-mar.-22 14:42
 .................... //// form are not restricted in any way.                               ////
 .................... ///////////////////////////////////////////////////////////////////////////
 .................... #device PIC18F4550
+0004:  DATA 53,75
+0006:  DATA 65,6E
+0008:  DATA 61,20
+000A:  DATA 61,6C
+000C:  DATA 61,72
+000E:  DATA 6D,61
+0010:  DATA 00,00
 *
-0042:  BTFSC  09.7
-0044:  BRA    0066
-0046:  MOVLW  0F
-0048:  MOVWF  00
-004A:  SWAPF  08,W
-004C:  ANDWF  00,F
-004E:  MOVLW  0A
-0050:  SUBWF  00,W
-0052:  BC    005A
-0054:  MOVLW  30
-0056:  ADDWF  00,F
-0058:  BRA    005E
-005A:  MOVF   09,W
-005C:  ADDWF  00,F
-005E:  MOVF   00,W
-0060:  BTFSS  F9E.4
-0062:  BRA    0060
-0064:  MOVWF  FAD
-0066:  MOVLW  0F
-0068:  ANDWF  08,F
-006A:  MOVLW  0A
-006C:  SUBWF  08,W
-006E:  BC    0074
-0070:  MOVLW  30
-0072:  BRA    0078
-0074:  BCF    09.7
-0076:  MOVF   09,W
-0078:  ADDWF  08,F
-007A:  MOVF   08,W
-007C:  BTFSS  F9E.4
-007E:  BRA    007C
-0080:  MOVWF  FAD
-0082:  GOTO   0128 (RETURN)
+004A:  BTFSC  0B.7
+004C:  BRA    006E
+004E:  MOVLW  0F
+0050:  MOVWF  00
+0052:  SWAPF  0A,W
+0054:  ANDWF  00,F
+0056:  MOVLW  0A
+0058:  SUBWF  00,W
+005A:  BC    0062
+005C:  MOVLW  30
+005E:  ADDWF  00,F
+0060:  BRA    0066
+0062:  MOVF   0B,W
+0064:  ADDWF  00,F
+0066:  MOVF   00,W
+0068:  BTFSS  F9E.4
+006A:  BRA    0068
+006C:  MOVWF  FAD
+006E:  MOVLW  0F
+0070:  ANDWF  0A,F
+0072:  MOVLW  0A
+0074:  SUBWF  0A,W
+0076:  BC    007C
+0078:  MOVLW  30
+007A:  BRA    0080
+007C:  BCF    0B.7
+007E:  MOVF   0B,W
+0080:  ADDWF  0A,F
+0082:  MOVF   0A,W
+0084:  BTFSS  F9E.4
+0086:  BRA    0084
+0088:  MOVWF  FAD
+008A:  RETURN 0
+*
+0146:  TBLRD*+
+0148:  MOVF   FF5,F
+014A:  BZ    0166
+014C:  MOVFF  FF6,0A
+0150:  MOVFF  FF7,0B
+0154:  MOVF   FF5,W
+0156:  BTFSS  F9E.4
+0158:  BRA    0156
+015A:  MOVWF  FAD
+015C:  MOVFF  0A,FF6
+0160:  MOVFF  0B,FF7
+0164:  BRA    0146
+0166:  GOTO   01CE (RETURN)
 .................... 
 .................... #list
 .................... 
 .................... #device ADC=10
 .................... 
-.................... #FUSES NOWDT                 	//No Watch Dog Timer
+.................... #FUSES NOWDT                    //No Watch Dog Timer
 .................... 
 .................... #use delay(crystal=4000000)
-0086:  CLRF   FEA
-0088:  MOVLW  09
-008A:  MOVWF  FE9
-008C:  MOVF   FEF,W
-008E:  BZ    00AC
-0090:  MOVLW  01
-0092:  MOVWF  01
-0094:  CLRF   00
-0096:  DECFSZ 00,F
-0098:  BRA    0096
-009A:  DECFSZ 01,F
-009C:  BRA    0094
-009E:  MOVLW  4A
-00A0:  MOVWF  00
-00A2:  DECFSZ 00,F
-00A4:  BRA    00A2
-00A6:  BRA    00A8
-00A8:  DECFSZ FEF,F
-00AA:  BRA    0090
-00AC:  GOTO   0132 (RETURN)
-.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8,stream=PORT1)
-.................... #use i2c(Master,Fast,sda=PIN_B0,scl=PIN_B1,force_hw)
 *
-0004:  BCF    FC6.7
-0006:  BCF    F9E.3
-0008:  MOVFF  08,FC9
-000C:  MOVLW  02
-000E:  BTFSC  FC6.7
-0010:  GOTO   0020
-0014:  BTFSS  F9E.3
-0016:  GOTO   0014
-001A:  MOVLW  00
-001C:  BTFSC  FC5.6
-001E:  MOVLW  01
-0020:  MOVWF  01
-0022:  GOTO   00FC (RETURN)
-0026:  BCF    FC6.6
-0028:  BSF    FC5.3
-002A:  BTFSC  FC5.3
-002C:  BRA    002A
-002E:  BTFSC  00.0
-0030:  BCF    FC5.5
-0032:  BTFSS  00.0
-0034:  BSF    FC5.5
-0036:  BSF    FC5.4
-0038:  BTFSC  FC5.4
-003A:  BRA    0038
-003C:  MOVFF  FC9,01
-0040:  RETURN 0
+011C:  CLRF   FEA
+011E:  MOVLW  0B
+0120:  MOVWF  FE9
+0122:  MOVF   FEF,W
+0124:  BZ    0142
+0126:  MOVLW  01
+0128:  MOVWF  01
+012A:  CLRF   00
+012C:  DECFSZ 00,F
+012E:  BRA    012C
+0130:  DECFSZ 01,F
+0132:  BRA    012A
+0134:  MOVLW  4A
+0136:  MOVWF  00
+0138:  DECFSZ 00,F
+013A:  BRA    0138
+013C:  BRA    013E
+013E:  DECFSZ FEF,F
+0140:  BRA    0126
+0142:  GOTO   01B4 (RETURN)
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8,stream=PORT1)
+.................... #use i2c(Master,Fast,sda=PIN_B0,scl=PIN_B1,force_hw)   //módulo serial del microcontrolador
+*
+0012:  BCF    FC6.7
+0014:  BCF    F9E.3
+0016:  MOVFF  0A,FC9
+001A:  MOVLW  02
+001C:  BTFSC  FC6.7
+001E:  BRA    002A
+0020:  BTFSS  F9E.3
+0022:  BRA    0020
+0024:  MOVLW  00
+0026:  BTFSC  FC5.6
+0028:  MOVLW  01
+002A:  MOVWF  01
+002C:  RETURN 0
+002E:  BCF    FC6.6
+0030:  BSF    FC5.3
+0032:  BTFSC  FC5.3
+0034:  BRA    0032
+0036:  BTFSC  00.0
+0038:  BCF    FC5.5
+003A:  BTFSS  00.0
+003C:  BSF    FC5.5
+003E:  BSF    FC5.4
+0040:  BTFSC  FC5.4
+0042:  BRA    0040
+0044:  MOVFF  FC9,01
+0048:  RETURN 0
 .................... 
 .................... 
 .................... BYTE direccion;    
-.................... Byte segundos,minutos,horas;
+.................... Byte segundos,minutos,horas;   //Variables para recibir la información de los minutos segundos y horas
+.................... 
+.................... void funcion1();   //declaracion de una funcion
+.................... 
 .................... void main()
 *
-00B0:  CLRF   FF8
-00B2:  BCF    FD0.7
-00B4:  BCF    FB8.3
-00B6:  MOVLW  19
-00B8:  MOVWF  FAF
-00BA:  MOVLW  A6
-00BC:  MOVWF  FAC
-00BE:  MOVLW  90
-00C0:  MOVWF  FAB
-00C2:  BSF    F93.1
-00C4:  BSF    F93.0
-00C6:  MOVLW  02
-00C8:  MOVWF  FC8
-00CA:  MOVLW  28
-00CC:  MOVWF  FC6
-00CE:  BCF    FC7.7
-00D0:  BCF    FC7.6
-00D2:  MOVF   FC1,W
-00D4:  ANDLW  C0
-00D6:  IORLW  0F
-00D8:  MOVWF  FC1
-00DA:  MOVLW  07
-00DC:  MOVWF  FB4
+016A:  CLRF   FF8
+016C:  BCF    FD0.7
+016E:  BCF    FB8.3
+0170:  MOVLW  19
+0172:  MOVWF  FAF
+0174:  MOVLW  A6
+0176:  MOVWF  FAC
+0178:  MOVLW  90
+017A:  MOVWF  FAB
+017C:  BSF    F93.1
+017E:  BSF    F93.0
+0180:  MOVLW  02
+0182:  MOVWF  FC8
+0184:  MOVLW  28
+0186:  MOVWF  FC6
+0188:  BCF    FC7.7
+018A:  BCF    FC7.6
+018C:  CLRF   09
+018E:  CLRF   08
+0190:  MOVF   FC1,W
+0192:  ANDLW  C0
+0194:  IORLW  0F
+0196:  MOVWF  FC1
+0198:  MOVLW  07
+019A:  MOVWF  FB4
 .................... {
 .................... direccion=0xD0;
-00DE:  MOVLW  D0
-00E0:  MOVWF  04
+019C:  MOVLW  D0
+019E:  MOVWF  04
 ....................    setup_adc_ports(NO_ANALOGS, VSS_VDD);
-00E2:  MOVF   FC1,W
-00E4:  ANDLW  C0
-00E6:  IORLW  0F
-00E8:  MOVWF  FC1
-.................... i2c_start();                                 // Issues a start command when in
-00EA:  BSF    FC5.0
-00EC:  BTFSC  FC5.0
-00EE:  BRA    00EC
-....................  
-....................                                              // the I2C master mode.
-.................... 
-.................... //!i2c_write(0xD1);                             // Sends a single byte over the I2C interface.
-.................... //!//i2c_write(0x00); 
-.................... //!
-.................... //!segundos=i2c_read(1);
-.................... //!minutos=i2c_read(1);
-.................... //!horas=i2c_read(1);
-.................... //!i2c_stop();                                 // Issues a stop command when in the I2C master mode                 
-.................... //!
-....................                         
+01A0:  MOVF   FC1,W
+01A2:  ANDLW  C0
+01A4:  IORLW  0F
+01A6:  MOVWF  FC1
+....................      
 .................... 
 ....................    while(TRUE)
 ....................    {
-.................... i2c_start();                                 // Issues a start command when in
-00F0:  BSF    FC5.1
-00F2:  BTFSC  FC5.1
-00F4:  BRA    00F2
-....................  
-....................                                              // the I2C master mode.
 .................... 
-.................... i2c_write(0xD1);                             // Sends a single byte over the I2C interface.
-00F6:  MOVLW  D1
-00F8:  MOVWF  08
-00FA:  BRA    0004
-.................... //i2c_write(0x00); 
 .................... 
-.................... segundos=i2c_read(1);
-00FC:  MOVLW  01
-00FE:  MOVWF  00
-0100:  RCALL  0026
-0102:  MOVFF  01,05
-.................... minutos=i2c_read(1);
-0106:  MOVLW  01
-0108:  MOVWF  00
-010A:  RCALL  0026
-010C:  MOVFF  01,06
-.................... horas=i2c_read(0);
-0110:  CLRF   00
-0112:  RCALL  0026
-0114:  MOVFF  01,07
-.................... i2c_stop();    
-0118:  BSF    FC5.2
-011A:  BTFSC  FC5.2
-011C:  BRA    011A
+.................... funcion1();  //llamada a la función
+01A8:  BRA    008C
 .................... 
-.................... printf("%x",segundos);
-011E:  MOVFF  05,08
-0122:  MOVLW  57
-0124:  MOVWF  09
-0126:  BRA    0042
 .................... // Issues a stop command when in the I2C master mode
 .................... delay_ms(1000);
-0128:  MOVLW  04
-012A:  MOVWF  08
-012C:  MOVLW  FA
-012E:  MOVWF  09
-0130:  BRA    0086
-0132:  DECFSZ 08,F
-0134:  BRA    012C
-0136:  BRA    00F0
+01AA:  MOVLW  04
+01AC:  MOVWF  0A
+01AE:  MOVLW  FA
+01B0:  MOVWF  0B
+01B2:  BRA    011C
+01B4:  DECFSZ 0A,F
+01B6:  BRA    01AE
 .................... 
+.................... if(minutos==0x49 && horas==0x16)
+01B8:  MOVF   06,W
+01BA:  SUBLW  49
+01BC:  BNZ   01CE
+01BE:  MOVF   07,W
+01C0:  SUBLW  16
+01C2:  BNZ   01CE
+....................    {printf("Suena alarma");}
+01C4:  MOVLW  04
+01C6:  MOVWF  FF6
+01C8:  MOVLW  00
+01CA:  MOVWF  FF7
+01CC:  BRA    0146
+01CE:  BRA    01A8
 ....................       //TODO: User Code
 ....................    }
 .................... 
 .................... }
-0138:  SLEEP 
+.................... 
+01D0:  SLEEP 
+.................... 
+.................... 
+.................... //un programa modular
+.................... 
+.................... void funcion1()
+.................... {
+.................... i2c_start();                                 // Issues a start command when in
+*
+008C:  BSF    FC5.0
+008E:  BTFSC  FC5.0
+0090:  BRA    008E
+.................... i2c_write(0xD0);                             // Sends a single byte over the I2C interface.
+0092:  MOVLW  D0
+0094:  MOVWF  0A
+0096:  RCALL  0012
+.................... i2c_write(0x00); 
+0098:  CLRF   0A
+009A:  RCALL  0012
+.................... i2c_start();
+009C:  BSF    FC5.1
+009E:  BTFSC  FC5.1
+00A0:  BRA    009E
+.................... i2c_write(0xD0|0x01);
+00A2:  MOVLW  D1
+00A4:  MOVWF  0A
+00A6:  RCALL  0012
+.................... segundos=i2c_read(1);
+00A8:  MOVLW  01
+00AA:  MOVWF  00
+00AC:  RCALL  002E
+00AE:  MOVFF  01,05
+.................... minutos=i2c_read(1);
+00B2:  MOVLW  01
+00B4:  MOVWF  00
+00B6:  RCALL  002E
+00B8:  MOVFF  01,06
+.................... horas=i2c_read(0);
+00BC:  CLRF   00
+00BE:  RCALL  002E
+00C0:  MOVFF  01,07
+.................... i2c_stop();    
+00C4:  BSF    FC5.2
+00C6:  BTFSC  FC5.2
+00C8:  BRA    00C6
+.................... printf("\r");
+00CA:  MOVLW  0D
+00CC:  BTFSS  F9E.4
+00CE:  BRA    00CC
+00D0:  MOVWF  FAD
+.................... printf("%x: %x :%x ",horas,minutos,segundos);
+00D2:  MOVFF  07,0A
+00D6:  MOVLW  57
+00D8:  MOVWF  0B
+00DA:  RCALL  004A
+00DC:  MOVLW  3A
+00DE:  BTFSS  F9E.4
+00E0:  BRA    00DE
+00E2:  MOVWF  FAD
+00E4:  MOVLW  20
+00E6:  BTFSS  F9E.4
+00E8:  BRA    00E6
+00EA:  MOVWF  FAD
+00EC:  MOVFF  06,0A
+00F0:  MOVLW  57
+00F2:  MOVWF  0B
+00F4:  RCALL  004A
+00F6:  MOVLW  20
+00F8:  BTFSS  F9E.4
+00FA:  BRA    00F8
+00FC:  MOVWF  FAD
+00FE:  MOVLW  3A
+0100:  BTFSS  F9E.4
+0102:  BRA    0100
+0104:  MOVWF  FAD
+0106:  MOVFF  05,0A
+010A:  MOVLW  57
+010C:  MOVWF  0B
+010E:  RCALL  004A
+0110:  MOVLW  20
+0112:  BTFSS  F9E.4
+0114:  BRA    0112
+0116:  MOVWF  FAD
+0118:  GOTO   01AA (RETURN)
+.................... 
+.................... }
 
 Configuration Fuses:
    Word  1: C000   PLL1 CPUDIV1 NOUSBDIV XT FCMEN IESO

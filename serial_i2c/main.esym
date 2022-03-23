@@ -1,10 +1,9 @@
-C L "main" 0 8 1 "FUNCTION"
-D G "__PCH__" 0 45 ""5.091""
-D G "__DEVICE__" 0 45 "4550"
-D G "__DATE__" 0 45 ""14-Mar-22""
-D G "__TIME__" 0 45 ""14:42:23""
-D G "_UNICODE" 0 45 ""?""
-D G "__EVAL" 0 45 ""?"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 49 ""5.091""
+D G "__DEVICE__" 0 49 "4550"
+D G "__DATE__" 0 49 ""18-Mar-22""
+D G "__TIME__" 0 49 ""16:48:27""
+D G "_UNICODE" 0 49 ""?""
+D G "__EVAL" 0 49 ""?"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 45 ""
 v L "value" 2 45 "int8" `55 
@@ -1282,13 +1281,18 @@ d G "INT_USB" 2 860 "0x00A020"
 V G "direccion" 0 2 "int8" `705 
 V G "segundos" 0 3 "int8" `706 
 V G "minutos" 0 3 "int8" `707 
-V G "horas" 0 3 "int8" `708 
-F N "main" 0 4 ""
-F G "main" 0 5 "void()" `709 
-C L "main" 0 8 8 "FUNCTION"
-C L "main" 0 8 2 "FUNCTION"
-C L "main" 0 8 2 "FUNCTION"
-C L "main" 0 8 1 "FUNCTION"
+V G "horas" 0 3 "int8" `708  "Variables para recibir la información de los minutos segundos y horas"
+F N "funcion1" 0 5 ""
+f G "funcion1" 0 5 "void()" `709  "declaracion de una funcion"
+F N "main" 0 7 ""
+F G "main" 0 8 "void()" `710 
+C L "main" 0 17 2 "FUNCTION"
+C L "main" 0 17 1 "FUNCTION"
+C L "funcion1" 0 17 1 "FUNCTION"
+F N "funcion1" 0 33 ""
+F G "funcion1" 0 34 "void()" `709 
+C L "funcion1" 0 17 1 "FUNCTION"
+C L "funcion1" 0 17 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

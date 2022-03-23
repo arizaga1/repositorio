@@ -7,50 +7,56 @@
 005     segundos
 006     minutos
 007     horas
-008     @I2C_WRITEU_129.P1
-008     @I2C_READU_129.P2
-008     @PRINTF_X_9600_31766_31767.P3
-008     main.@SCRATCH1
-009     @PRINTF_X_9600_31766_31767.P1
-009     @delay_ms1.P2
+008-009 @sprintf_string
+00A     @I2C_READU_129.P1
+00A     @PRINTF_X_9600_31766_31767.P2
+00A     @I2C_WRITEU_129.P3
+00A     main.@SCRATCH1
+00A     @PSTRINGC_9600_31766_31767.@SCRATCH1
+00B     @PRINTF_X_9600_31766_31767.P1
+00B     @delay_ms1.P2
+00B     @PSTRINGC_9600_31766_31767.@SCRATCH2
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
 FBB     CCP_2
 FBB     CCP_2_LOW
 FBC     CCP_2_HIGH
-FBE     CCP_1
 FBE     CCP_1_LOW
+FBE     CCP_1
 FBF     CCP_1_HIGH
-FE1-FE2 @WRITE_PACKED_MEMORY.P1
-FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P1
-FE9-FEA @READ_PROGRAM_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
 FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
 ROM Allocation:
-000004  @I2C_WRITEU_129
-000026  @I2C_READU_129
-000042  @PRINTF_X_9600_31766_31767
-000086  @delay_ms1
-0000B0  main
-0000B0  @cinit1
-0000DE  @cinit2
+000004  @const713.call
+000012  @I2C_WRITEU_129
+00002E  @I2C_READU_129
+00004A  @PRINTF_X_9600_31766_31767
+00008C  funcion1
+00011C  @delay_ms1
+000146  @PSTRINGC_9600_31766_31767
+00016A  main
+00016A  @cinit1
+00019C  @cinit2
 
 Project Directory:
     C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\
 
 Project Files:
-    main.c                                                  [14-mar.-22 14:42  CRC=744F0F1D]
-    main.h                                                  [14-mar.-22 14:00  CRC=D872A938]
+    main.c                                                  [18-mar.-22 16:48  CRC=83110640]
+    main.h                                                  [18-mar.-22 16:26  CRC=B723CC71]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [30-oct.-19 15:52  CRC=B77A8E99]
 
-Source signature=BBB6D587
+Source signature=A929EFE3
 Program memory checksum=0000
-Hex file CRC=8AD6
+Hex file CRC=ADB0
 
 Units:
     C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main (main)

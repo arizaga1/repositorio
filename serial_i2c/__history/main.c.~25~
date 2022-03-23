@@ -17,9 +17,9 @@ direccion=0xD0;
 funcion1();  //llamada a la función
 
 // Issues a stop command when in the I2C master mode
-delay_ms(1000);
+delay_ms(60000);
 
-if(minutos==0x49 && horas==0x16)
+if(minutos==0x46 && horas==0x16)
    {printf("Suena alarma");}
       //TODO: User Code
    }

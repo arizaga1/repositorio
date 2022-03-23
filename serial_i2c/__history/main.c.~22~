@@ -1,9 +1,6 @@
 #include <main.h>
 BYTE direccion;    
 Byte segundos,minutos,horas;   //Variables para recibir la información de los minutos segundos y horas
-
-void funcion1();   //declaracion de una funcion
-
 void main()
 {
 direccion=0xD0;
@@ -14,24 +11,7 @@ direccion=0xD0;
    {
 
 
-funcion1();  //llamada a la función
 
-// Issues a stop command when in the I2C master mode
-delay_ms(1000);
-
-if(minutos==0x49 && horas==0x16)
-   {printf("Suena alarma");}
-      //TODO: User Code
-   }
-
-}
-
-
-
-//un programa modular
-
-void funcion1()
-{
 i2c_start();                                 // Issues a start command when in
 i2c_write(0xD0);                             // Sends a single byte over the I2C interface.
 i2c_write(0x00); 
@@ -43,5 +23,10 @@ horas=i2c_read(0);
 i2c_stop();    
 printf("\r");
 printf("%x: %x :%x ",horas,minutos,segundos);
+// Issues a stop command when in the I2C master mode
+delay_ms(1000);
+
+      //TODO: User Code
+   }
 
 }

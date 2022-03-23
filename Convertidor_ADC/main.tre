@@ -1,5 +1,5 @@
 ÀÄmain
-   ÀÄMAIN  0/66  Ram=0
+   ÀÄMAIN  0/91  Ram=2
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@cinit2  (Inline)  Ram=0
       ÃÄlcd_init  0/62  Ram=6
@@ -15,6 +15,8 @@
       ³     ÃÄlcd_send_nibble  0/15  Ram=1
       ³     ÀÄlcd_send_nibble  0/15  Ram=1
       ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄ@MUL1616  0/23  Ram=5
+      ÃÄ@DIV1616  0/39  Ram=5
       ÃÄlcd_gotoxy  0/18  Ram=4
       ³  ÀÄlcd_send_byte  0/66  Ram=3
       ³     ÀÄ*

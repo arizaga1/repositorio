@@ -1,10 +1,16 @@
 ÀÄmain
-   ÀÄmain  0/138  Ram=1
+   ÀÄmain  0/104  Ram=1
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@cinit2  (Inline)  Ram=0
-      ÃÄ@I2C_WRITEU_129  0/34  Ram=1
-      ÃÄ@I2C_READU_129  0/28  Ram=1
-      ÃÄ@I2C_READU_129  0/28  Ram=1
-      ÃÄ@I2C_READU_129  0/28  Ram=1
-      ÃÄ@PRINTF_X_9600_31766_31767  0/68  Ram=2
-      ÀÄ@delay_ms1  0/42  Ram=1
+      ÃÄfuncion1  0/144  Ram=0
+      ³  ÃÄ@I2C_WRITEU_129  0/28  Ram=1
+      ³  ÃÄ@I2C_WRITEU_129  0/28  Ram=1
+      ³  ÃÄ@I2C_WRITEU_129  0/28  Ram=1
+      ³  ÃÄ@I2C_READU_129  0/28  Ram=1
+      ³  ÃÄ@I2C_READU_129  0/28  Ram=1
+      ³  ÃÄ@I2C_READU_129  0/28  Ram=1
+      ³  ÃÄ@PRINTF_X_9600_31766_31767  0/66  Ram=2
+      ³  ÃÄ@PRINTF_X_9600_31766_31767  0/66  Ram=2
+      ³  ÀÄ@PRINTF_X_9600_31766_31767  0/66  Ram=2
+      ÃÄ@delay_ms1  0/42  Ram=1
+      ÀÄ@PSTRINGC_9600_31766_31767  0/36  Ram=2
