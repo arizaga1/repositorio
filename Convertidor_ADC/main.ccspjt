@@ -1,8 +1,8 @@
 [PROJECT]
 Target=main.hex
-Processor_Text=PIC16F877A
+Processor_Text=PIC18F4550
 CCSVerions=5.091
-Compiler=PCM
+Compiler=PCH
 CCSVersion=5.091
 [Target Data]
 FileList=main.c
@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=6
+Days=7
 D1=04-03-2022
 D1_L=5
 D1_L1=[59977]Project Opened.
@@ -25,7 +25,7 @@ D1_L2=[59985]Started Editing.
 D1_L3=[60987]Stopped Editing.
 D1_L4=[61084]Started Editing.
 D1_L5=[61394]Stopped Editing.
-TotalEdit=97
+TotalEdit=103
 TotalDebug=0
 D2=05-03-2022
 D2_E=12
@@ -55,18 +55,45 @@ D6_L=3
 D6_L1=[43585]Project Opened.
 D6_L2=[43664]Started Editing.
 D6_L3=[44033]Stopped Editing.
+D7=25-03-2022
+D7_L=21
+D7_L1=[47817]Project Opened.
+D7_L2=[47830]Started Editing.
+D7_L3=[48136]Stopped Editing.
+D7_L4=[48301]Started Editing.
+D7_L5=[48603]Stopped Editing.
+D7_L6=[50476]Started Editing.
+D7_L7=[50791]Stopped Editing.
+D7_L8=[50828]Started Editing.
+D7_L9=[51163]Stopped Editing.
+D7_E=6
+D7_D=0
+D7_L10=[51163]Project Closed.
+D7_L11=[51655]Project Opened.
+D7_L12=[51694]Started Editing.
+D7_L13=[51994]Stopped Editing.
+D7_L14=[52051]Started Editing.
+D7_L15=[52505]Stopped Editing.
+D7_L16=[52522]Started Editing.
+D7_L17=[52822]Stopped Editing.
+D7_L18=[59333]Project Opened.
+D7_L19=[59342]Started Editing.
+D7_L20=[59642]Stopped Editing.
+D7_L21=[60016]Started Editing.
 
 [Opened Files]
 1=main.c
-t1=5
-Count=2
+t1=1
+Count=3
 2=main.h
 t2=1
+3=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
+t3=1
 [main.c]
 Type=4
 
 [defines]
-buildcount=7
+buildcount=17
 [Units]
 Count=1
 1=main (main)

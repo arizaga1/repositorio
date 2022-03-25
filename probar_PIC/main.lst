@@ -1,0 +1,127 @@
+CCS PCM C Compiler, Version 5.091, 13314               25-mar.-22 14:15
+
+               Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\probar_PIC\main.lst
+
+               ROM used:   70 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           7 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   019
+0003:  NOP
+.................... #include <main.h>
+.................... #include <16F877A.h>
+.................... //////////// Standard Header file for the PIC16F877A device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F877A
+.................... 
+.................... #list
+.................... 
+.................... #device ADC=10
+.................... #use delay(crystal=16MHz)
+0004:  MOVLW  22
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  05
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  2E
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  RETURN
+.................... #use FIXED_IO( A_outputs=PIN_A5,PIN_A0 )
+.................... 
+.................... #define LED PIN_A5
+.................... #define DELAY 1000
+.................... 
+.................... 
+.................... 
+.................... 
+.................... void main()
+0019:  MOVF   03,W
+001A:  ANDLW  1F
+001B:  MOVWF  03
+001C:  BSF    03.5
+001D:  BSF    1F.0
+001E:  BSF    1F.1
+001F:  BSF    1F.2
+0020:  BCF    1F.3
+0021:  MOVLW  07
+0022:  MOVWF  1C
+0023:  BCF    03.7
+.................... {
+....................       output_B(0xAA);
+0024:  CLRF   06
+0025:  MOVLW  AA
+0026:  BCF    03.5
+0027:  MOVWF  06
+....................       output_D(0xAA);
+0028:  BSF    03.5
+0029:  CLRF   08
+002A:  BCF    03.5
+002B:  MOVWF  08
+....................    while(TRUE)
+....................    {
+....................    
+....................       //Example blinking LED program
+....................       output_low(LED);
+002C:  MOVLW  DE
+002D:  BSF    03.5
+002E:  MOVWF  05
+002F:  BCF    03.5
+0030:  BCF    05.5
+....................       delay_ms(DELAY);
+0031:  MOVLW  04
+0032:  MOVWF  21
+0033:  MOVLW  FA
+0034:  MOVWF  22
+0035:  CALL   004
+0036:  DECFSZ 21,F
+0037:  GOTO   033
+....................       output_high(LED);
+0038:  MOVLW  DE
+0039:  BSF    03.5
+003A:  MOVWF  05
+003B:  BCF    03.5
+003C:  BSF    05.5
+....................       delay_ms(DELAY);
+003D:  MOVLW  04
+003E:  MOVWF  21
+003F:  MOVLW  FA
+0040:  MOVWF  22
+0041:  CALL   004
+0042:  DECFSZ 21,F
+0043:  GOTO   03F
+0044:  GOTO   02C
+.................... 
+....................       //TODO: User Code
+....................    }
+.................... 
+.................... }
+0045:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT
