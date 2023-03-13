@@ -18,7 +18,7 @@ forcecoff=0
 
 [Opened Files]
 1=main.c
-t1=9
+t1=1
 Count=3
 2=main.h
 t2=1
@@ -58,7 +58,7 @@ D3_E=5
 D3_D=0
 D3_L6=[39362]Project Closed.
 D4=13-03-2023
-D4_L=8
+D4_L=10
 D4_L1=[73641]Project Opened.
 D4_L2=[73698]Started Editing.
 D4_L3=[74089]Stopped Editing.
@@ -69,6 +69,8 @@ D4_L7=[53758]Stopped Editing.
 D4_E=-351
 D4_D=0
 D4_L8=[54039]Project Closed.
+D4_L9=[55821]Project Opened.
+D4_L10=[55836]Project Closed.
 [Units]
 Count=1
 1=main (main)
