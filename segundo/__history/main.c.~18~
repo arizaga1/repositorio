@@ -14,7 +14,7 @@ void main()
    {
       for(i=0;i<10;i++)
         { 
-        lcd_gotoxy(3, 5);
+        lcd_gotoxy(3, 2);
         printf(lcd_putc,"contador: %u ",j++);//imprimir a pantalla
         
         
