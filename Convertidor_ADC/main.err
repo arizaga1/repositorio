@@ -1,8 +1,4 @@
-Compiling C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Convertidor_ADC\main on 25-mar.-22 at 16:40
-*** Error 24 "C:\Program Files (x86)\PICC\Devices\18F4550.h" Line 11(9,19): Unknown device type    -- Try PCH
-      1 Errors,  0 Warnings.
-Build Failed.
-Compiling C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Convertidor_ADC\main on 25-mar.-22 at 16:40
-      Memory usage:   ROM=6%      RAM=1% - 2%
+Compiling C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Convertidor_ADC\main on 11-jul.-22 at 11:52
+      Memory usage:   ROM=18%      RAM=4% - 11%
       0 Errors,  0 Warnings.
 Build Successful.

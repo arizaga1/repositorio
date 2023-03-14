@@ -1,4 +1,5 @@
-Compiling C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\main on 11-feb.-22 at 18:04
-      Memory usage:   ROM=7%      RAM=5% - 9%
-      0 Errors,  0 Warnings.
-Build Successful.
+Compiling C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\main on 05-jul.-22 at 11:29
+*** Error 12 "C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\main.c" Line 14(11,12): Undefined identifier  -- lcd_gotoxy
+*** Error 12 "C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\main.c" Line 15(8,16): Undefined identifier   lcd_putc
+      2 Errors,  0 Warnings.
+Build Failed.

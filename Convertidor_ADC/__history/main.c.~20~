@@ -4,16 +4,16 @@ int  TEMP = 0xff;
 float  x;  //el resultado del convertidor
 void main()
 {
-   setup_adc_ports(AN0_VREF_VREF);  //En esta línea se configura el ADC
+   setup_adc_ports(AN0);  //En esta línea se configura el ADC
    setup_adc(ADC_CLOCK_DIV_64);     //la velociad de conversión
    lcd_init();                      //se configura la pantalla LCD
-   TEMP |= 0x0f;
+   TEMP ~= 0x0f;
    while(TRUE)
    {
    delay_ms(50);
-   x=read_adc()* 1.0/1023;
+   x=read_adc()* 5.0/1023;
    lcd_gotoxy(1,1);
-   printf(LCD_PUTC, " \r Valor=%f ",(x*100)-50);
+   printf(LCD_PUTC, " \r temp=%f ",x*100);
 
 
 

@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=2
+Days=4
 D1=11-02-2022
 D1_L=18
 D1_L1=[61825]Project Opened.
@@ -29,7 +29,7 @@ D1_L6=[63444]Started Editing.
 D1_L7=[63758]Stopped Editing.
 D1_L8=[63805]Started Editing.
 D1_L9=[64841]Stopped Editing.
-TotalEdit=32
+TotalEdit=37
 TotalDebug=0
 D1_E=32
 D1_D=0
@@ -46,18 +46,40 @@ D2=25-02-2022
 D2_L=2
 D2_L1=[61016]Project Opened.
 D2_L2=[61053]Project Closed.
+D3=05-07-2022
+D3_L=10
+D3_L1=[37312]Project Opened.
+D3_L2=[37341]Project Closed.
+D3_L3=[39362]Project Opened.
+D3_L4=[39557]Started Editing.
+D3_L5=[39857]Stopped Editing.
+D3_L6=[40363]Started Editing.
+D3_L7=[40771]Stopped Editing.
+D3_L8=[41204]Started Editing.
+D3_L9=[41690]Stopped Editing.
+D3_E=5
+D3_D=0
+D3_L10=[45205]Project Closed.
+D4=11-07-2022
+D4_L=2
+D4_L1=[40976]Project Opened.
+D4_L2=[41454]Project Closed.
 
 [Opened Files]
 1=main.c
-t1=1
-Count=2
+t1=9
+Count=4
 2=main.h
 t2=1
+3=..\segundo\main.c
+t3=10
+4=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h
+t4=681
 [main.c]
 Type=4
 
 [defines]
-buildcount=20
+buildcount=21
 [Units]
 Count=1
 1=main (main)

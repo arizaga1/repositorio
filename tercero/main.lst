@@ -1,4 +1,4 @@
-CCS PCM C Compiler, Version 5.091, 13314               11-feb.-22 18:04
+CCS PCM C Compiler, Version 5.091, 13314               05-jul.-22 11:26
 
                Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\main.lst
 
@@ -334,10 +334,11 @@ CCS PCM C Compiler, Version 5.091, 13314               11-feb.-22 18:04
 0073:  RETURN
 .................... 
 .................... 
-.................... int8 cuenta=77;
+.................... int8 cuenta=76;
 .................... int8 segundos;
 .................... #INT_RTCC   //interrupcion por Tmr0 
-.................... void  RTCC_isr(void) 
+.................... void  RTCC_isr(void) //RSI Rutina de Servicio a la Interrupción  
+....................                      //ISR Interrupt Service Routin
 .................... {
 .................... cuenta--;
 *
@@ -349,8 +350,8 @@ CCS PCM C Compiler, Version 5.091, 13314               11-feb.-22 18:04
 0052:  MOVF   2B,F
 0053:  BTFSS  03.2
 0054:  GOTO   058
-.................... cuenta=77; 
-0055:  MOVLW  4D
+.................... cuenta=76; 
+0055:  MOVLW  4C
 0056:  MOVWF  2B
 .................... 
 .................... segundos++;
@@ -1044,7 +1045,7 @@ CCS PCM C Compiler, Version 5.091, 13314               11-feb.-22 18:04
 020E:  MOVF   03,W
 020F:  ANDLW  1F
 0210:  MOVWF  03
-0211:  MOVLW  4D
+0211:  MOVLW  4C
 0212:  MOVWF  2B
 0213:  BSF    03.5
 0214:  BSF    1F.0
@@ -1065,7 +1066,7 @@ CCS PCM C Compiler, Version 5.091, 13314               11-feb.-22 18:04
 0220:  BCF    03.5
 0221:  MOVWF  01
 ....................    
-....................    enable_interrupts(INT_RTCC);
+....................    enable_interrupts(INT_TIMER0);
 0222:  BSF    0B.5
 ....................    enable_interrupts(GLOBAL);
 0223:  MOVLW  C0

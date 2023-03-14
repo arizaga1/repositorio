@@ -1,10 +1,10 @@
-C L "MAIN" 0 24 2 "FUNCTION"
-D G "__PCM__" 0 30 ""5.091""
-D G "__DEVICE__" 0 30 "877"
-D G "__DATE__" 0 30 ""4-Feb-22""
-D G "__TIME__" 0 30 ""17:21:05""
-D G "_UNICODE" 0 30 ""?""
-D G "__EVAL" 0 30 ""?"" "Standard Header file for the PIC16F877A device ////////////////"
+f N "set_tris_a" 2 37 ""
+D G "__PCM__" 2 38 ""5.091""
+D G "__DEVICE__" 2 38 "877"
+D G "__DATE__" 2 38 ""5-Jul-22""
+D G "__TIME__" 2 38 ""10:45:55""
+D G "_UNICODE" 2 38 ""?""
+D G "__EVAL" 2 38 ""?"" "Standard Header file for the PIC16F877A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `55 
@@ -390,9 +390,9 @@ f N "read_adc" 2 373 ""
 f G "read_adc" 2 373 "int16()" `207 
 f N "read_adc" 2 374 ""
 v L "mode" 2 374 "int8" `208 
-f G "read_adc" 2 374 "int16(int8 mode,int8 setting)" `207 
+f G "read_adc" 2 374 "int16(int8 mode)" `207 
 f N "adc_done" 2 375 ""
-f B "adc_done" 2 375 "int8(int8 mode,int8 setting)" `207  "Constants used for SETUP_ADC() are:"
+f B "adc_done" 2 375 "int8(int8 mode)" `207  "Constants used for SETUP_ADC() are:"
 d G "ADC_OFF" 2 377 "0" "ADC Off"
 d G "ADC_CLOCK_DIV_2" 2 378 "0x10000"
 d G "ADC_CLOCK_DIV_4" 2 379 "0x4000"
@@ -795,9 +795,9 @@ f B "i2c_transfer_in" 2 534 "int8(int8 stream,int8 address,*int8 rData,int8 rCou
 f N "spi_xfer" 2 537 ""
 f B "spi_xfer" 2 537 "int8()" `472 
 f N "spi_xfer" 2 538 ""
-f G "spi_xfer" 2 538 "int16(int8 data)" `473 
+f G "spi_xfer" 2 538 "int16()" `473 
 f N "spi_xfer" 2 539 ""
-f G "spi_xfer" 2 539 "int32(int8 data)" `473 
+f G "spi_xfer" 2 539 "int32()" `473 
 f N "spi_xfer" 2 540 ""
 v L "data" 2 540 "int8" `474 
 f B "spi_xfer" 2 540 "int8(int8 data)" `473 
@@ -877,18 +877,18 @@ f B "spi_prewrite" 2 559 "void(int8 ,int32 data)" `526
 f N "spi_xfer_in" 2 560 ""
 f B "spi_xfer_in" 2 560 "int8()" `529 
 f N "spi_xfer_in" 2 561 ""
-f G "spi_xfer_in" 2 561 "int16(int8 bits)" `530 
+f G "spi_xfer_in" 2 561 "int16()" `530 
 f N "spi_xfer_in" 2 562 ""
-f G "spi_xfer_in" 2 562 "int32(int8 bits)" `530 
+f G "spi_xfer_in" 2 562 "int32()" `530 
 f N "spi_xfer_in" 2 563 ""
 v L "bits" 2 563 "int8" `531 
 f B "spi_xfer_in" 2 563 "int8(int8 bits)" `530 
 f N "spi_xfer_in" 2 564 ""
 v L "bits" 2 564 "int8" `533 
-f G "spi_xfer_in" 2 564 "int16(int8 bits,int8 bits)" `532 
+f G "spi_xfer_in" 2 564 "int16(int8 bits)" `532 
 f N "spi_xfer_in" 2 565 ""
 v L "bits" 2 565 "int8" `533 
-f G "spi_xfer_in" 2 565 "int32(int8 bits,int8 bits)" `532 
+f G "spi_xfer_in" 2 565 "int32(int8 bits)" `532 
 f N "spi_xfer_in" 2 566 ""
 v L "stream" 2 566 "int8" `533 
 v L "bits" 2 566 "int8" `534 
@@ -896,11 +896,11 @@ f B "spi_xfer_in" 2 566 "int8(int8 stream,int8 bits)" `532
 f N "spi_xfer_in" 2 567 ""
 v L "stream" 2 567 "int8" `533 
 v L "bits" 2 567 "int8" `537 
-f G "spi_xfer_in" 2 567 "int16(int8 stream,int8 bits,int16 count)" `535 
+f G "spi_xfer_in" 2 567 "int16(int8 stream,int8 bits)" `535 
 f N "spi_xfer_in" 2 568 ""
 v L "stream" 2 568 "int8" `533 
 v L "bits" 2 568 "int8" `537 
-f G "spi_xfer_in" 2 568 "int32(int8 stream,int8 bits,int16 count)" `535 
+f G "spi_xfer_in" 2 568 "int32(int8 stream,int8 bits)" `535 
 f N "spi_transfer" 2 569 ""
 v L "wData" 2 569 "*int8" `536 
 v L "rData" 2 569 "*int8" `537 
@@ -969,9 +969,9 @@ f B "rtos_stats" 2 589 "void(int8 task,*int8 stat)" `578  "#use timer() Prototyp
 f N "get_ticks" 2 592 ""
 f B "get_ticks" 2 592 "int8()" `581 
 f N "get_ticks" 2 593 ""
-f G "get_ticks" 2 593 "int16(int8 stream)" `582 
+f G "get_ticks" 2 593 "int16()" `582 
 f N "get_ticks" 2 594 ""
-f G "get_ticks" 2 594 "int32(int8 stream)" `582 
+f G "get_ticks" 2 594 "int32()" `582 
 f N "get_ticks" 2 595 ""
 v L "stream" 2 595 "int8" `583 
 f B "get_ticks" 2 595 "int8(int8 stream)" `582 
@@ -1128,7 +1128,7 @@ C L "jump_to_isr" 3 2 1 "FUNCTION"
 C L "jump_to_isr" 3 2 1 "FUNCTION"
 C L "jump_to_isr" 3 2 1 "FUNCTION"
 C L "jump_to_isr" 3 2 2 "FUNCTION"
-T G "LCD_PIN_MAP" 3 90 "{int1 enable,int1 rs,int1 rw,int1 unused,int4 data}" `673  "this is to improve compatability with previous LCD drivers that accepted"
+T G "LCD_PIN_MAP" 3 90 "{int1 enable,int1 rs,int1 rw,int1 unused,int4 data}" `674  "this is to improve compatability with previous LCD drivers that accepted"
 D G "lcd_output_enable" 3 109 "(x) lcdlat.enable=x"
 D G "lcd_enable_tris" 3 110 "()   lcdtris.enable=0"
 D G "lcd_output_rs" 3 117 "(x) lcdlat.rs=x"
@@ -1136,62 +1136,65 @@ D G "lcd_rs_tris" 3 118 "()   lcdtris.rs=0"
 D G "lcd_output_rw" 3 125 "(x) lcdlat.rw=x"
 D G "lcd_rw_tris" 3 126 "()   lcdtris.rw=0"
 D G "LCD_DATA_PORT" 3 149 "getenv("SFR:PORTD")" "portd"
-V G "lcd" 3 161 "LCD_PIN_MAP" `674 
-V G "lcdlat" 3 161 "LCD_PIN_MAP" `675 
-V G "lcdtris" 3 161 "LCD_PIN_MAP" `676 
+V G "lcd" 3 161 "LCD_PIN_MAP" `675 
+V G "lcdlat" 3 161 "LCD_PIN_MAP" `676 
+V G "lcdtris" 3 161 "LCD_PIN_MAP" `677 
 D G "LCD_TYPE" 3 179 "2" "0=5x7, 1=5x10, 2=2 lines"
 D G "LCD_LINE_TWO" 3 183 "0x40" "LCD RAM address for the second line"
 D G "LCD_LINE_LENGTH" 3 187 "20"
 F N "lcd_read_nibble" 3 190 ""
-f G "lcd_read_nibble" 3 190 "int8()" `677 
+f G "lcd_read_nibble" 3 190 "int8()" `678 
 F N "lcd_read_byte" 3 192 ""
-F G "lcd_read_byte" 3 193 "int8()" `678 
-V L "low" 3 194 "int8" `679 
-V L "high" 3 194 "int8" `680 
+F G "lcd_read_byte" 3 193 "int8()" `679 
+V L "low" 3 194 "int8" `680 
+V L "high" 3 194 "int8" `681 
 F N "lcd_read_nibble" 3 239 ""
-F G "lcd_read_nibble" 3 240 "int8()" `677 
+F G "lcd_read_nibble" 3 240 "int8()" `678 
 F N "lcd_send_nibble" 3 256 ""
-V L "n" 3 256 "int8" `682 
-F G "lcd_send_nibble" 3 257 "void(int8 n)" `681 
+V L "n" 3 256 "int8" `683 
+F G "lcd_send_nibble" 3 257 "void(int8 n)" `682 
 F N "lcd_send_byte" 3 274 ""
-V L "address" 3 274 "int8" `684 
-V L "n" 3 274 "int8" `685 
-F G "lcd_send_byte" 3 275 "void(int8 address,int8 n)" `683 
+V L "address" 3 274 "int8" `685 
+V L "n" 3 274 "int8" `686 
+F G "lcd_send_byte" 3 275 "void(int8 address,int8 n)" `684 
 F N "lcd_init" 3 299 ""
-F G "lcd_init" 3 300 "void()" `686 
-V L "i" 3 301 "int8" `687 
-V L "LCD_INIT_STRING" 3 302 "int8[4]" `688 
+F G "lcd_init" 3 300 "void()" `687 
+V L "i" 3 301 "int8" `688 
+V L "LCD_INIT_STRING" 3 302 "int8[4]" `689 
 C L "lcd_init" 3 2 2 "FUNCTION"
 F N "lcd_gotoxy" 3 345 ""
-V L "x" 3 345 "int8" `690 
-V L "y" 3 345 "int8" `691 
-F G "lcd_gotoxy" 3 346 "void(int8 x,int8 y)" `689 
-V L "address" 3 347 "int8" `692 
+V L "x" 3 345 "int8" `691 
+V L "y" 3 345 "int8" `692 
+F G "lcd_gotoxy" 3 346 "void(int8 x,int8 y)" `690 
+V L "address" 3 347 "int8" `693 
 F N "lcd_putc" 3 363 ""
-V L "c" 3 363 "int8" `694 
-F G "lcd_putc" 3 364 "void(int8 c)" `693 
+V L "c" 3 363 "int8" `695 
+F G "lcd_putc" 3 364 "void(int8 c)" `694 
 F N "lcd_getc" 3 406 ""
-V L "x" 3 406 "int8" `696 
-V L "y" 3 406 "int8" `697 
-F G "lcd_getc" 3 407 "int8(int8 x,int8 y)" `695 
-V L "value" 3 408 "int8" `698 
+V L "x" 3 406 "int8" `697 
+V L "y" 3 406 "int8" `698 
+F G "lcd_getc" 3 407 "int8(int8 x,int8 y)" `696 
+V L "value" 3 408 "int8" `699 
 C L "lcd_getc" 3 2 1 "FUNCTION"
 C L "lcd_set_cgram_char" 3 2 5 "FUNCTION"
 F N "lcd_set_cgram_char" 3 424 ""
-V L "which" 3 424 "int8" `700 
-V L "ptr" 3 424 "*int8" `701 
-F G "lcd_set_cgram_char" 3 425 "void(int8 which,*int8 ptr)" `699 
-V L "i" 3 426 "int8" `702 
+V L "which" 3 424 "int8" `701 
+V L "ptr" 3 424 "*int8" `702 
+F G "lcd_set_cgram_char" 3 425 "void(int8 which,*int8 ptr)" `700 
+V L "i" 3 426 "int8" `703 
 C L "lcd_set_cgram_char" 3 2 1 "FUNCTION"
 F N "lcd_cursor_on" 3 443 ""
-V L "on" 3 443 "int8" `704 
-F G "lcd_cursor_on" 3 444 "void(int8 on)" `703 
+V L "on" 3 443 "int8" `705 
+F G "lcd_cursor_on" 3 444 "void(int8 on)" `704 
 C L "lcd_cursor_on" 3 2 1 "FUNCTION"
 C L "lcd_cursor_on" 3 2 1 "FUNCTION"
-V G "i" 0 4 "int8" `705 
+V G "i" 0 4 "int8" `706 
 F N "MAIN" 0 5 ""
-F G "MAIN" 0 6 "void()" `706 
-C L "MAIN" 0 13 1 "FUNCTION"
+F G "MAIN" 0 6 "void()" `707 
+C L "MAIN" 0 7 1 "FUNCTION"
+C L "MAIN" 0 7 1 "FUNCTION"
+C L "MAIN" 0 7 1 "FUNCTION"
+C L "MAIN" 0 7 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0
@@ -1324,3 +1327,10 @@ F B "spi_write2" 1 2
 F B "spi_data_is_in2" 0 0
 F B "delay_ms" 1 0
 F B "delay_us" 1 0
+F B "putchar" 1 2
+F B "puts" 1 2
+F B "getch" 0 1
+F B "gets" 1 3
+F B "kbhit" 0 1
+F B "set_uart_speed" 1 3
+F B "setup_uart" 1 3

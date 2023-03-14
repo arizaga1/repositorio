@@ -1,8 +1,8 @@
-CCS PCM C Compiler, Version 5.091, 13314               04-feb.-22 17:21
+CCS PCM C Compiler, Version 5.091, 13314               05-jul.-22 10:45
 
                Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\segundo\main.lst
 
-               ROM used:   627 words (8%)
+               ROM used:   664 words (8%)
                            Largest free fragment is 2048
                RAM used:   9 (2%) at main() level
                            24 (7%) worst case
@@ -11,7 +11,7 @@ CCS PCM C Compiler, Version 5.091, 13314               04-feb.-22 17:21
 
 0000:  MOVLW  02
 0001:  MOVWF  0A
-0002:  GOTO   21E
+0002:  GOTO   237
 0003:  NOP
 .................... #include <main.h>
 .................... #include <16F877A.h>
@@ -223,7 +223,7 @@ CCS PCM C Compiler, Version 5.091, 13314               04-feb.-22 17:21
 01AC:  GOTO   157
 01AD:  BCF    0A.3
 01AE:  BCF    0A.4
-01AF:  GOTO   25D (RETURN)
+01AF:  GOTO   27E (RETURN)
 01B0:  MOVF   2A,W
 01B1:  CLRF   78
 01B2:  SUBWF  29,W
@@ -333,7 +333,32 @@ CCS PCM C Compiler, Version 5.091, 13314               04-feb.-22 17:21
 021A:  CALL   0D5
 021B:  BCF    0A.3
 021C:  BCF    0A.4
-021D:  GOTO   262 (RETURN)
+021D:  GOTO   283 (RETURN)
+021E:  MOVF   00,F
+021F:  BTFSC  03.2
+0220:  GOTO   234
+0221:  CLRF   24
+0222:  MOVF   04,W
+0223:  MOVWF  23
+0224:  BCF    24.0
+0225:  BTFSC  03.7
+0226:  BSF    24.0
+0227:  MOVF   00,W
+0228:  BTFSS  0C.4
+0229:  GOTO   228
+022A:  MOVWF  19
+022B:  MOVF   23,W
+022C:  MOVWF  04
+022D:  BCF    03.7
+022E:  BTFSC  24.0
+022F:  BSF    03.7
+0230:  INCF   04,F
+0231:  BTFSC  03.2
+0232:  INCF   05,F
+0233:  GOTO   21E
+0234:  BCF    0A.3
+0235:  BCF    0A.4
+0236:  GOTO   28A (RETURN)
 .................... 
 .................... #list
 .................... 
@@ -359,6 +384,7 @@ CCS PCM C Compiler, Version 5.091, 13314               04-feb.-22 17:21
 002B:  DECFSZ 00,F
 002C:  GOTO   020
 002D:  RETURN
+.................... #use rs232(baud=9600,xmit=pin_c6,rcv=pin_c7,stream=HOSTPC)
 .................... 
 .................... 
 .................... 
@@ -855,7 +881,7 @@ CCS PCM C Compiler, Version 5.091, 13314               04-feb.-22 17:21
 00BF:  GOTO   0B0
 00C0:  BCF    0A.3
 00C1:  BCF    0A.4
-00C2:  GOTO   22D (RETURN)
+00C2:  GOTO   24E (RETURN)
 ....................    g_LcdX = 0;
 ....................    g_LcdY = 0;
 ....................   #endif
@@ -1038,114 +1064,128 @@ CCS PCM C Compiler, Version 5.091, 13314               04-feb.-22 17:21
 .................... int  i;
 .................... void main()
 *
-021E:  MOVF   03,W
-021F:  ANDLW  1F
-0220:  MOVWF  03
-0221:  CLRF   22
-0222:  CLRF   21
-0223:  BSF    03.5
-0224:  BSF    1F.0
-0225:  BSF    1F.1
-0226:  BSF    1F.2
-0227:  BCF    1F.3
-0228:  MOVLW  07
-0229:  MOVWF  1C
-022A:  BCF    03.7
+0237:  MOVF   03,W
+0238:  ANDLW  1F
+0239:  MOVWF  03
+023A:  MOVLW  81
+023B:  BSF    03.5
+023C:  MOVWF  19
+023D:  MOVLW  A6
+023E:  MOVWF  18
+023F:  MOVLW  90
+0240:  BCF    03.5
+0241:  MOVWF  18
+0242:  CLRF   22
+0243:  CLRF   21
+0244:  BSF    03.5
+0245:  BSF    1F.0
+0246:  BSF    1F.1
+0247:  BSF    1F.2
+0248:  BCF    1F.3
+0249:  MOVLW  07
+024A:  MOVWF  1C
+024B:  BCF    03.7
 .................... {
-....................    lcd_init();
-022B:  BCF    03.5
-022C:  GOTO   085
+....................    lcd_init();   //inicializar la pantalla LCD
+024C:  BCF    03.5
+024D:  GOTO   085
 ....................    lcd_putc("Ejemplo LCD \n");
-022D:  MOVLW  04
-022E:  BSF    03.6
-022F:  MOVWF  0D
-0230:  MOVLW  00
-0231:  MOVWF  0F
-0232:  BCF    03.6
-0233:  CALL   101
+024E:  MOVLW  04
+024F:  BSF    03.6
+0250:  MOVWF  0D
+0251:  MOVLW  00
+0252:  MOVWF  0F
+0253:  BCF    03.6
+0254:  CALL   101
 ....................    delay_ms(5000);
-0234:  MOVLW  14
-0235:  MOVWF  23
-0236:  MOVLW  FA
-0237:  MOVWF  2A
-0238:  CALL   01A
-0239:  DECFSZ 23,F
-023A:  GOTO   236
+0255:  MOVLW  14
+0256:  MOVWF  23
+0257:  MOVLW  FA
+0258:  MOVWF  2A
+0259:  CALL   01A
+025A:  DECFSZ 23,F
+025B:  GOTO   257
 ....................    lcd_putc("\f");
-023B:  MOVLW  0B
-023C:  BSF    03.6
-023D:  MOVWF  0D
-023E:  MOVLW  00
-023F:  MOVWF  0F
-0240:  BCF    03.6
-0241:  CALL   101
+025C:  MOVLW  0B
+025D:  BSF    03.6
+025E:  MOVWF  0D
+025F:  MOVLW  00
+0260:  MOVWF  0F
+0261:  BCF    03.6
+0262:  CALL   101
 ....................    lcd_putc("Hola Mundo \n");
-0242:  MOVLW  0C
-0243:  BSF    03.6
-0244:  MOVWF  0D
-0245:  MOVLW  00
-0246:  MOVWF  0F
-0247:  BCF    03.6
-0248:  CALL   101
+0263:  MOVLW  0C
+0264:  BSF    03.6
+0265:  MOVWF  0D
+0266:  MOVLW  00
+0267:  MOVWF  0F
+0268:  BCF    03.6
+0269:  CALL   101
 ....................    
 ....................    while(TRUE)  //ciclo infinito
 ....................    {
 ....................       for(i=0;i<10;i++)
-0249:  CLRF   20
-024A:  MOVF   20,W
-024B:  SUBLW  09
-024C:  BTFSS  03.0
-024D:  GOTO   26E
+026A:  CLRF   20
+026B:  MOVF   20,W
+026C:  SUBLW  09
+026D:  BTFSS  03.0
+026E:  GOTO   293
 ....................         { 
 ....................         lcd_gotoxy(3, 2);
-024E:  MOVLW  03
-024F:  MOVWF  2A
-0250:  MOVLW  02
-0251:  MOVWF  2B
-0252:  CALL   0C3
-....................         printf(lcd_putc,"contador: %d ",i);
-0253:  MOVLW  13
-0254:  BSF    03.6
-0255:  MOVWF  0D
-0256:  MOVLW  00
-0257:  MOVWF  0F
-0258:  BCF    03.0
-0259:  MOVLW  0A
-025A:  BCF    03.6
-025B:  MOVWF  23
-025C:  GOTO   157
-025D:  MOVF   20,W
-025E:  MOVWF  23
-025F:  MOVLW  18
-0260:  MOVWF  24
-0261:  GOTO   1C5
-0262:  MOVLW  20
-0263:  MOVWF  29
-0264:  CALL   0D5
+026F:  MOVLW  03
+0270:  MOVWF  2A
+0271:  MOVLW  02
+0272:  MOVWF  2B
+0273:  CALL   0C3
+....................         printf(lcd_putc,"contador: %d ",i);//imprimir a pantalla
+0274:  MOVLW  13
+0275:  BSF    03.6
+0276:  MOVWF  0D
+0277:  MOVLW  00
+0278:  MOVWF  0F
+0279:  BCF    03.0
+027A:  MOVLW  0A
+027B:  BCF    03.6
+027C:  MOVWF  23
+027D:  GOTO   157
+027E:  MOVF   20,W
+027F:  MOVWF  23
+0280:  MOVLW  18
+0281:  MOVWF  24
+0282:  GOTO   1C5
+0283:  MOVLW  20
+0284:  MOVWF  29
+0285:  CALL   0D5
+....................         printf(HOSTPC,"contador: %d ",i);  //imprimir al puerto serial
+0286:  MOVLW  01
+0287:  MOVWF  04
+0288:  BCF    03.7
+0289:  GOTO   21E
+....................         
 ....................           delay_ms(1000);
-0265:  MOVLW  04
-0266:  MOVWF  23
-0267:  MOVLW  FA
-0268:  MOVWF  2A
-0269:  CALL   01A
-026A:  DECFSZ 23,F
-026B:  GOTO   267
-026C:  INCF   20,F
-026D:  GOTO   24A
+028A:  MOVLW  04
+028B:  MOVWF  23
+028C:  MOVLW  FA
+028D:  MOVWF  2A
+028E:  CALL   01A
+028F:  DECFSZ 23,F
+0290:  GOTO   28C
+0291:  INCF   20,F
+0292:  GOTO   26B
 ....................         }
 ....................         
 ....................       #ASM
-026E:  NOP
-026F:  BCF    03.5
-0270:  BCF    03.6
+0293:  NOP
+0294:  BCF    03.5
+0295:  BCF    03.6
 ....................       NOP
 ....................       #ENDASM//no hacer nada
-0271:  GOTO   249
+0296:  GOTO   26A
 ....................       //TODO: User Code
 ....................    }
 .................... 
 .................... }
-0272:  SLEEP
+0297:  SLEEP
 
 Configuration Fuses:
    Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

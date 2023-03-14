@@ -16,7 +16,7 @@ void main()
         { 
         lcd_gotoxy(3, 2);
         printf(lcd_putc,"contador: %d ",i);//imprimir a pantalla
-        
+        printf(HOSTPC,"contador: %d ",i);  //imprimir al puerto serial
         
           delay_ms(1000);
         }

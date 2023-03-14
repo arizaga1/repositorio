@@ -1,40 +1,42 @@
-004-005 @WRITE_PROGRAM_MEMORY8.P1
-004-005 @READ_PROGRAM_MEMORY8.P2
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
 008     PSP_DATA
-008     lcd
 008     lcdlat
-015     CCP_1
+008     lcd
 015     CCP_1_LOW
+015     CCP_1
 016     CCP_1_HIGH
 01B     CCP_2
 01B     CCP_2_LOW
 01C     CCP_2_HIGH
 020     i
 021-022 @sprintf_string
-023     @PRINTF_D_693.P1
-023     @PSTRINGCN7_693.P2
+023     @PSTRINGCN7_694.P1
+023     @PRINTF_D_694.P2
 023     lcd_init.i
 023     MAIN.@SCRATCH1
-023     @PSTRINGC7_693.@SCRATCH1
-024     @PRINTF_D_693.P1
+023     @PSTRINGC7_694.@SCRATCH1
+023     @PSTRINGR_9600_62_63.@SCRATCH1
+024     @PRINTF_D_694.P1
 024-027 lcd_init.LCD_INIT_STRING
-024     @PSTRINGC7_693.@SCRATCH2
-024     @PSTRINGCN7_693.@SCRATCH1
-025     @PSTRINGC7_693.@SCRATCH3
-025     @PSTRINGCN7_693.@SCRATCH2
-025     @PRINTF_D_693.@SCRATCH1
-026     @PSTRINGC7_693.@SCRATCH4
-026     @PSTRINGCN7_693.@SCRATCH3
-026     @PRINTF_D_693.@SCRATCH2
-027     @PSTRINGCN7_693.@SCRATCH4
-027     @PRINTF_D_693.@SCRATCH3
+024     @PSTRINGC7_694.@SCRATCH2
+024     @PSTRINGCN7_694.@SCRATCH1
+024     @PSTRINGR_9600_62_63.@SCRATCH2
+025     @PSTRINGC7_694.@SCRATCH3
+025     @PSTRINGCN7_694.@SCRATCH2
+025     @PRINTF_D_694.@SCRATCH1
+026     @PSTRINGC7_694.@SCRATCH4
+026     @PSTRINGCN7_694.@SCRATCH3
+026     @PRINTF_D_694.@SCRATCH2
+027     @PSTRINGCN7_694.@SCRATCH4
+027     @PRINTF_D_694.@SCRATCH3
 028     lcd_init.@SCRATCH1
-028     @PRINTF_D_693.@SCRATCH4
+028     @PRINTF_D_694.@SCRATCH4
 029     lcd_putc.c
 029     @DIV88.P1
 02A     lcd_gotoxy.x
-02A     @delay_ms1.P1
-02A     @DIV88.P2
+02A     @DIV88.P1
+02A     @delay_ms1.P2
 02B     lcd_gotoxy.y
 02B     @DIV88.@SCRATCH1
 02C     lcd_gotoxy.address
@@ -58,10 +60,10 @@
 10D-10E @READ_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
-000004  @const709.call
-00000B  @const714.call
-00000C  @const715.call
-000013  @const716.call
+000004  @const710.call
+00000B  @const715.call
+00000C  @const716.call
+000013  @const717.call
 00001A  @delay_ms1
 00002E  lcd_send_nibble
 00003D  lcd_read_nibble
@@ -70,26 +72,27 @@ ROM Allocation:
 000085  lcd_init
 0000C3  lcd_gotoxy
 0000D5  lcd_putc
-000101  @PSTRINGC7_693
-000157  @PSTRINGCN7_693
+000101  @PSTRINGC7_694
+000157  @PSTRINGCN7_694
 0001B0  @DIV88
-0001C5  @PRINTF_D_693
-00021E  MAIN
-00021E  @cinit1
-00022A  @cinit2
+0001C5  @PRINTF_D_694
+00021E  @PSTRINGR_9600_62_63
+000237  MAIN
+000237  @cinit1
+00024B  @cinit2
 
 Project Directory:
     C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\segundo\
 
 Project Files:
-    main.c                                                  [04-feb.-22 17:21  CRC=6F0603CC]
-    main.h                                                  [04-feb.-22 17:02  CRC=00000000]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 15:48  CRC=15D497A0]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-feb.-16 10:05  CRC=D1A6378A]
+    main.c                                                  [05-jul.-22 10:45  CRC=CDD6CEE1]
+    main.h                                                  [05-jul.-22 10:44  CRC=00000000]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 16:48  CRC=15D497A0]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-feb.-16 11:05  CRC=D1A6378A]
 
-Source signature=28270A80
+Source signature=86F7D595
 Program memory checksum=0000
-Hex file CRC=9117
+Hex file CRC=9828
 
 Units:
     C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\segundo\main (main)

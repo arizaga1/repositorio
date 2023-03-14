@@ -11,7 +11,8 @@ if (cuenta == 0){
 cuenta=76; 
 
 segundos++;
-
+lcd_gotoxy(3, 2);
+printf(lcd_putc, "seg:=%d",segundos);
 
 }
 
@@ -32,8 +33,7 @@ void main()
    while(TRUE)
    {
    
-   lcd_gotoxy(3, 2);
-printf(lcd_putc, "seg:=%d",segundos);
+   
    
       //TODO: User Code
    }

@@ -13,7 +13,7 @@ void main()
    delay_ms(50);
    x=read_adc()* 1.0/1023;
    lcd_gotoxy(1,1);
-   printf(LCD_PUTC, " \r Valor=%f ",(x*100)-50);
+   printf(LCD_PUTC, " \r temp=%f ",x*100);
 
 
 

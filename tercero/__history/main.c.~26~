@@ -33,8 +33,7 @@ void main()
    {
    
    lcd_gotoxy(3, 2);
-printf(lcd_putc, "seg:=%d",segundos);
-   
+   printf(lcd_putc, "seg:=%d",segundos);
       //TODO: User Code
    }
 
