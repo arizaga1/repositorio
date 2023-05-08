@@ -1,10 +1,10 @@
-C L "MAIN" 0 23 1 "FUNCTION"
-D G "__PCM__" 0 41 ""5.091""
-D G "__DEVICE__" 0 41 "877"
-D G "__DATE__" 0 41 ""11-Feb-22""
-D G "__TIME__" 0 41 ""18:04:20""
-D G "_UNICODE" 0 41 ""?""
-D G "__EVAL" 0 41 ""?"" "Standard Header file for the PIC16F877A device ////////////////"
+C L "MAIN" 0 24 1 "FUNCTION"
+D G "__PCM__" 0 42 ""5.091""
+D G "__DEVICE__" 0 42 "877"
+D G "__DATE__" 0 42 ""5-Jul-22""
+D G "__TIME__" 0 42 ""11:29:32""
+D G "_UNICODE" 0 42 ""?""
+D G "__EVAL" 0 42 ""?"" "Standard Header file for the PIC16F877A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `55 
@@ -1123,8 +1123,9 @@ d G "INT_COMP" 2 691 "0x008D40"
 V G "cuenta" 0 2 "int8" `667 
 V G "segundos" 0 3 "int8" `668 
 F N "RTCC_isr" 0 5 ""
-F G "RTCC_isr" 0 6 "void()" `669 
-C L "RTCC_isr" 0 8 1 "FUNCTION"
+C L "RTCC_isr" 0 5 2 "FUNCTION"
+F G "RTCC_isr" 0 7 "void()" `669 
+C L "RTCC_isr" 0 5 1 "FUNCTION"
 D G "__LCD_C__" 3 76 ""
 T G "LCD_PIN_MAP" 3 90 "{int1 enable,int1 rs,int1 rw,int1 unused,int4 data}" `676  "this is to improve compatability with previous LCD drivers that accepted"
 D G "lcd_output_enable" 3 109 "(x) lcdlat.enable=x"
@@ -1186,9 +1187,9 @@ V L "on" 3 443 "int8" `707
 F G "lcd_cursor_on" 3 444 "void(int8 on)" `706 
 C L "lcd_cursor_on" 3 2 1 "FUNCTION"
 C L "lcd_cursor_on" 3 2 1 "FUNCTION"
-F N "MAIN" 0 21 ""
-F G "MAIN" 0 22 "void()" `708 
-C L "MAIN" 0 23 1 "FUNCTION"
+F N "MAIN" 0 23 ""
+F G "MAIN" 0 24 "void()" `708 
+C L "MAIN" 0 25 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

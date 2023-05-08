@@ -149,14 +149,14 @@ Project Directory:
     C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\
 
 Project Files:
-    main.c                                                  [11-feb.-22 18:04  CRC=1FDB0B40]
-    main.h                                                  [11-feb.-22 17:10  CRC=00000000]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 15:48  CRC=15D497A0]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [22-feb.-16 10:05  CRC=D1A6378A]
+    main.c                                                  [05-jul.-22 11:26  CRC=D4194B82]
+    main.h                                                  [11-feb.-22 18:10  CRC=00000000]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 16:48  CRC=15D497A0]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [22-feb.-16 11:05  CRC=D1A6378A]
 
-Source signature=D8FC11F4
+Source signature=8D3A5236
 Program memory checksum=0000
-Hex file CRC=36FB
+Hex file CRC=F72C
 
 Units:
     C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\main (main)
