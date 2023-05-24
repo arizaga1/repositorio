@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
- <FRAME activewindow="0">
+ <FRAME activewindow="1">
   <PLACEMENT>2c00000002000000030000000083ffff0083fffffffffffffffffffffd050000000000004d0a0000c6020000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
+  <WINDOW type="default" module="VSMDEBUG"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
@@ -48,7 +49,7 @@
      <ITEM name="VSplitter1Pos">138</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="2224" flags="00008023" y="206" h="384" pid="0" iid="7">
+   <POPUP w="450" x="2196" flags="00000023" y="206" h="384" pid="0" iid="7">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
@@ -67,7 +68,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="1171" x="143" flags="0000002b" y="0" h="788" pid="1" iid="3">
+   <POPUP w="1171" x="1135" flags="0000002a" y="173" h="788" pid="1" iid="3">
     <PROPERTIES>
      <ITEM name="Breakpoint 0">"",0176,0000,080C,C391,-1
 </ITEM>
