@@ -1,4 +1,8 @@
-Compiling C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main on 18-mar.-22 at 16:48
+Compiling C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main on 24-may.-23 at 11:10
+*** Error 24 "C:\Program Files (x86)\PICC\Devices\18F4550.h" Line 11(9,19): Unknown device type    -- Try PCH
+      1 Errors,  0 Warnings.
+Build Failed.
+Compiling C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main on 24-may.-23 at 11:10
       Memory usage:   ROM=1%      RAM=1% - 1%
       0 Errors,  0 Warnings.
 Build Successful.

@@ -8,7 +8,7 @@ ROM used:   466/32768 (1%)
 RAM used:   11/2048 (1%) at main() level
             12/2048 (1%) worst case
 
-Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack used: 0 worst case (0 in main + 0 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
@@ -25,23 +25,23 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0     28   3    1             @I2C_WRITEU_129
 0     28   3    1             @I2C_READU_129
 0    104  11    1    176  3.8  main
-0     14   2    0    292  2.7  @const713
+0     14   2    0             @const713
 0     36   4    2             @PSTRINGC_9600_31766_31767
 0    144  15    0    292  2.7  funcion1
 0     66   7    2             @PRINTF_X_9600_31766_31767
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               3
+    Functions               2
     Statements              20
-    Comments                162
-    Volume (V)              1010
-    Difficulty (D)          8.6
-    Effort to implement (E) 8662
-    Time to implement (T)   8 minutes
+    Comments                163
+    Volume (V)              574
+    Difficulty (D)          5.7
+    Effort to implement (E) 3270
+    Time to implement (T)   3 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   1
-    Maintainability (MI)    64
+    Maintainability (MI)    154
 
  Segment     Used  Free
 -----------  ----  ----

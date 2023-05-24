@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.091, 13314               18-mar.-22 16:48
+CCS PCH C Compiler, Version 5.091, 13314               24-may.-23 11:10
 
                Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main.lst
 
@@ -6,7 +6,7 @@ CCS PCH C Compiler, Version 5.091, 13314               18-mar.-22 16:48
                            Largest free fragment is 32302
                RAM used:   11 (1%) at main() level
                            12 (1%) worst case
-               Stack used: 1 locations
+               Stack used: 0 locations
                Stack size: 31
 
 0000:  GOTO   016A
@@ -171,7 +171,7 @@ CCS PCH C Compiler, Version 5.091, 13314               18-mar.-22 16:48
 0198:  MOVLW  07
 019A:  MOVWF  FB4
 .................... {
-.................... direccion=0xD0;
+.................... direccion=0xD0;  //  dirección 1101  000  bit de escrituta 0 
 019C:  MOVLW  D0
 019E:  MOVWF  04
 ....................    setup_adc_ports(NO_ANALOGS, VSS_VDD);
