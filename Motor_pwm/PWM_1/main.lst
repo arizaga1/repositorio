@@ -1,0 +1,200 @@
+CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:02
+
+               Filename:   C:\Users\j_ari\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\main.lst
+
+               ROM used:   132 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   7 (2%) at main() level
+                           8 (2%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   019
+0003:  NOP
+.................... #include <main.h>
+.................... #include <16F877A.h>
+.................... //////////// Standard Header file for the PIC16F877A device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC16F877A
+.................... 
+.................... #list
+.................... 
+.................... #device ADC=10
+.................... #use delay(crystal=16MHz)
+0004:  MOVLW  22
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  05
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  2E
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  RETURN
+.................... 
+.................... 
+.................... //PWM  Modulación por ancho de Pulso
+.................... //se utiliza para control de velocidad 
+.................... //de motores de CD
+.................... void main()
+0019:  MOVF   03,W
+001A:  ANDLW  1F
+001B:  MOVWF  03
+001C:  MOVLW  FF
+001D:  MOVWF  20
+001E:  BSF    03.5
+001F:  BSF    1F.0
+0020:  BSF    1F.1
+0021:  BSF    1F.2
+0022:  BCF    1F.3
+0023:  MOVLW  07
+0024:  MOVWF  1C
+0025:  BCF    03.7
+.................... {
+....................    setup_timer_2(T2_DIV_BY_16,249,1);      //1.0 ms overflow, 1.0 ms interrupt
+0026:  MOVLW  00
+0027:  MOVWF  78
+0028:  IORLW  06
+0029:  BCF    03.5
+002A:  MOVWF  12
+002B:  MOVLW  F9
+002C:  BSF    03.5
+002D:  MOVWF  12
+.................... 
+....................    setup_ccp1(CCP_PWM);
+002E:  BCF    03.5
+002F:  BCF    20.2
+0030:  MOVF   20,W
+0031:  BSF    03.5
+0032:  MOVWF  07
+0033:  BCF    03.5
+0034:  BCF    07.2
+0035:  MOVLW  0C
+0036:  MOVWF  17
+....................    set_pwm1_duty((int16)250);
+0037:  MOVLW  3E
+0038:  MOVWF  15
+0039:  MOVF   17,W
+003A:  ANDLW  CF
+003B:  IORLW  20
+003C:  MOVWF  17
+.................... 
+....................    while(TRUE)
+....................    {
+.................... set_pwm1_duty((int16)0);
+003D:  CLRF   15
+003E:  MOVF   17,W
+003F:  ANDLW  CF
+0040:  MOVWF  17
+.................... delay_ms(1500);
+0041:  MOVLW  06
+0042:  MOVWF  21
+0043:  MOVLW  FA
+0044:  MOVWF  22
+0045:  CALL   004
+0046:  DECFSZ 21,F
+0047:  GOTO   043
+.................... 
+.................... set_pwm1_duty((int16)200);
+0048:  MOVLW  32
+0049:  MOVWF  15
+004A:  MOVF   17,W
+004B:  ANDLW  CF
+004C:  MOVWF  17
+.................... delay_ms(1500);
+004D:  MOVLW  06
+004E:  MOVWF  21
+004F:  MOVLW  FA
+0050:  MOVWF  22
+0051:  CALL   004
+0052:  DECFSZ 21,F
+0053:  GOTO   04F
+.................... 
+.................... set_pwm1_duty((int16)350);
+0054:  MOVLW  57
+0055:  MOVWF  15
+0056:  MOVF   17,W
+0057:  ANDLW  CF
+0058:  IORLW  20
+0059:  MOVWF  17
+.................... delay_ms(1500);
+005A:  MOVLW  06
+005B:  MOVWF  21
+005C:  MOVLW  FA
+005D:  MOVWF  22
+005E:  CALL   004
+005F:  DECFSZ 21,F
+0060:  GOTO   05C
+.................... 
+.................... set_pwm1_duty((int16)500);
+0061:  MOVLW  7D
+0062:  MOVWF  15
+0063:  MOVF   17,W
+0064:  ANDLW  CF
+0065:  MOVWF  17
+.................... delay_ms(1500);
+0066:  MOVLW  06
+0067:  MOVWF  21
+0068:  MOVLW  FA
+0069:  MOVWF  22
+006A:  CALL   004
+006B:  DECFSZ 21,F
+006C:  GOTO   068
+.................... 
+.................... set_pwm1_duty((int16)750);
+006D:  MOVLW  BB
+006E:  MOVWF  15
+006F:  MOVF   17,W
+0070:  ANDLW  CF
+0071:  IORLW  20
+0072:  MOVWF  17
+.................... delay_ms(1500);
+0073:  MOVLW  06
+0074:  MOVWF  21
+0075:  MOVLW  FA
+0076:  MOVWF  22
+0077:  CALL   004
+0078:  DECFSZ 21,F
+0079:  GOTO   075
+.................... 
+.................... 
+.................... set_pwm1_duty((int16)1000);
+007A:  MOVLW  FA
+007B:  MOVWF  15
+007C:  MOVF   17,W
+007D:  ANDLW  CF
+007E:  MOVWF  17
+.................... delay_ms(200);
+007F:  MOVLW  C8
+0080:  MOVWF  22
+0081:  CALL   004
+0082:  GOTO   03D
+....................       //TODO: User Code
+....................    }
+.................... 
+.................... }
+0083:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT
