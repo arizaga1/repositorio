@@ -54,12 +54,12 @@ Project Directory:
     C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Motor_pwm\PWM_1\
 
 Project Files:
-    main.c                                                  [24-may.-23 15:46  CRC=B9200D79]
+    main.c                                                  [25-may.-23 12:54  CRC=46489F69]
     main.h                                                  [24-may.-23 14:29  CRC=00000000]
     ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 16:48  CRC=15D497A0]
     ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h [22-sep.-16 10:36  CRC=9CF8C837]
 
-Source signature=08E63587
+Source signature=960EC777
 Program memory checksum=0000
 Hex file CRC=C4FB
 

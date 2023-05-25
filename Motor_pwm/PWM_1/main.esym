@@ -1,10 +1,10 @@
-C L "MAIN" 0 3 1 "FUNCTION"
-D G "__PCM__" 0 36 ""5.091""
-D G "__DEVICE__" 0 36 "877"
-D G "__DATE__" 0 36 ""24-May-23""
-D G "__TIME__" 0 36 ""15:46:43""
-D G "_UNICODE" 0 36 ""?""
-D G "__EVAL" 0 36 ""?"" "Standard Header file for the PIC16F877A device ////////////////"
+F N "MAIN" 0 7 ""
+D G "__PCM__" 0 38 ""5.091""
+D G "__DEVICE__" 0 38 "877"
+D G "__DATE__" 0 38 ""25-May-23""
+D G "__TIME__" 0 38 ""12:54:23""
+D G "_UNICODE" 0 38 ""?""
+D G "__EVAL" 0 38 ""?"" "Standard Header file for the PIC16F877A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `55 
@@ -1305,8 +1305,9 @@ F G "ldexp" 3 2208 "float(float value,sint8 exp)" `806
 V G "contador" 0 6 "float" `809 
 F N "MAIN" 0 7 ""
 F G "MAIN" 0 8 "void()" `810 
-C L "MAIN" 0 3 2 "FUNCTION"
+C L "MAIN" 0 3 3 "FUNCTION"
 C L "MAIN" 0 3 1 "FUNCTION"
+C L "MAIN" 0 3 2 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

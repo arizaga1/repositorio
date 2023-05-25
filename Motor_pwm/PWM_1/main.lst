@@ -1,4 +1,4 @@
-CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:46
+CCS PCM C Compiler, Version 5.091, 13314               25-may.-23 12:54
 
                Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Motor_pwm\PWM_1\main.lst
 
@@ -13,7 +13,7 @@ CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:46
 0001:  MOVWF  0A
 0002:  GOTO   199
 0003:  NOP
-.................... #include <main.h>
+.................... #include <main.h> //se agrregan funciones o variables a programas
 .................... #include <16F877A.h>
 .................... //////////// Standard Header file for the PIC16F877A device ////////////////
 .................... ///////////////////////////////////////////////////////////////////////////
@@ -438,7 +438,7 @@ CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:46
 0198:  GOTO   208 (RETURN)
 .................... 
 .................... 
-.................... #INCLUDE <math.h>
+.................... #include <math.h> //se agregan funciones matemáticas 
 .................... ////////////////////////////////////////////////////////////////////////////
 .................... ////        (C) Copyright 1996,2011 Custom Computer Services            ////
 .................... //// This source code may only be used by licensed users of the CCS C   ////
@@ -2669,7 +2669,7 @@ CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:46
 .................... //PWM  Modulación por ancho de Pulso
 .................... //se utiliza para control de velocidad 
 .................... //de motores de CD
-.................... float contador=0;
+.................... float contador=0; 
 .................... void main()
 0199:  MOVF   03,W
 019A:  ANDLW  1F
@@ -2692,8 +2692,9 @@ CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:46
 ....................    set_tris_a(0x02); 
 01AA:  MOVLW  02
 01AB:  MOVWF  05
-....................    //para colocar los pines del puerto C como entrad o salida
-....................    //0x02 pone en 1 lógico los pines c0 y C1 por lo tanto seran entradas
+....................    //para colocar los pines del puerto A como entrada (1) o salida (0)
+....................    //0x02 =b'00000010  pone en 1 lógico el pin A1 
+....................    //por lo tanto será de entrada
 ....................     setup_timer_2(T2_DIV_BY_16,249,1);      //1.0 ms overflow, 1.0 ms interrupt
 01AC:  MOVLW  00
 01AD:  MOVWF  78
@@ -2727,12 +2728,13 @@ CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:46
 ....................   while(TRUE)
 ....................    {
 .................... 
-....................  If(input(PIN_A1))
+....................  If(input(PIN_A1)) //botón de entrada para cambiar el ancho
 01C1:  BSF    03.5
 01C2:  BSF    05.1
 01C3:  BCF    03.5
 01C4:  BTFSS  05.1
 01C5:  GOTO   208
+....................  //de pulso del PWM 
 ....................  {
 ....................       contador=contador+1; 
 01C6:  BCF    03.1
@@ -2799,7 +2801,7 @@ CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:46
 0202:  ANDLW  CF
 0203:  IORWF  77,W
 0204:  MOVWF  17
-....................       delay_ms(200);
+....................       delay_ms(200); //delay agregado para evitar rebotes
 0205:  MOVLW  C8
 0206:  MOVWF  25
 0207:  GOTO   182
