@@ -7,7 +7,7 @@ void main()
    setup_adc_ports(AN0);  //En esta línea se configura el ADC
    setup_adc(ADC_CLOCK_DIV_64);     //la velociad de conversión
    lcd_init();                      //se configura la pantalla LCD
-   TEMP |= 0x0f;
+   TEMP ^= 0x0f;
    while(TRUE)
    {
    delay_ms(50);

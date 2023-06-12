@@ -1,0 +1,47 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.091
+Compiler=PCM
+CCSVersion=5.091
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\j_ari\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=24-05-2023
+D1_L=6
+D1_L1=[52180]Project Opened.
+D1_L2=[52253]Started Editing.
+D1_L3=[52719]Stopped Editing.
+D1_L4=[54136]Started Editing.
+D1_L5=[54450]Stopped Editing.
+TotalEdit=3
+TotalDebug=0
+D1_E=3
+D1_D=0
+D1_L6=[55412]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=29
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=4
+[Units]
+Count=1
+1=main (main)

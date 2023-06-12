@@ -1,0 +1,17 @@
+#include <main.h>
+
+void main()
+{
+	setup_timer_2(T2_DIV_BY_16,249,1);		//1.0 ms overflow, 1.0 ms interrupt
+
+	setup_ccp1(CCP_PWM);
+	set_pwm1_duty((int16)250);
+
+	while(TRUE)
+	{
+
+
+		//TODO: User Code
+	}
+
+}

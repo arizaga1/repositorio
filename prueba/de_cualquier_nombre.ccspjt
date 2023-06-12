@@ -1,0 +1,49 @@
+[PROJECT]
+Target=de_cualquier_nombre.hex
+Processor_Text=PIC18F4550
+CCSVerions=5.091
+Compiler=PCH
+CCSVersion=5.091
+[Target Data]
+FileList=de_cualquier_nombre.c
+[Directories]
+Include=
+[C:\Users\j_ari\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\prueba\de_cualquier_nombre]
+Type=4
+[mru-list]
+1=de_cualquier_nombre.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=25-05-2023
+D1_L=4
+D1_L1=[47432]Project Opened.
+D1_L2=[47615]Started Editing.
+D1_L3=[47918]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L4=[51125]Project Closed.
+D2=12-06-2023
+D2_L=2
+D2_L1=[45562]Project Opened.
+D2_L2=[45569]Started Editing.
+
+[Opened Files]
+1=de_cualquier_nombre.c
+t1=1
+Count=2
+2=de_cualquier_nombre.h
+t2=1
+
+[defines]
+buildcount=3
+[de_cualquier_nombre.c]
+Type=4
+[Units]
+Count=1
+1=de_cualquier_nombre (main)

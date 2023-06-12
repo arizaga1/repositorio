@@ -1,8 +1,8 @@
 [PROJECT]
 Target=main.hex
-Processor_Text=PIC18F4550
+Processor_Text=PIC16F877A
 CCSVerions=5.091
-Compiler=PCH
+Compiler=PCM
 CCSVersion=5.091
 [Target Data]
 FileList=main.c
@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=8
+Days=12
 D1=04-03-2022
 D1_L=5
 D1_L1=[59977]Project Opened.
@@ -25,7 +25,7 @@ D1_L2=[59985]Started Editing.
 D1_L3=[60987]Stopped Editing.
 D1_L4=[61084]Started Editing.
 D1_L5=[61394]Stopped Editing.
-TotalEdit=104
+TotalEdit=114
 TotalDebug=0
 D2=05-03-2022
 D2_E=12
@@ -86,6 +86,33 @@ D8_E=1
 D8_D=0
 D8_L=1
 D8_L1=[55729]Project Closed.
+D9=07-04-2022
+D9_L=3
+D9_L1=[36535]Project Opened.
+D9_L2=[36985]Project Closed.
+D9_L3=[36985]Project Opened.
+D10=08-04-2022
+D10_L=8
+D10_L1=[59096]Project Opened.
+D10_L2=[60376]Project Closed.
+D10_L3=[60376]Project Opened.
+D10_L4=[60390]Started Editing.
+D10_L5=[60695]Stopped Editing.
+D10_L6=[60999]Started Editing.
+D10_L7=[61387]Stopped Editing.
+D10_E=2
+D10_D=0
+D10_L8=[65488]Project Closed.
+D11=22-04-2022
+D11_L=3
+D11_L1=[32758]Project Opened.
+D11_L2=[32800]Started Editing.
+D11_L3=[33539]Stopped Editing.
+D12=25-04-2022
+D12_E=8
+D12_D=0
+D12_L=1
+D12_L1=[33564]Project Closed.
 
 [Opened Files]
 1=main.c
@@ -99,7 +126,7 @@ t3=1
 Type=4
 
 [defines]
-buildcount=17
+buildcount=22
 [Units]
 Count=1
 1=main (main)

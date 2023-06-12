@@ -1,0 +1,70 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-008 atan2.y
+009-00C atan2.x
+00D-010 atan2.z
+011.0   atan2.sign
+012     atan2.quad
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  MAIN
+000004  @cinit1
+000028  @cinit2
+
+Project Directory:
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\prueba\
+
+Project Files:
+    de_cualquier_nombre.c                                   [12-jun.-23 12:39  CRC=EC836B45]
+    de_cualquier_nombre.h                                   [25-may.-23 12:13  CRC=D872A938]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [30-oct.-19 15:52  CRC=B77A8E99]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\float.h [01-ago.-07 16:50  CRC=8BC4079E]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h [22-sep.-16 09:36  CRC=9CF8C837]
+
+Source signature=42263B22
+Program memory checksum=0000
+Hex file CRC=584A
+
+Units:
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\prueba\de_cualquier_nombre (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   de_cualquier_nombre.xsym
+    Errors:      de_cualquier_nombre.err
+    Ext Symbols: de_cualquier_nombre.esym
+    INHX32:      de_cualquier_nombre.hex
+    Symbols:     de_cualquier_nombre.sym
+    List:        de_cualquier_nombre.lst
+    Debug/COFF:  de_cualquier_nombre.cof
+    Project:     de_cualquier_nombre.ccspjt
+    Call Tree:   de_cualquier_nombre.tre
+    Statistics:  de_cualquier_nombre.STA
