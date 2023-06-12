@@ -1,0 +1,59 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.091
+Compiler=PCM
+CCSVersion=5.091
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\j_ari\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=24-05-2023
+D1_L=10
+D1_L1=[52180]Project Opened.
+D1_L2=[52253]Started Editing.
+D1_L3=[52719]Stopped Editing.
+D1_L4=[54136]Started Editing.
+D1_L5=[54450]Stopped Editing.
+TotalEdit=19
+TotalDebug=0
+D1_E=19
+D1_D=0
+D1_L6=[55412]Project Closed.
+D1_L7=[55558]Project Opened.
+D1_L8=[56026]Started Editing.
+D1_L9=[56948]Stopped Editing.
+D1_L10=[56948]Project Closed.
+D2=25-05-2023
+D2_L=4
+D2_L1=[44164]Project Opened.
+D2_L2=[44218]Started Editing.
+D2_L3=[45030]Stopped Editing.
+D2_L4=[46411]Started Editing.
+
+[Opened Files]
+1=main.c
+t1=21
+Count=3
+2=main.h
+t2=1
+3=..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h
+t3=1168
+[main.c]
+Type=4
+
+[defines]
+buildcount=7
+[Units]
+Count=1
+1=main (main)

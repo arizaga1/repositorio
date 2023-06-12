@@ -1,10 +1,10 @@
-C L "MAIN" 0 7 1 "FUNCTION"
-D G "__PCM__" 0 25 ""5.091""
-D G "__DEVICE__" 0 25 "877"
-D G "__DATE__" 0 25 ""22-Apr-22""
-D G "__TIME__" 0 25 ""09:13:32""
-D G "_UNICODE" 0 25 ""?""
-D G "__EVAL" 0 25 ""?"" "Standard Header file for the PIC16F877A device ////////////////"
+f N "Xr" 2 530 ""
+D G "__PCM__" 2 530 ""5.091""
+D G "__DEVICE__" 2 530 "877"
+D G "__DATE__" 2 530 ""11-Jul-22""
+D G "__TIME__" 2 530 ""11:52:47""
+D G "_UNICODE" 2 530 ""?""
+D G "__EVAL" 2 530 ""?"" "Standard Header file for the PIC16F877A device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `55 
@@ -755,7 +755,7 @@ v L "wData" 2 528 "*int8" `438
 v L "wCount" 2 528 "int8" `439 
 v L "rData" 2 528 "*int8" `440 
 v L "rCount" 2 528 "*int8" `441 
-f B "i2c_transfer" 2 528 "int8(int8 address,*int8 wData,int8 wCount,*int8 rData,*int8 rCount)" `436 
+f B "i2c_transfer" 2 528 "int8(int8 address,*int8 wData,int8 wCount,*int8 rData,*int8 rCount,int8 stream,int8 address,*int8 wData,int8 wCount,int8 wCount)" `436 
 f N "i2c_transfer" 2 529 ""
 v L "stream" 2 529 "int8" `443 
 v L "address" 2 529 "int8" `444 

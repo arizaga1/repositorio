@@ -1,0 +1,30 @@
+#include <main.h>
+
+#include <LCD.C>
+int  i;
+void main()
+{
+   lcd_init();   //inicializar la pantalla LCD
+   lcd_putc("Ejemplo LCD \n");
+   delay_ms(5000);
+   lcd_putc("\f");
+   lcd_putc("Hola Mundo \n");
+   
+   while(TRUE)  //ciclo infinito
+   {
+      for(i=0;i<10;i++)
+        { 
+        lcd_gotoxy(3, 2);
+        printf(lcd_putc,"contador: %d ",i);//imprimir a pantalla
+        printf(HOSTPC,"contador: %d ",i);  //imprimir al puerto serial
+        
+          delay_ms(1000);
+        }
+        
+      #ASM
+      NOP
+      #ENDASM//no hacer nada
+      //TODO: User Code
+   }
+
+}

@@ -1,19 +1,19 @@
 #include <main.h>
-int  TEMP = 0xff;
+//incluyo esta linea de c√≥digo
 #include <LCD.C>
 float  x;  //el resultado del convertidor
 void main()
 {
-   setup_adc_ports(AN0);  //En esta lÌnea se configura el ADC
-   setup_adc(ADC_CLOCK_DIV_64);     //la velociad de conversiÛn
+   setup_adc_ports(AN0);  //En esta l√≠nea se configura el ADC
+   setup_adc(ADC_CLOCK_DIV_64);     //la velociad de conversi√≥n
    lcd_init();                      //se configura la pantalla LCD
-   TEMP |= 0x0f;
+
    while(TRUE)
    {
    delay_ms(50);
    x=read_adc()* 5.0/1023;
    lcd_gotoxy(1,1);
-   printf(LCD_PUTC, " \r temp=%f ",x*100);
+   printf(LCD_PUTC, " \r voltaje=%f ",x);
 
 
 

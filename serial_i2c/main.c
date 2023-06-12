@@ -6,7 +6,7 @@ void funcion1();   //declaracion de una funcion
 
 void main()
 {
-direccion=0xD0;
+direccion=0xD0;  //  dirección 1101  000  bit de escrituta 0 
    setup_adc_ports(NO_ANALOGS, VSS_VDD);
      
 

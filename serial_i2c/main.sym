@@ -50,11 +50,11 @@ Project Directory:
     C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\
 
 Project Files:
-    main.c                                                  [18-mar.-22 16:48  CRC=83110640]
-    main.h                                                  [18-mar.-22 16:26  CRC=B723CC71]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [30-oct.-19 15:52  CRC=B77A8E99]
+    main.c                                                  [24-may.-23 11:10  CRC=A3C9B035]
+    main.h                                                  [18-mar.-22 17:26  CRC=B723CC71]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [30-oct.-19 16:52  CRC=B77A8E99]
 
-Source signature=A929EFE3
+Source signature=C9E299D8
 Program memory checksum=0000
 Hex file CRC=ADB0
 

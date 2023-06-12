@@ -1,5 +1,5 @@
 ÀÄmain
-   ÀÄMAIN  0/151  Ram=4
+   ÀÄMAIN  0/174  Ram=4
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@cinit2  (Inline)  Ram=0
       ÃÄlcd_init  0/62  Ram=6
@@ -22,6 +22,7 @@
       ³  ÀÄlcd_send_byte  0/64  Ram=3
       ³     ÀÄ*
       ÃÄ@MULFF  0/117  Ram=13
+      ÃÄ@ADDFF  0/323  Ram=16
       ÃÄ@PSTRINGCN7_694  0/89  Ram=5
       ³  ÃÄlcd_putc  0/44  Ram=1
       ³  ³  ÃÄlcd_gotoxy  0/18  Ram=4
