@@ -1,6 +1,6 @@
-CCS PCH C Compiler, Version 5.091, 13314               24-may.-23 11:10
+CCS PCH C Compiler, Version 5.091, 13314               13-jul.-24 10:26
 
-               Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main.lst
+               Filename:   C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\serial_i2c\main.lst
 
                ROM used:   466 bytes (1%)
                            Largest free fragment is 32302
@@ -188,7 +188,7 @@ CCS PCH C Compiler, Version 5.091, 13314               24-may.-23 11:10
 .................... funcion1();  //llamada a la función
 01A8:  BRA    008C
 .................... 
-.................... // Issues a stop command when in the I2C master mode
+.................... 
 .................... delay_ms(1000);
 01AA:  MOVLW  04
 01AC:  MOVWF  0A
@@ -224,16 +224,16 @@ CCS PCH C Compiler, Version 5.091, 13314               24-may.-23 11:10
 .................... 
 .................... void funcion1()
 .................... {
-.................... i2c_start();                                 // Issues a start command when in
+.................... i2c_start();       // Issues a start command when in
 *
 008C:  BSF    FC5.0
 008E:  BTFSC  FC5.0
 0090:  BRA    008E
-.................... i2c_write(0xD0);                             // Sends a single byte over the I2C interface.
+.................... i2c_write(0xD0);   // Sends a single byte over the I2C interface.
 0092:  MOVLW  D0
 0094:  MOVWF  0A
 0096:  RCALL  0012
-.................... i2c_write(0x00); 
+.................... i2c_write(0x00);  // Sends a 0x00 .
 0098:  CLRF   0A
 009A:  RCALL  0012
 .................... i2c_start();

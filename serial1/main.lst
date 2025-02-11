@@ -1,6 +1,6 @@
-CCS PCM C Compiler, Version 5.091, 13314               25-feb.-22 17:15
+CCS PCM C Compiler, Version 5.091, 13314               06-jul.-24 10:56
 
-               Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial1\main.lst
+               Filename:   C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\serial1\main.lst
 
                ROM used:   598 words (7%)
                            Largest free fragment is 2048
@@ -598,7 +598,7 @@ CCS PCM C Compiler, Version 5.091, 13314               25-feb.-22 17:15
 0228:  GOTO   227
 0229:  MOVWF  19
 .................... 
-.................... printf("este es el valor de %Ld \n \r", variable);
+.................... fprintf(PORT1,"este es el valor de %Ld \n \r", variable);
 022A:  MOVLW  2E
 022B:  BSF    03.6
 022C:  MOVWF  0D
@@ -641,8 +641,7 @@ CCS PCM C Compiler, Version 5.091, 13314               25-feb.-22 17:15
 024D:  GOTO   24C
 024E:  MOVF   1A,W
 024F:  MOVWF  22
-.................... 
-....................   putc(ch) ;   //TODO: User Code
+....................   putc(ch) ;   
 0250:  MOVF   22,W
 0251:  BTFSS  0C.4
 0252:  GOTO   251

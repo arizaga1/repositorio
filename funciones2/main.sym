@@ -1,0 +1,107 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+008     lcd
+008     lcdlat
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     g
+021     i
+022     x
+023-040 nombres
+041     lcd_init.i
+041     MAIN.@SCRATCH1
+041     @cinit1.@SCRATCH1
+042-045 lcd_init.LCD_INIT_STRING
+042     @PRINTF_D_693.P1
+042     @cinit1.@SCRATCH2
+043     @PRINTF_D_693.P1
+043     @cinit1.@SCRATCH3
+044     @PRINTF_D_693.@SCRATCH1
+044     @cinit1.@SCRATCH4
+045     @PRINTF_D_693.@SCRATCH2
+046     lcd_init.@SCRATCH1
+046     @PRINTF_D_693.@SCRATCH3
+047     @PRINTF_D_693.@SCRATCH4
+048     @DIV88.P1
+048     lcd_putc.c
+049     lcd_gotoxy.x
+049     @delay_ms1.P1
+049     @DIV88.P2
+04A     lcd_gotoxy.y
+04A     @DIV88.@SCRATCH1
+04B     lcd_gotoxy.address
+04C     lcd_gotoxy.@SCRATCH1
+04D     lcd_send_byte.address
+04E     lcd_send_byte.n
+04F     lcd_read_byte.low
+04F     lcd_send_byte.@SCRATCH1
+050     lcd_send_nibble.n
+050     lcd_read_byte.high
+051     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @delay_ms1
+000019  lcd_send_nibble
+000025  lcd_read_nibble
+00002B  lcd_send_byte
+000031  lcd_read_byte
+00006B  lcd_init
+0000A9  lcd_gotoxy
+0000BB  lcd_putc
+0000E7  @DIV88
+0000FC  @PRINTF_D_693
+000155  MAIN
+000155  @cinit1
+000164  @cinit2
+
+Project Directory:
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones2\
+
+Project Files:
+    main.c                                                  [10-feb.-25 18:05  CRC=4A0AE43B]
+    main.h                                                  [10-feb.-25 17:29  CRC=00000000]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 15:48  CRC=15D497A0]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-feb.-16 10:05  CRC=D1A6378A]
+
+Source signature=032BEAEF
+Program memory checksum=0000
+Hex file CRC=EE69
+
+Units:
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones2\main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

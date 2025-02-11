@@ -1,0 +1,99 @@
+[Directories]
+Include=
+Library=
+LinkerScript=
+output=
+
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+buildcount=4
+
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+
+[PROJECT]
+Target=main.hex
+Development_Mode=
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+CCSVersion=5.091
+Compiler=PCM
+
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+FileList=main.c
+
+[main.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=main.c
+
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+
+
+[CompilerVersion]
+Fixed=
+
+[Opened Files]
+1=main.c
+t1=9
+2=..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
+t2=11
+3=main.cof.txt
+t3=1
+Count=4
+4=main.lst
+t4=1
+
+[ProjectLog]
+Days=2
+D1=21-06-2024
+D1_L=9
+D1_L1=[53576]Project Closed.
+D1_L2=[53576]Project Opened.
+D1_L3=[54256]Started Editing.
+D1_L4=[54442]Stopped Editing.
+TotalEdit=17
+TotalDebug=0
+D1_E=9
+D1_D=0
+D1_L5=[54442]Project Closed.
+D1_L6=[54455]Project Opened.
+D1_L7=[54469]Started Editing.
+D1_L8=[55052]Stopped Editing.
+D1_L9=[55602]Project Closed.
+D2=06-07-2024
+D2_L=5
+D2_L1=[35426]Project Opened.
+D2_L2=[36149]Started Editing.
+D2_L3=[36449]Stopped Editing.
+D2_L4=[37325]Project Opened.
+D2_L5=[37329]Project Closed.
+[Units]
+Count=1
+1=main (main)

@@ -13,37 +13,37 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   25    12 100  main.c
+   24    12 100  main.c
     7     0   0  main.h
   796     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
 ----- -----
-  828    12 Total
+  827    12 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-0    136  23    0    243  2.6  main
-0     14   2    0             @const680
-0     88  15    4             @PSTRINGC7_1
-0     14   2    0             @const685
-0     14   2    0             @const686
-0     14   2    0             @const687
-0     89  15    5             @PSTRINGCN7_9600_62_63
-0    120  20    9             @PRINTF_LD_9600_62_63
-0     15   3    0             @const692
-0     90  15    4             @PSTRINGC7_9600_62_63
- Inline         0             @cinit1
+0    136  23    0    255  2.7  main
+0     14   2    0    596  5.9  @const680
+0     88  15    4    179  3.3  @PSTRINGC7_1
+0     14   2    0    460  4.7  @const685
+0     14   2    0    814  7.2  @const686
+0     14   2    0    208  6.3  @const687
+0     89  15    5    354  4.7  @PSTRINGCN7_9600_62_63
+0    120  20    9    238  4.0  @PRINTF_LD_9600_62_63
+0     15   3    0    267  6.8  @const692
+0     90  15    4     90  2.5  @PSTRINGC7_9600_62_63
+ Inline         0    145  2.2  @cinit1
 
 Program metrics:
-    Functions               1
+    Functions               11
     Statements              12
-    Comments                139
-    Volume (V)              263
-    Difficulty (D)          1.9
-    Effort to implement (E) 495
-    Time to implement (T)   0 minutes
-    Est Delivered Bugs (B)  0
-    Cyclomatic Complexity   1
-    Maintainability (MI)    74
+    Comments                138
+    Volume (V)              5826
+    Difficulty (D)          50.3
+    Effort to implement (E) 293065
+    Time to implement (T)   4 hours, 31 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   10
+    Maintainability (MI)    101
 
  Segment     Used  Free
 -----------  ----  ----

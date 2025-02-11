@@ -1,5 +1,5 @@
-004-005 @READ_PROGRAM_MEMORY8.P1
-004-005 @WRITE_PROGRAM_MEMORY8.P2
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
 008     PSP_DATA
 008     lcdlat
 008     lcd
@@ -9,78 +9,67 @@
 01B     CCP_2_LOW
 01B     CCP_2
 01C     CCP_2_HIGH
-020     TEMP
-021-024 x
-025     lcd_init.i
-025     MAIN.@SCRATCH1
-026-029 lcd_init.LCD_INIT_STRING
-026     MAIN.@SCRATCH2
-027-028 @ITOF.P1
-027     MAIN.@SCRATCH3
-028     MAIN.@SCRATCH4
-029-02C @DIVFF.P1
-029-02C @ADDFF.P2
-029-02C @PRINTF_L32D_694FPFPF.P3
-029     @PSTRINGCN7_694.P4
-02A     lcd_init.@SCRATCH1
-02A     @PSTRINGCN7_694.@SCRATCH1
-02B     @PSTRINGCN7_694.@SCRATCH2
-02C     @PSTRINGCN7_694.@SCRATCH3
-02D-030 @ADDFF.P1
-02D-030 @DIVFF.P2
-02D     @PRINTF_L32D_694FPFPF.P3
-02D     @PSTRINGCN7_694.@SCRATCH4
-02E     @PRINTF_L32D_694FPFPF.@SCRATCH1
-02F     @PRINTF_L32D_694FPFPF.@SCRATCH2
-030     @PRINTF_L32D_694FPFPF.@SCRATCH3
-031     @DIVFF.@SCRATCH1
-031     @ADDFF.@SCRATCH1
-031     @PRINTF_L32D_694FPFPF.@SCRATCH4
-032     @DIVFF.@SCRATCH2
-032     @ADDFF.@SCRATCH2
-032     @PRINTF_L32D_694FPFPF.@SCRATCH5
-033     @DIVFF.@SCRATCH3
-033     @ADDFF.@SCRATCH3
-033     @PRINTF_L32D_694FPFPF.@SCRATCH6
-034     @DIVFF.@SCRATCH4
-034     @ADDFF.@SCRATCH4
-034     @PRINTF_L32D_694FPFPF.@SCRATCH7
-035     @DIVFF.@SCRATCH5
-035     @ADDFF.@SCRATCH5
-035     @PRINTF_L32D_694FPFPF.@SCRATCH8
-036     lcd_putc.c
-036-039 @MULFF.P1
-036-039 @FTOSD.P2
-036-039 @DIV3232.P3
-036     @DIVFF.@SCRATCH6
-036     @ADDFF.@SCRATCH6
-037     lcd_gotoxy.x
-037     @delay_ms1.P1
-037     @ADDFF.@SCRATCH7
-038     lcd_gotoxy.y
-038     @ADDFF.@SCRATCH8
-039     lcd_gotoxy.address
-03A-03D @DIV3232.P1
-03A-03D @MULFF.P2
-03A     lcd_gotoxy.@SCRATCH1
-03A     @FTOSD.@SCRATCH1
-03B     lcd_send_byte.address
-03C     lcd_send_byte.n
-03D     lcd_read_byte.low
-03D     lcd_send_byte.@SCRATCH1
-03E     lcd_read_byte.high
-03E     lcd_send_nibble.n
-03E     @MULFF.@SCRATCH1
-03E     @DIV3232.@SCRATCH1
-03F     lcd_read_byte.@SCRATCH1
-03F     @MULFF.@SCRATCH2
-03F     @DIV3232.@SCRATCH2
-040     @MULFF.@SCRATCH3
-040     @DIV3232.@SCRATCH3
-041     @MULFF.@SCRATCH4
-041     @DIV3232.@SCRATCH4
-042     @MULFF.@SCRATCH5
-042     @DIV3232.@SCRATCH5
+020-023 x
+024-027 @PRINTF_L32D_693FPFPF.P1
+024     lcd_init.i
+024     @PSTRINGCN7_693.P1
+024     MAIN.@SCRATCH1
+025-028 lcd_init.LCD_INIT_STRING
+025     MAIN.@SCRATCH2
+025     @PSTRINGCN7_693.@SCRATCH1
+026-027 @ITOF.P1
+026     MAIN.@SCRATCH3
+026     @PSTRINGCN7_693.@SCRATCH2
+027     MAIN.@SCRATCH4
+027     @PSTRINGCN7_693.@SCRATCH3
+028-02B @DIVFF.P1
+028     @PRINTF_L32D_693FPFPF.P2
+028     @PSTRINGCN7_693.@SCRATCH4
+029     lcd_init.@SCRATCH1
+029     @PRINTF_L32D_693FPFPF.@SCRATCH1
+02A     @PRINTF_L32D_693FPFPF.@SCRATCH2
+02B     @PRINTF_L32D_693FPFPF.@SCRATCH3
+02C-02F @DIVFF.P1
+02C     @PRINTF_L32D_693FPFPF.@SCRATCH4
+02D     @PRINTF_L32D_693FPFPF.@SCRATCH5
+02E     @PRINTF_L32D_693FPFPF.@SCRATCH6
+02F     @PRINTF_L32D_693FPFPF.@SCRATCH7
+030     @DIVFF.@SCRATCH1
+030     @PRINTF_L32D_693FPFPF.@SCRATCH8
+031-034 @FTOSD.P1
+031-034 @DIV3232.P2
+031-034 @MULFF.P3
+031     lcd_putc.c
+031     @DIVFF.@SCRATCH2
+032     @delay_ms1.P1
+032     lcd_gotoxy.x
+032     @DIVFF.@SCRATCH3
+033     lcd_gotoxy.y
+033     @DIVFF.@SCRATCH4
+034     lcd_gotoxy.address
+034     @DIVFF.@SCRATCH5
+035-038 @MULFF.P1
+035-038 @DIV3232.P2
+035     lcd_gotoxy.@SCRATCH1
+035     @DIVFF.@SCRATCH6
+035     @FTOSD.@SCRATCH1
+036     lcd_send_byte.address
+037     lcd_send_byte.n
+038     lcd_read_byte.low
+038     lcd_send_byte.@SCRATCH1
+039     lcd_send_nibble.n
+039     lcd_read_byte.high
+039     @MULFF.@SCRATCH1
+039     @DIV3232.@SCRATCH1
+03A     lcd_read_byte.@SCRATCH1
+03A     @MULFF.@SCRATCH2
+03A     @DIV3232.@SCRATCH2
+03B     @MULFF.@SCRATCH3
+03B     @DIV3232.@SCRATCH3
+03C     @MULFF.@SCRATCH4
+03C     @DIV3232.@SCRATCH4
+03D     @MULFF.@SCRATCH5
+03D     @DIV3232.@SCRATCH5
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -93,42 +82,41 @@
 10D-10E @READ_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
-000004  @const718.call
-00000B  @delay_ms1
-000020  lcd_send_nibble
-00002C  lcd_read_nibble
-000032  lcd_send_byte
-000038  lcd_read_byte
-000072  lcd_init
-0000B0  @ITOF
-0000CF  @MULFF
-000144  @DIVFF
-000210  lcd_gotoxy
-000222  @ADDFF
-000365  lcd_putc
-000391  @PSTRINGCN7_694
-0003EA  @DIV3232
-000439  @PRINTF_L32D_694FPFPF
-000460  @FTOSD
-00051B  MAIN
-00051B  @cinit1
-000527  @cinit2
+000004  @const717.call
+00000C  @delay_ms1
+000021  lcd_send_nibble
+00002D  lcd_read_nibble
+000033  lcd_send_byte
+000039  lcd_read_byte
+000073  lcd_init
+0000B1  @ITOF
+0000D0  @MULFF
+000145  @DIVFF
+000211  lcd_gotoxy
+000223  lcd_putc
+00024F  @PSTRINGCN7_693
+0002A8  @DIV3232
+0002F7  @PRINTF_L32D_693FPFPF
+00031E  @FTOSD
+0003D9  MAIN
+0003D9  @cinit1
+0003E3  @cinit2
 
 Project Directory:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Convertidor_ADC\
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\Convertidor_ADC\
 
 Project Files:
-    main.c                                                  [11-jul.-22 11:52  CRC=82E09DFE]
-    main.h                                                  [08-abr.-22 16:46  CRC=00000000]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [30-oct.-19 16:48  CRC=15D497A0]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-feb.-16 11:05  CRC=D1A6378A]
+    main.c                                                  [06-jul.-24 11:59  CRC=C095AA0E]
+    main.h                                                  [19-jun.-24 11:55  CRC=00000000]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [30-oct.-19 15:48  CRC=15D497A0]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-feb.-16 10:05  CRC=D1A6378A]
 
-Source signature=3C01A4B2
+Source signature=79B6B0C2
 Program memory checksum=0000
-Hex file CRC=D40F
+Hex file CRC=2E68
 
 Units:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Convertidor_ADC\main (main)
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\Convertidor_ADC\main (main)
 
 Compiler Settings:
     Processor:      PIC16F877A

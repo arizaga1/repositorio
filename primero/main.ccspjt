@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=2
+Days=8
 D1=31-01-2022
 D1_L=14
 D1_L1=[49775]Project Opened.
@@ -27,7 +27,7 @@ D1_L4=[50163]Started Editing.
 D1_L5=[50793]Stopped Editing.
 D1_L6=[51638]Started Editing.
 D1_L7=[51762]Stopped Editing.
-TotalEdit=14
+TotalEdit=19
 TotalDebug=0
 D1_E=14
 D1_D=0
@@ -44,18 +44,63 @@ D2_L1=[57704]Project Opened.
 D2_L2=[59387]Project Closed.
 D2_L3=[59387]Project Opened.
 D2_L4=[59436]Project Closed.
+D3=19-06-2024
+D3_L=4
+D3_L1=[42978]Project Opened.
+D3_L2=[42998]Started Editing.
+D3_L3=[43301]Stopped Editing.
+D3_E=1
+D3_D=0
+D3_L4=[43845]Project Closed.
+D4=20-06-2024
+D4_L=1
+D4_L1=[55587]Project Opened.
+D5=21-06-2024
+D5_L=2
+D5_L1=[51027]Project Opened.
+D5_L2=[51088]Project Closed.
+D6=29-01-2025
+D6_L=6
+D6_L1=[45705]Project Opened.
+D6_L2=[46771]Started Editing.
+D6_L3=[47074]Stopped Editing.
+D6_L4=[47247]Started Editing.
+D6_L5=[47553]Stopped Editing.
+D6_E=1
+D6_D=0
+D6_L6=[49881]Project Closed.
+D7=30-01-2025
+D7_L=8
+D7_L1=[45714]Project Opened.
+D7_L2=[45721]Project Closed.
+D7_L3=[46133]Project Opened.
+D7_L4=[46202]Started Editing.
+D7_L5=[46503]Stopped Editing.
+D7_L6=[47402]Started Editing.
+D7_L7=[47711]Stopped Editing.
+D7_E=1
+D7_D=0
+D7_L8=[71208]Project Closed.
+D8=05-02-2025
+D8_L=2
+D8_L1=[44739]Project Opened.
+D8_L2=[44847]Project Closed.
 
 [Opened Files]
 1=main.c
 t1=1
-Count=2
+Count=4
 2=main.h
 t2=1
+3=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h
+t3=1
+4=main.lst
+t4=1
 [main.c]
 Type=4
 
 [defines]
-buildcount=5
+buildcount=9
 [Units]
 Count=1
 1=main (main)

@@ -1,0 +1,52 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.091
+Compiler=PCM
+CCSVersion=5.091
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=10-02-2025
+D1_L=7
+D1_L1=[49066]Project Closed.
+D1_L2=[49077]Project Opened.
+D1_L3=[49135]Started Editing.
+D1_L4=[51416]Stopped Editing.
+D1_L5=[51706]Started Editing.
+D1_L6=[52022]Stopped Editing.
+TotalEdit=34
+TotalDebug=0
+D1_E=34
+D1_D=0
+D1_L7=[62961]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=4
+2=main.h
+t2=1
+3=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h
+t3=1
+4=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
+t4=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=13
+[Units]
+Count=1
+1=main (main)

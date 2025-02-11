@@ -1,0 +1,20 @@
+#include <main.h>
+
+#include <LCD.C>
+
+int g=4;
+//char data[20][20] = {"Jan","Feb","Apr","May","Jun","Jul","Aug","Sep","Oct"};
+char  nombres[5][5]=["juan", "pedro","josé","maria","diana"];
+
+void main()
+{
+   lcd_init();
+
+   while(TRUE)
+   {
+
+
+      //TODO: User Code
+   }
+
+}

@@ -1,0 +1,16 @@
+#include <main.h>
+
+#include <LCD.C>
+
+void main()
+{
+	lcd_init();
+
+	while(TRUE)
+	{
+
+
+		//TODO: User Code
+	}
+
+}

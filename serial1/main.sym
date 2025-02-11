@@ -55,11 +55,11 @@ ROM Allocation:
 0001EF  @cinit2
 
 Project Directory:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial1\
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\serial1\
 
 Project Files:
-    main.c                                                  [25-feb.-22 17:15  CRC=28811FFC]
-    main.h                                                  [25-feb.-22 17:02  CRC=D872A938]
+    main.c                                                  [21-jun.-24 15:57  CRC=28811FFC]
+    main.h                                                  [19-jun.-24 11:55  CRC=D872A938]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [30-oct.-19 15:48  CRC=C6420252]
 
 Source signature=8D77CDD8
@@ -67,7 +67,7 @@ Program memory checksum=0000
 Hex file CRC=37FF
 
 Units:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial1\main (main)
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\serial1\main (main)
 
 Compiler Settings:
     Processor:      PIC16F887

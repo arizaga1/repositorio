@@ -1,7 +1,7 @@
 D G "__PCH__" 0 0 ""5.091""
 D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""24-May-23""
-D G "__TIME__" 0 0 ""11:10:38""
+D G "__DATE__" 0 0 ""13-Jul-24""
+D G "__TIME__" 0 0 ""10:26:47""
 D G "_UNICODE" 0 0 ""?""
 D G "__EVAL" 0 0 ""?"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
@@ -1287,11 +1287,12 @@ f G "funcion1" 0 5 "void()" `709  "declaracion de una funcion"
 F N "main" 0 7 ""
 F G "main" 0 8 "void()" `710 
 C L "main" 0 9 1 "FUNCTION"
-C L "main" 0 9 2 "FUNCTION"
+C L "main" 0 9 1 "FUNCTION"
 C L "main" 0 9 1 "FUNCTION"
 C L "funcion1" 0 9 1 "FUNCTION"
 F N "funcion1" 0 33 ""
 F G "funcion1" 0 34 "void()" `709 
+C L "funcion1" 0 9 1 "FUNCTION"
 C L "funcion1" 0 9 1 "FUNCTION"
 C L "funcion1" 0 9 1 "FUNCTION"
 F B "reset_cpu" 0 0

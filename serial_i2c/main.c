@@ -16,7 +16,7 @@ direccion=0xD0;  //  dirección 1101  000  bit de escrituta 0
 
 funcion1();  //llamada a la función
 
-// Issues a stop command when in the I2C master mode
+
 delay_ms(1000);
 
 if(minutos==0x49 && horas==0x16)
@@ -32,9 +32,9 @@ if(minutos==0x49 && horas==0x16)
 
 void funcion1()
 {
-i2c_start();                                 // Issues a start command when in
-i2c_write(0xD0);                             // Sends a single byte over the I2C interface.
-i2c_write(0x00); 
+i2c_start();       // Issues a start command when in
+i2c_write(0xD0);   // Sends a single byte over the I2C interface.
+i2c_write(0x00);  // Sends a 0x00 .
 i2c_start();
 i2c_write(0xD0|0x01);
 segundos=i2c_read(1);

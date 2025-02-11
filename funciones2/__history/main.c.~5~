@@ -1,0 +1,24 @@
+#include <main.h>
+
+#include <LCD.C>
+int g = 4;
+int i=0;
+void main()
+{
+   lcd_init();
+
+   while(TRUE) //ciclo
+   {
+ 
+     
+   for(i=0;i<5;i++)
+   {
+      printf(lcd_putc,"\n");
+      printf(lcd_putc,"%d",i);
+      delay_ms(1000);  
+   }
+
+      
+   }
+
+}

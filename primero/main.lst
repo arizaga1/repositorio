@@ -1,6 +1,6 @@
-CCS PCM C Compiler, Version 5.091, 13314               31-ene.-22 14:35
+CCS PCM C Compiler, Version 5.091, 13314               30-ene.-25 13:32
 
-               Filename:   C:\Users\j_ari\Documents\CCS C Projects\Proyectos\CCS_2022\primero\main.lst
+               Filename:   C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\primero\main.lst
 
                ROM used:   97 words (1%)
                            Largest free fragment is 2048
@@ -61,7 +61,7 @@ CCS PCM C Compiler, Version 5.091, 13314               31-ene.-22 14:35
 .................... 
 .................... 
 .................... 
-.................... void main()
+.................... void main()  //funcion principal
 0018:  MOVF   03,W
 0019:  ANDLW  1F
 001A:  MOVWF  03
@@ -83,7 +83,7 @@ CCS PCM C Compiler, Version 5.091, 13314               31-ene.-22 14:35
 .................... 
 .................... 
 .................... 
-....................    while(TRUE)
+....................    while(TRUE) //While infinito
 ....................    {
 ....................    
 ....................    if (input_state(entrada))   //  if es una sentencia condiciona, que sirve para cambiar
@@ -114,7 +114,7 @@ CCS PCM C Compiler, Version 5.091, 13314               31-ene.-22 14:35
 0039:  MOVWF  06
 003A:  BCF    03.5
 003B:  BSF    06.7
-....................       delay_ms(retraso);     //delay_ms es una función que retrasa el microcntrolador por 1000 milisegundos
+....................       delay_ms(retraso);     //delay_ms es una función que retrasa el microcontrolador por 1000 milisegundos
 003C:  MOVF   22,W
 003D:  MOVWF  23
 003E:  INCF   23,F
@@ -139,7 +139,7 @@ CCS PCM C Compiler, Version 5.091, 13314               31-ene.-22 14:35
 004F:  MOVWF  06
 0050:  BCF    03.5
 0051:  BCF    06.7
-....................       delay_ms(retraso); //delay_ms es una función que retrasa el microcntrolador por 1000 milisegundos
+....................       delay_ms(retraso); //delay_ms es una función que retrasa el microcontrolador por 1000 milisegundos    
 0052:  MOVF   22,W
 0053:  MOVWF  23
 0054:  INCF   23,F
@@ -154,8 +154,6 @@ CCS PCM C Compiler, Version 5.091, 13314               31-ene.-22 14:35
 005D:  MOVWF  24
 005E:  CALL   004
 005F:  GOTO   028
-.................... 
-....................       
 ....................    }
 .................... 
 .................... }

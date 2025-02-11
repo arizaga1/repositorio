@@ -47,19 +47,19 @@ ROM Allocation:
 00019C  @cinit2
 
 Project Directory:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\serial_i2c\
 
 Project Files:
-    main.c                                                  [24-may.-23 11:10  CRC=A3C9B035]
-    main.h                                                  [18-mar.-22 17:26  CRC=B723CC71]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [30-oct.-19 16:52  CRC=B77A8E99]
+    main.c                                                  [09-jul.-24 22:17  CRC=A3D7A823]
+    main.h                                                  [19-jun.-24 11:55  CRC=B723CC71]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [30-oct.-19 15:52  CRC=B77A8E99]
 
-Source signature=C9E299D8
+Source signature=C9F091C6
 Program memory checksum=0000
 Hex file CRC=ADB0
 
 Units:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\serial_i2c\main (main)
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\serial_i2c\main (main)
 
 Compiler Settings:
     Processor:      PIC18F4550

@@ -1,0 +1,7 @@
+Compiling C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones2\main on 10-feb.-25 at 18:05
+>>> Warning 230 "C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones2\main.c" Line 7(1,1): String truncated
+>>> Warning 202 "C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones2\main.c" Line 4(5,6): Variable never used:   g
+>>> Warning 202 "C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones2\main.c" Line 7(6,7): Variable never used:   x
+      Memory usage:   ROM=5%      RAM=11% - 15%
+      0 Errors,  3 Warnings.
+Build Successful.

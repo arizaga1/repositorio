@@ -18,27 +18,29 @@ forcecoff=0
 
 [Opened Files]
 1=main.c
-t1=1
-Count=3
+t1=17
+Count=4
 2=main.h
 t2=1
 3=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
-t3=5
+t3=1
+4=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h
+t4=1
 [main.c]
 Type=4
 
 [defines]
-buildcount=16
+buildcount=26
 
 [ProjectLog]
-Days=4
+Days=8
 D1=04-02-2022
 D1_L=4
 D1_L1=[61098]Started Editing.
 D1_L2=[61655]Stopped Editing.
 D1_L3=[62043]Started Editing.
 D1_L4=[62763]Stopped Editing.
-TotalEdit=-286
+TotalEdit=-261
 TotalDebug=0
 D1_E=12
 D2=11-02-2022
@@ -71,6 +73,40 @@ D4_D=0
 D4_L8=[54039]Project Closed.
 D4_L9=[55821]Project Opened.
 D4_L10=[55836]Project Closed.
+D5=21-06-2024
+D5_L=4
+D5_L1=[51088]Project Opened.
+D5_L2=[51757]Started Editing.
+D5_L3=[52787]Stopped Editing.
+D5_L4=[53562]Project Closed.
+D6=05-02-2025
+D6_L=10
+D6_L1=[44848]Project Opened.
+D6_L2=[46596]Started Editing.
+D6_L3=[46905]Stopped Editing.
+D6_L4=[47204]Started Editing.
+D6_L5=[47587]Stopped Editing.
+D6_L6=[47890]Started Editing.
+D6_L7=[47977]Stopped Editing.
+D6_L8=[48298]Stopped Editing.
+D6_L9=[49020]Started Editing.
+D6_L10=[49481]Stopped Editing.
+D7=06-02-2025
+D7_L=10
+D7_L1=[45153]Project Opened.
+D7_L2=[47924]Started Editing.
+D7_L3=[48224]Stopped Editing.
+D7_L4=[48824]Started Editing.
+D7_L5=[49128]Stopped Editing.
+D7_L6=[49635]Started Editing.
+D7_L7=[49663]Stopped Editing.
+D7_L8=[49712]Project Opened.
+D7_L9=[49881]Started Editing.
+D7_L10=[50632]Stopped Editing.
+D8=10-02-2025
+D8_L=2
+D8_L1=[48750]Project Opened.
+D8_L2=[49054]Project Closed.
 [Units]
 Count=1
 1=main (main)
