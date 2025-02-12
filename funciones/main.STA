@@ -1,55 +1,64 @@
 
-ROM used:   318/8192 (4%)
-            318/8192 (4%) including unused fragments
+ROM used:   567/8192 (7%)
+            567/8192 (7%) including unused fragments
 
-            0.3 Average locations per line
-            3.5 Average locations per statement
+            0.2 Average locations per line
+            1.0 Average locations per statement
 
-RAM used:   16/368 (4%) at main() level
-            28/368 (8%) worst case
+RAM used:   47/368 (13%) at main() level
+            59/368 (16%) worst case
 
-Stack used: 4 worst case (4 in main + 0 for interrupts)
+Stack used: 0 worst case (0 in main + 0 for interrupts)
 Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   32     8   9  main.c
+   46    10   2  main.c
     5     0   0  main.h
   694     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h
-  456    84  91  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
+  456    84  14  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
+ 1352   359  62  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
+   32     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h
+  435   129  22  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
+   28     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h
 ----- -----
- 1187    92 Total
+ 3048   582 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-0     21   7    1             @delay_ms1
+0     21   4    1             @delay_ms1
  Inline         3    596  5.9  lcd_read_byte
-0      6   2    0     59  4.2  lcd_read_nibble
-0     12   4    1    179  3.3  lcd_send_nibble
-0     64  20    3    460  4.7  lcd_send_byte
-0     62  19    6    814  7.2  lcd_init
-0     18   6    4    208  6.3  lcd_gotoxy
-0     44  14    1    354  4.7  lcd_putc
-0     63  20    2    206  4.3  MAIN
-0     24   8    2             @PSTRINGR_693
+0      6   1    0     59  4.2  lcd_read_nibble
+0     12   2    1    179  3.3  lcd_send_nibble
+0     64  11    3    460  4.7  lcd_send_byte
+0     62  11    6    814  7.2  lcd_init
+0     18   3    4    208  6.3  lcd_gotoxy
+0     44   8    1    354  4.7  lcd_putc
+0     39   7    2             @MUL88
+ Inline        13             @MUL3232
+ Inline         4    101  3.8  rand
+0     37   7    5             @DIV1616
+0    118  21    2    242  4.3  MAIN
+0     24   4    2             @PSTRINGR_693
+0    118  21    3     33  2.0  mi_funcion
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               8
-    Statements              92
-    Comments                224
-    Volume (V)              4357
-    Difficulty (D)          39.8
-    Effort to implement (E) 173594
-    Time to implement (T)   2 hours, 41 minutes
+    Functions               10
+    Statements              582
+    Comments                1005
+    Volume (V)              4772
+    Difficulty (D)          46.1
+    Effort to implement (E) 219755
+    Time to implement (T)   3 hours, 23 minutes
     Est Delivered Bugs (B)  1
     Cyclomatic Complexity   9
-    Maintainability (MI)    145
+    Maintainability (MI)    82
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF   314  1730  
+00004-007FF   563  1481  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

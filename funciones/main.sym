@@ -1,38 +1,59 @@
-004-005 @READ_PROGRAM_MEMORY8.P1
-004-005 @WRITE_PROGRAM_MEMORY8.P2
-008     lcd
-008     lcdlat
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
 008     PSP_DATA
+008     lcdlat
+008     lcd
 015     CCP_1_LOW
 015     CCP_1
 016     CCP_1_HIGH
-01B     CCP_2_LOW
 01B     CCP_2
+01B     CCP_2_LOW
 01C     CCP_2_HIGH
-020     j
-021     g
-022-026 nombres
-027-028 @sprintf_string
-029     lcd_init.i
-029     MAIN.@SCRATCH1
-02A-02D lcd_init.LCD_INIT_STRING
-02A     MAIN.@SCRATCH2
-02B     @PSTRINGR_693.@SCRATCH1
-02C     @PSTRINGR_693.@SCRATCH2
-02D     lcd_putc.c
-02E     @delay_ms1.P1
-02E     lcd_gotoxy.x
-02E     lcd_init.@SCRATCH1
-02F     lcd_gotoxy.y
-030     lcd_gotoxy.address
-031     lcd_gotoxy.@SCRATCH1
-032     lcd_send_byte.address
-033     lcd_send_byte.n
-034     lcd_read_byte.low
-034     lcd_send_byte.@SCRATCH1
-035     lcd_send_nibble.n
-035     lcd_read_byte.high
-036     lcd_read_byte.@SCRATCH1
+020-021 strtok.save
+022-025 _Randseed
+026     j
+027     g
+028-045 nombres
+046-047 @sprintf_string
+048     lcd_init.i
+048     mi_funcion.x
+048     @MUL88.P1
+048     MAIN.@SCRATCH1
+049-04C lcd_init.LCD_INIT_STRING
+049-04C @MUL3232.P1
+049     @MUL88.P2
+049     rand.@SCRATCH1
+049     MAIN.@SCRATCH2
+049     mi_funcion.@SCRATCH1
+04A     rand.@SCRATCH2
+04A     @PSTRINGR_693.@SCRATCH1
+04A     mi_funcion.@SCRATCH2
+04B     rand.@SCRATCH3
+04B     @PSTRINGR_693.@SCRATCH2
+04C     lcd_putc.c
+04C-04D @DIV1616.P1
+04C     rand.@SCRATCH4
+04D-050 @MUL3232.P1
+04D     @delay_ms1.P2
+04D     lcd_gotoxy.x
+04D     lcd_init.@SCRATCH1
+04E     lcd_gotoxy.y
+04E-04F @DIV1616.P1
+04F     lcd_gotoxy.address
+050     lcd_gotoxy.@SCRATCH1
+050     @DIV1616.@SCRATCH1
+051     lcd_send_byte.address
+051     @MUL3232.@SCRATCH1
+052     lcd_send_byte.n
+052     @MUL3232.@SCRATCH2
+053     lcd_read_byte.low
+053     lcd_send_byte.@SCRATCH1
+053     @MUL3232.@SCRATCH3
+054     lcd_send_nibble.n
+054     lcd_read_byte.high
+054     @MUL3232.@SCRATCH4
+055     lcd_read_byte.@SCRATCH1
+055     @MUL3232.@SCRATCH5
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -41,8 +62,8 @@
 088     lcdtris
 09C.6   C1OUT
 09C.7   C2OUT
-10D-10E @READ_PROGRAM_MEMORY8.P1
-10D-10E @WRITE_PROGRAM_MEMORY8.P2
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
 
 ROM Allocation:
 000004  @delay_ms1
@@ -51,25 +72,36 @@ ROM Allocation:
 00002B  lcd_send_byte
 000031  lcd_read_byte
 00006B  lcd_init
-0000A9  lcd_gotoxy
-0000BB  lcd_putc
-0000E7  @PSTRINGR_693
-0000FF  @cinit1
-0000FF  MAIN
-00010E  @cinit2
+0000A9  @DIV1616
+0000CE  rand
+0000CE  mi_funcion
+0000DE  @MUL3232
+000144  @MUL88
+00016B  lcd_gotoxy
+00017D  lcd_putc
+0001A9  @PSTRINGR_693
+0001C1  @cinit1
+0001C1  MAIN
+0001D0  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
 
 Project Directory:
     C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones\
 
 Project Files:
-    main.c                                                  [10-feb.-25 14:21  CRC=E21129F5]
+    main.c                                                  [12-feb.-25 12:44  CRC=7E984A97]
     main.h                                                  [10-feb.-25 13:43  CRC=00000000]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 15:48  CRC=15D497A0]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-feb.-16 10:05  CRC=D1A6378A]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h [29-mar.-19 13:31  CRC=99D16202]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h [30-ene.-19 12:26  CRC=897CEC6C]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h [02-ago.-19 11:17  CRC=428BEDCB]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h [03-ene.-08 15:55  CRC=2D1F019F]
 
-Source signature=9B3230A9
+Source signature=262B5938
 Program memory checksum=0000
-Hex file CRC=AD90
+Hex file CRC=6F97
 
 Units:
     C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\funciones\main (main)
