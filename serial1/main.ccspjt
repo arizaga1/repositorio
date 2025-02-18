@@ -31,7 +31,7 @@ buildcount=12
 forcecoff=0
 
 [ProjectLog]
-Days=6
+Days=7
 D1=28-02-2022
 D1_L=4
 D1_L1=[49161]Project Opened.
@@ -68,6 +68,11 @@ D6=06-07-2024
 D6_L=2
 D6_L1=[39082]Project Opened.
 D6_L2=[40977]Project Closed.
+D7=18-02-2025
+D7_L=3
+D7_L1=[52890]Project Opened.
+D7_L2=[53194]Started Editing.
+D7_L3=[53516]Stopped Editing.
 [Units]
 Count=1
 1=main (main)

@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=7
+Days=10
 D1=11-02-2022
 D1_L=18
 D1_L1=[61825]Project Opened.
@@ -29,7 +29,7 @@ D1_L6=[63444]Started Editing.
 D1_L7=[63758]Stopped Editing.
 D1_L8=[63805]Started Editing.
 D1_L9=[64841]Stopped Editing.
-TotalEdit=37
+TotalEdit=94
 TotalDebug=0
 D1_E=32
 D1_D=0
@@ -76,11 +76,27 @@ D6_L1=[38919]Project Opened.
 D7=21-08-2024
 D7_L=1
 D7_L1=[44454]Project Closed.
+D8=12-02-2025
+D8_L=5
+D8_L1=[46204]Project Opened.
+D8_L2=[47065]Started Editing.
+D8_L3=[47439]Stopped Editing.
+D8_L4=[48034]Started Editing.
+D8_L5=[51634]Stopped Editing.
+D9=16-02-2025
+D9_E=57
+D9_D=0
+D9_L=1
+D9_L1=[80801]Project Closed.
+D10=18-02-2025
+D10_L=2
+D10_L1=[52780]Project Opened.
+D10_L2=[52890]Project Closed.
 
 [Opened Files]
 1=main.c
-t1=1
-Count=5
+t1=11
+Count=6
 2=main.h
 t2=1
 3=..\segundo\main.c
@@ -89,11 +105,13 @@ t3=1
 t4=1
 5=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c
 t5=1
+6=main.lst
+t6=1
 [main.c]
 Type=4
 
 [defines]
-buildcount=21
+buildcount=23
 [Units]
 Count=1
 1=main (main)

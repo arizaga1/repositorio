@@ -22,36 +22,33 @@
 02A     @INTERRUPT_AREA
 02B     cuenta
 02C     segundos
-02D     @PSTRINGCN7_696.P1
 02D     lcd_init.i
-02D     @PRINTF_D_696.P1
+02D     MAIN.@SCRATCH1
+02E     @PSTRINGCN7_696.P1
+02E     @PRINTF_U_696.P2
 02E-031 lcd_init.LCD_INIT_STRING
-02E     @PRINTF_D_696.P1
-02E     @PSTRINGCN7_696.@SCRATCH1
-02F     @PSTRINGCN7_696.@SCRATCH2
-02F     @PRINTF_D_696.@SCRATCH1
-030     @PSTRINGCN7_696.@SCRATCH3
-030     @PRINTF_D_696.@SCRATCH2
-031     @PSTRINGCN7_696.@SCRATCH4
-031     @PRINTF_D_696.@SCRATCH3
+02F     @PRINTF_U_696.P1
+02F     @PSTRINGCN7_696.@SCRATCH1
+030     @DIV88.P1
+030     @PSTRINGCN7_696.@SCRATCH2
+031     @DIV88.P1
+031     @PSTRINGCN7_696.@SCRATCH3
+032     lcd_putc.c
 032     lcd_init.@SCRATCH1
-032     @PRINTF_D_696.@SCRATCH4
-033     lcd_putc.c
-033     @DIV88.P1
-034     @delay_ms1.P1
-034     lcd_gotoxy.x
-034     @DIV88.P1
-035     lcd_gotoxy.y
-035     @DIV88.@SCRATCH1
-036     lcd_gotoxy.address
-037     lcd_gotoxy.@SCRATCH1
-038     lcd_send_byte.address
-039     lcd_send_byte.n
-03A     lcd_read_byte.low
-03A     lcd_send_byte.@SCRATCH1
-03B     lcd_read_byte.high
-03B     lcd_send_nibble.n
-03C     lcd_read_byte.@SCRATCH1
+032     @DIV88.@SCRATCH1
+032     @PSTRINGCN7_696.@SCRATCH4
+033     @delay_ms1.P1
+033     lcd_gotoxy.x
+034     lcd_gotoxy.y
+035     lcd_gotoxy.address
+036     lcd_gotoxy.@SCRATCH1
+037     lcd_send_byte.address
+038     lcd_send_byte.n
+039     lcd_read_byte.low
+039     lcd_send_byte.@SCRATCH1
+03A     lcd_send_nibble.n
+03A     lcd_read_byte.high
+03B     lcd_read_byte.@SCRATCH1
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -137,29 +134,29 @@ ROM Allocation:
 00008F  lcd_read_byte
 0000CB  lcd_init
 000109  lcd_gotoxy
-00011B  lcd_putc
-000147  @PSTRINGCN7_696
-0001A0  @DIV88
-0001B5  @PRINTF_D_696
-00020E  MAIN
-00020E  @cinit1
-00021A  @cinit2
+00011B  @DIV88
+000130  lcd_putc
+00015C  @PSTRINGCN7_696
+0001B5  @PRINTF_U_696
+0001EC  MAIN
+0001EC  @cinit1
+0001F8  @cinit2
 
 Project Directory:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\tercero\
 
 Project Files:
-    main.c                                                  [05-jul.-22 11:26  CRC=D4194B82]
-    main.h                                                  [11-feb.-22 18:10  CRC=00000000]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 16:48  CRC=15D497A0]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [22-feb.-16 11:05  CRC=D1A6378A]
+    main.c                                                  [12-feb.-25 13:20  CRC=FF6CA925]
+    main.h                                                  [19-jun.-24 11:55  CRC=00000000]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 15:48  CRC=15D497A0]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [22-feb.-16 10:05  CRC=D1A6378A]
 
-Source signature=8D3A5236
+Source signature=B88DAFD9
 Program memory checksum=0000
-Hex file CRC=F72C
+Hex file CRC=89BD
 
 Units:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\tercero\main (main)
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\tercero\main (main)
 
 Compiler Settings:
     Processor:      PIC16F877A
