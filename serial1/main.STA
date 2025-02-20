@@ -1,54 +1,60 @@
 
-ROM used:   598/8192 (7%)
-            598/8192 (7%) including unused fragments
+ROM used:   829/8192 (10%)
+            829/8192 (10%) including unused fragments
 
-            0.7 Average locations per line
-            49.8 Average locations per statement
+            1.0 Average locations per line
+            51.8 Average locations per statement
 
-RAM used:   10/368 (3%) at main() level
-            19/368 (5%) worst case
+RAM used:   11/368 (3%) at main() level
+            20/368 (5%) worst case
 
-Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack used: 2 worst case (2 in main + 0 for interrupts)
 Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   24    12 100  main.c
-    7     0   0  main.h
+   31    16 100  main.c
+   11     0   0  main.h
   796     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
 ----- -----
-  827    12 Total
+  838    16 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-0    136  23    0    255  2.7  main
-0     14   2    0    596  5.9  @const680
-0     88  15    4    179  3.3  @PSTRINGC7_1
-0     14   2    0    460  4.7  @const685
-0     14   2    0    814  7.2  @const686
-0     14   2    0    208  6.3  @const687
-0     89  15    5    354  4.7  @PSTRINGCN7_9600_62_63
-0    120  20    9    238  4.0  @PRINTF_LD_9600_62_63
-0     15   3    0    267  6.8  @const692
-0     90  15    4     90  2.5  @PSTRINGC7_9600_62_63
- Inline         0    145  2.2  @cinit1
+0     36   4    1    255  2.7  @PUTCHAR_2_
+0    189  23    0    423  2.8  main
+0     14   2    0             @const685
+0     88  11    4             @PSTRINGC7_1
+0     14   2    0             @const690
+0     14   2    0             @const691
+0     14   2    0             @const692
+0     86  10    4             @PSTRINGC7_676
+0     14   2    0             @const694
+0     14   2    0             @const695
+0     14   2    0             @const696
+0     14   2    0             @const697
+0     89  11    5             @PSTRINGCN7_9600_62_63
+0    120  14    9             @PRINTF_LD_9600_62_63
+0     15   2    0             @const702
+0     90  11    4             @PSTRINGC7_9600_62_63
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               11
-    Statements              12
-    Comments                138
-    Volume (V)              5826
-    Difficulty (D)          50.3
-    Effort to implement (E) 293065
-    Time to implement (T)   4 hours, 31 minutes
-    Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   10
-    Maintainability (MI)    101
+    Functions               2
+    Statements              16
+    Comments                144
+    Volume (V)              835
+    Difficulty (D)          4.4
+    Effort to implement (E) 3695
+    Time to implement (T)   3 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    133
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF   594  1450  
+00004-007FF   825  1219  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffff64010000180000008007000006040000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000fffffffffffffffffffffffffffffffff7fffffff7ffffff880700000f040000</PLACEMENT>
   <WINDOW type="default" module="ISIS">
-   <editor metric="0" gridmajor="2540000" mode="00000016" zoom="-1" scale="446" flipped="0" gridminor="254000" gridmode="32" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="127000">
+   <editor metric="0" gridmajor="2540000" mode="00000016" zoom="-1" scale="122" flipped="0" gridminor="254000" gridmode="32" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="127000">
     <world y1="-55880000" x1="-40640000" y2="55880000" x2="40640000"/>
-    <centre x="-6101380" y="41153380"/>
+    <centre x="-5124050" y="39414049"/>
     <origin x="0" y="0"/>
    </editor>
   </WINDOW>
+  <WINDOW type="default" module="DXP"/>
  </FRAME>
  <MODULE name="ARES">
   <editor metric="0" gridmajor="0" mode="00000000" zoom="10" scale="10" flipped="0" gridminor="0" gridmode="32" snapidx="3" snap="0" xcursor="0" orgmode="0" snaprange="0">
@@ -18,23 +19,24 @@
   </editor>
  </MODULE>
  <MODULE name="ISIS">
-  <editor metric="0" gridmajor="2540000" mode="00000016" zoom="-1" scale="446" flipped="0" gridminor="254000" gridmode="32" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="127000">
+  <editor metric="0" gridmajor="2540000" mode="00000016" zoom="-1" scale="122" flipped="0" gridminor="254000" gridmode="32" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="127000">
    <world y1="-55880000" x1="-40640000" y2="55880000" x2="40640000"/>
-   <centre x="-6101380" y="41153380"/>
+   <centre x="-5124050" y="39414049"/>
    <origin x="0" y="0"/>
   </editor>
  </MODULE>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="800" x="2488" flags="00000002" y="197" h="200" pid="0" iid="-1">
+   <POPUP w="800" x="1083" flags="00000003" y="0" h="200" pid="0" iid="-1">
     <PROPERTIES>
      <ITEM name="Message Column Width">661</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
+     <ITEM name="Time Column Width">120</ITEM>
      <ITEM name="Version">100</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="350" x="2508" flags="00000032" y="217" h="200" pid="1" iid="-1">
+   <POPUP w="350" x="1570" flags="00000032" y="217" h="200" pid="1" iid="-1">
     <PROPERTIES>
      <ITEM name="Address Column Width">82</ITEM>
      <ITEM name="AutoResize">No</ITEM>
@@ -51,12 +53,12 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="1384" x="2528" flags="00000000" y="237" h="883" pid="0" iid="3">
+   <POPUP w="1384" x="403" flags="00000000" y="100" h="883" pid="0" iid="3">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="450" x="3005" flags="00008023" y="494" h="250" pid="0" iid="2">
+   <POPUP w="1190" x="937" flags="00000023" y="77" h="447" pid="0" iid="2">
     <PROPERTIES>
-     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="AutoEcho">1</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
@@ -106,10 +108,10 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="994" x="2543" flags="0000000a" y="110" h="669" pid="1" iid="1">
+   <POPUP w="994" x="926" flags="0000000a" y="110" h="669" pid="1" iid="1">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="307" x="2708" flags="0000000a" y="417" h="285" pid="2" iid="1">
+   <POPUP w="307" x="1613" flags="0000000a" y="417" h="285" pid="2" iid="1">
     <PROPERTIES>
      <ITEM name="Address Column Width">93</ITEM>
      <ITEM name="AutoResize">No</ITEM>
@@ -124,6 +126,12 @@
      <ITEM name="Value Column Width">93</ITEM>
      <ITEM name="Version">100</ITEM>
      <ITEM name="nItems">0</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="939" x="-23" flags="00008023" y="80" h="429" pid="0" iid="4">
+    <PROPERTIES>
+     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
   </PWI>

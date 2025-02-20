@@ -1,11 +1,27 @@
 ÀÄmain
-   ÀÄmain  0/136  Ram=0
+   ÀÄmain  0/189  Ram=0
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@cinit2  (Inline)  Ram=0
       ÃÄ@PSTRINGC7_1  0/88  Ram=4
       ÃÄ@PSTRINGC7_1  0/88  Ram=4
       ÃÄ@PSTRINGC7_1  0/88  Ram=4
+      ÃÄ@PSTRINGC7_676  0/86  Ram=4
+      ³  ÃÄ@PUTCHAR_2_  0/36  Ram=1
+      ³  ÀÄ@PUTCHAR_2_  0/36  Ram=1
+      ÃÄ@PUTCHAR_2_  0/36  Ram=1
+      ÃÄ@PUTCHAR_2_  0/36  Ram=1
+      ÃÄ@PSTRINGC7_676  0/86  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PUTCHAR_2_  0/36  Ram=1
+      ÃÄ@PUTCHAR_2_  0/36  Ram=1
+      ÃÄ@PSTRINGC7_676  0/86  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PUTCHAR_2_  0/36  Ram=1
+      ÃÄ@PUTCHAR_2_  0/36  Ram=1
+      ÃÄ@PSTRINGC7_676  0/86  Ram=4
+      ³  ÀÄ*
       ÃÄ@PSTRINGCN7_9600_62_63  0/89  Ram=5
       ÃÄ@PRINTF_LD_9600_62_63  0/120  Ram=9
       ÃÄ@PSTRINGCN7_9600_62_63  0/89  Ram=5
-      ÀÄ@PSTRINGC7_9600_62_63  0/90  Ram=4
+      ÃÄ@PSTRINGC7_9600_62_63  0/90  Ram=4
+      ÀÄ@PUTCHAR_2_  0/36  Ram=1
