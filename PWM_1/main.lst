@@ -1,8 +1,8 @@
-CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:02
+CCS PCM C Compiler, Version 5.091, 13314               19-mar.-25 13:03
 
-               Filename:   C:\Users\j_ari\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\main.lst
+               Filename:   C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\main.lst
 
-               ROM used:   132 words (2%)
+               ROM used:   136 words (2%)
                            Largest free fragment is 2048
                RAM used:   7 (2%) at main() level
                            8 (2%) worst case
@@ -185,16 +185,20 @@ CCS PCM C Compiler, Version 5.091, 13314               24-may.-23 15:02
 007C:  MOVF   17,W
 007D:  ANDLW  CF
 007E:  MOVWF  17
-.................... delay_ms(200);
-007F:  MOVLW  C8
-0080:  MOVWF  22
-0081:  CALL   004
-0082:  GOTO   03D
+.................... delay_ms(1500);
+007F:  MOVLW  06
+0080:  MOVWF  21
+0081:  MOVLW  FA
+0082:  MOVWF  22
+0083:  CALL   004
+0084:  DECFSZ 21,F
+0085:  GOTO   081
+0086:  GOTO   03D
 ....................       //TODO: User Code
 ....................    }
 .................... 
 .................... }
-0083:  SLEEP
+0087:  SLEEP
 
 Configuration Fuses:
    Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

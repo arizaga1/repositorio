@@ -1,9 +1,9 @@
 
-ROM used:   132/8192 (2%)
-            132/8192 (2%) including unused fragments
+ROM used:   136/8192 (2%)
+            136/8192 (2%) including unused fragments
 
             0.2 Average locations per line
-            7.8 Average locations per statement
+            8.0 Average locations per statement
 
 RAM used:   7/368 (2%) at main() level
             8/368 (2%) worst case
@@ -21,8 +21,8 @@ Lines Stmts  %   Files
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-0     21  16    1             @delay_ms1
-0    107  81    1    450  2.8  main
+0     21  15    1             @delay_ms1
+0    111  82    1    450  2.8  main
  Inline         0             @cinit1
 
 Program metrics:
@@ -40,7 +40,7 @@ Program metrics:
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF   128  1916  
+00004-007FF   132  1912  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

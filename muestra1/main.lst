@@ -1,0 +1,1378 @@
+CCS PCH C Compiler, Version 5.091, 13314               24-feb.-25 13:56
+
+               Filename:   C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\muestra1\main.lst
+
+               ROM used:   1016 bytes (3%)
+                           Largest free fragment is 31484
+               RAM used:   72 (4%) at main() level
+                           131 (6%) worst case
+               Stack used: 2 locations (1 in main + 1 for interrupts)
+               Stack size: 31
+
+0000:  GOTO   03A2
+.................... #include <main.h>
+.................... #include <18F4550.h>
+.................... //////////// Standard Header file for the PIC18F4550 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC18F4550
+*
+001E:  MOVLW  E0
+0020:  ANDWF  FF6,F
+0022:  MOVLW  1F
+0024:  MOVWF  00
+0026:  TBLRD*
+0028:  TBLWT*+
+002A:  DECFSZ 00,F
+002C:  BRA    0026
+002E:  TBLRD*
+0030:  TBLWT*
+0032:  GOTO   03CE (RETURN)
+0036:  MOVF   FF2,W
+0038:  MOVWF  03
+003A:  BCF    FF2.7
+003C:  BSF    FA6.7
+003E:  BSF    FA6.2
+0040:  MOVLB  F
+0042:  MOVLW  55
+0044:  MOVWF  FA7
+0046:  MOVLW  AA
+0048:  MOVWF  FA7
+004A:  BSF    FA6.1
+004C:  NOP   
+004E:  MOVF   03,W
+0050:  IORWF  FF2,F
+0052:  MOVLB  0
+0054:  RETURN 0
+*
+00C4:  BCF    FA6.6
+00C6:  MOVF   FF6,W
+00C8:  ANDLW  1F
+00CA:  MOVWF  00
+00CC:  MOVLW  E0
+00CE:  ANDWF  FF6,F
+00D0:  TBLRD*-
+00D2:  MOVFF  7A,01
+00D6:  TSTFSZ 00
+00D8:  BRA    00EA
+00DA:  MOVF   FF6,W
+00DC:  ADDLW  01
+00DE:  ANDLW  3F
+00E0:  BNZ   00EA
+00E2:  BSF    FA6.4
+00E4:  TBLRD*+
+00E6:  RCALL  0036
+00E8:  TBLRD*-
+00EA:  TSTFSZ 00
+00EC:  BRA    00FC
+00EE:  MOVFF  FEE,FF5
+00F2:  MOVF   01,F
+00F4:  BZ    00FE
+00F6:  TBLWT+*
+00F8:  DECF   01,F
+00FA:  BRA    0102
+00FC:  DECF   00,F
+00FE:  TBLRD+*
+0100:  TBLWT*
+0102:  MOVLW  1F
+0104:  ANDWF  FF6,W
+0106:  XORLW  1F
+0108:  BNZ   00D6
+010A:  RCALL  0036
+010C:  TSTFSZ 01
+010E:  BRA    00D6
+0110:  CLRF   FF8
+0112:  GOTO   0380 (RETURN)
+.................... 
+.................... #list
+.................... 
+.................... #device ADC=10
+.................... 
+.................... #FUSES NOWDT                 	//No Watch Dog Timer
+.................... 
+.................... #use delay(crystal=20000000)
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8,stream=PORT1)
+*
+0056:  BTFSS  F9E.4
+0058:  BRA    0056
+005A:  MOVWF  FAD
+005C:  RETURN 0
+.................... 
+.................... 
+....................  
+.................... #define _bootloader
+.................... 
+.................... // NOTE - User must include bootloader.h in application program
+.................... #include <bootloader.h>
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////                       BOOTLOADER.H                                ////
+.................... ////                                                                   ////
+.................... ////  This include file must be included by any application loaded     ////
+.................... ////  by the example bootloader (ex_bootloader.c).                     ////
+.................... ////                                                                   ////
+.................... ////  The directives in this file relocate the reset and interrupt     ////
+.................... ////  vectors as well as reserving space for the bootloader.           ////
+.................... ////                                                                   ////
+.................... ////  LOADER_END may need to be adjusted for a specific chip and       ////
+.................... ////  bootloader.  LOADER_END must be 1 minus a multiple of            ////
+.................... ////  FLASH_ERASE_SIZE.                                                ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996,2014 Custom Computer Services           ////
+.................... //// This source code may only be used by licensed users of the CCS    ////
+.................... //// C compiler.  This source code may only be distributed to other    ////
+.................... //// licensed users of the CCS C compiler.  No other use,              ////
+.................... //// reproduction or distribution is permitted without written         ////
+.................... //// permission.  Derivative programs created using this software      ////
+.................... //// in object code form are not restricted in any way.                ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #ifndef __BOOTLOADER_H__
+.................... #define __BOOTLOADER_H__
+.................... 
+.................... #ifndef LOADER_END
+....................  #if defined(__PCM__)
+....................   #ifdef BOOTLOADER_MODE2X
+....................    #define LOADER_END 0x4BF
+....................   #else
+....................    #define LOADER_END 0x33F
+....................   #endif
+....................  #elif defined(__PCH__)
+....................   #define FLASH_SIZE getenv("FLASH_ERASE_SIZE")
+....................   #if ((0x500 % FLASH_SIZE) == 0)         //IF 0x500 is even flash boundary
+....................    #define LOADER_END   0x4FF
+....................   #else                                  //ELSE, goto next even boundary
+....................    #define LOADER_END   ((0x500+FLASH_SIZE-(0x500 % FLASH_SIZE))-1)
+....................   #endif
+....................  #else
+....................   #error Bootloader only works with PCM or PCH compiler
+....................  #endif
+.................... #endif
+.................... 
+.................... #define LOADER_SIZE   LOADER_END
+.................... 
+.................... #ifndef BOOTLOADER_AT_START
+....................  #define BOOTLOADER_AT_START
+.................... #endif
+.................... 
+.................... #ifndef _bootloader
+....................  #if defined(__PCM__)
+....................   #build(reset=LOADER_END+1, interrupt=LOADER_END+5)
+....................  #elif defined(__PCH__)
+....................   #build(reset=LOADER_END+1, interrupt=LOADER_END+9)
+....................  #endif
+.................... 
+....................  #org 0, LOADER_END {}
+.................... #else
+....................  #ifdef __PCM__
+....................   #if getenv("PROGRAM_MEMORY") <= 0x800
+....................    #org LOADER_END+3, (getenv("PROGRAM_MEMORY") - 1) {}
+....................   #else
+....................    #org LOADER_END+3, 0x7FF {}
+....................    #if getenv("PROGRAM_MEMORY") <= 0x1000
+....................     #org 0x800, (getenv("PROGRAM_MEMORY") - 1) {}
+....................    #else
+....................     #org 0x800, 0xFFF{}
+....................     #if getenv("PROGRAM_MEMORY") <= 0x1800
+....................      #org 0x1000, (getenv("PROGRAM_MEMORY") - 1) {}
+....................     #else
+....................      #org 0x1000, 0x17FF {}
+....................      #if getenv("PROGRAM_MEMORY") <= 0x2000
+....................       #org 0x1800, (getenv("PROGRAM_MEMORY") - 1) {}
+....................      #else
+....................       #org 0x1800, 0x1FFF {}
+....................       #if getenv("PROGRAM_MEMORY") <= 0x2800
+....................        #org 0x2000, (getenv("PROGRAM_MEMORY") - 1) {}
+....................       #else
+....................        #org 0x2000, 0x27FF {}
+....................        #if getenv("PROGRAM_MEMORY") <= 0x3000
+....................         #org 0x2800, (getenv("PROGRAM_MEMORY") - 1) {}
+....................        #else
+....................         #org 0x2800, 0x2FFF {}
+....................         #if getenv("PROGRAM_MEMORY") <= 0x3800
+....................          #org 0x3000, (getenv("PROGRAM_MEMORY") - 1) {}
+....................         #else
+....................          #org 0x3000, 0x37FF {}
+....................          #org 0x3800, 0x3FFF {}
+....................         #endif
+....................        #endif
+....................       #endif
+....................      #endif
+....................     #endif
+....................    #endif
+....................   #endif
+....................  #else
+....................   #if getenv("PROGRAM_MEMORY") <= 0x10000
+....................    #org LOADER_END+5, (getenv("PROGRAM_MEMORY") - 1) {}
+....................   #else
+....................    #org LOADER_END+5, 0xFFFE {}
+....................    #org 0x10000, (getenv("PROGRAM_MEMORY") - 1) {}
+....................   #endif
+....................  #endif
+.................... #endif
+.................... 
+.................... #endif
+.................... 
+.................... #include <loader.c>
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////                         loader.c                                  ////
+.................... ////                                                                   ////
+.................... //// This driver will take an Intel 8-bit Hex file over RS232 channels ////
+.................... //// and modify the flash program memory with the new code.  A proxy   ////
+.................... //// function is required to sit between the real loading function     ////
+.................... //// and the main code because the #org preprocessor command could     ////
+.................... //// possibly change the order of functions within a defined block.    ////
+.................... ////                                                                   ////
+.................... //// After each good line, the loader sends an ACKLOD character.  The  ////
+.................... //// driver uses XON/XOFF flow control.  Also, any buffer on the PC    ////
+.................... //// UART must be turned off, or to its lowest setting, otherwise it   ////
+.................... //// will miss data.                                                   ////
+.................... ////                                                                   ////
+.................... ////                                                                   ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996,2014 Custom Computer Services           ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... 
+.................... #ifndef LOADER_END
+....................  #define LOADER_END      getenv("PROGRAM_MEMORY")-1
+.................... 
+....................  #if defined(__PCM__)
+....................   #define LOADER_SIZE   0x27F
+....................  #elif defined(__PCH__)
+....................   #if (getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE")) == 0
+....................    #define LOADER_SIZE   0x3FF
+....................   #else
+....................    #define LOADER_SIZE   (getenv("PROGRAM_MEMORY") % (getenv("FLASH_ERASE_SIZE")) - 1)
+....................   #endif
+....................  #endif
+.................... #endif
+.................... 
+.................... #define LOADER_ADDR LOADER_END-LOADER_SIZE
+.................... 
+.................... #ifndef BOOTLOADER_AT_START
+....................  #ORG LOADER_ADDR+4, LOADER_END auto=0 default
+.................... #endif
+.................... 
+.................... #ifndef BUFFER_LEN_LOD
+....................  #define BUFFER_LEN_LOD    64
+.................... #endif
+.................... 
+.................... #ifdef BOOTLOADER_MODE2X
+....................  #define BUFFER_COUNT   2
+.................... #else
+....................  #define BUFFER_COUNT   1
+.................... #endif
+.................... 
+.................... #if defined(__PCM__) && !getenv("ENH16") && (BUFFER_COUNT == 2)
+....................  struct
+....................  {
+....................    int8 idx;
+....................    char *buffer;
+....................  } rBuffer[BUFFER_COUNT];
+.................... 
+....................  char Buffer1[BUFFER_LEN_LOD];
+....................  char Buffer2[BUFFER_LEN_LOD];
+.................... #else
+....................  struct
+....................  {
+....................    int8 idx;
+....................    char buffer[BUFFER_LEN_LOD];
+....................  } rBuffer[BUFFER_COUNT];
+.................... #endif
+.................... 
+.................... #define ACKLOD 0x06
+.................... #define XON    0x11
+.................... #define XOFF   0x13
+.................... 
+.................... unsigned int atoi_b16(char *s);
+.................... 
+.................... #ifdef BOOTLOADER_STREAM
+....................  #define BootLoaderGetc()     fgetc(BOOTLOADER_STREAM)
+....................  #define BootLoaderPutc(c)    fputc(c, BOOTLOADER_STREAM)
+.................... #else
+....................  #define BootLoaderGetc()     getc()
+....................  #define BootLoaderPutc(c)    putc(c)
+.................... #endif
+.................... 
+.................... void real_load_program (void)
+*
+0116:  BCF    48.1
+0118:  CLRF   4E
+011A:  CLRF   4D
+.................... {
+....................    int1  do_ACKLOD, done=FALSE;
+....................    int8  checksum, line_type;
+....................    int16 l_addr,h_addr=0;
+....................    int32 addr;
+....................   #if getenv("FLASH_ERASE_SIZE") != getenv("FLASH_WRITE_SIZE")
+....................    int32 next_addr;
+....................   #endif
+....................    int8  dataidx, i, count;
+....................    int8  data[BUFFER_LEN_LOD / 2];
+....................   #ifdef BOOTLOADER_MODE2X
+....................    int8  buffidx;
+....................   #endif
+....................    
+....................   #if defined(__PCM__) && !getenv("ENH16") && (BUFFER_COUNT == 2)
+....................    rBuffer[0].buffer = &Buffer1[0];
+....................    rBuffer[1].buffer = &Buffer2[0];
+....................   #endif
+....................    
+....................   #ifdef BOOTLOADER_MODE2X
+....................    buffidx = 0;
+.................... 
+....................    while (!done)  // Loop until the entire program is downloaded
+....................    {
+....................       rBuffer[buffidx].idx = 0;     // Read into the buffer until 0x0D ('\r') is received or the buffer is full
+....................       
+....................       do {
+....................          rBuffer[buffidx].buffer[rBuffer[buffidx].idx] = BootLoaderGetc();
+....................          
+....................       } while ((rBuffer[buffidx].buffer[rBuffer[buffidx].idx++] != 0x0D) && (rBuffer[buffidx].idx <= BUFFER_LEN_LOD));
+....................       
+....................       if(++buffidx >= BUFFER_COUNT)
+....................       {
+....................   #else
+....................    while (!done)  // Loop until the entire program is downloaded
+011C:  BTFSC  48.1
+011E:  BRA    038E
+....................    {
+....................       rBuffer[0].idx = 0;
+0120:  CLRF   06
+....................       
+....................       do {
+....................          rBuffer[0].buffer[rBuffer[0].idx] = BootLoaderGetc();
+0122:  CLRF   03
+0124:  MOVF   06,W
+0126:  ADDLW  07
+0128:  MOVWF  FE9
+012A:  MOVLW  00
+012C:  ADDWFC 03,W
+012E:  MOVWF  FEA
+0130:  BTFSS  F9E.5
+0132:  BRA    0130
+0134:  MOVFF  FAE,FEF
+....................          
+....................       } while ((rBuffer[0].buffer[rBuffer[0].idx++] != 0x0D) && (rBuffer[0].idx <= BUFFER_LEN_LOD));
+0138:  MOVF   06,W
+013A:  INCF   06,F
+013C:  CLRF   03
+013E:  ADDLW  07
+0140:  MOVWF  FE9
+0142:  MOVLW  00
+0144:  ADDWFC 03,W
+0146:  MOVWF  FEA
+0148:  MOVF   FEF,W
+014A:  SUBLW  0D
+014C:  BZ    0154
+014E:  MOVF   06,W
+0150:  SUBLW  40
+0152:  BC    0122
+....................   #endif
+....................   
+....................          BootLoaderPutc(XOFF);  // Suspend sender
+0154:  MOVLW  13
+0156:  RCALL  0056
+....................    
+....................          do_ACKLOD = TRUE;
+0158:  BSF    48.0
+....................          
+....................         #ifdef BOOTLOADER_MODE2X
+....................          if(rBuffer[0].idx != rBuffer[1].idx)
+....................             do_ACKLOD = FALSE;
+....................          else
+....................          {
+....................             for(i=0;i<(rBuffer[0].idx-1);i++)
+....................             {
+....................                if(rBuffer[0].buffer[i] != rBuffer[1].buffer[i])
+....................                {
+....................                   do_ACKLOD = FALSE;
+....................                   break;
+....................                }
+....................             }
+....................             
+....................             if(do_ACKLOD)
+....................             {
+....................         #endif   
+....................                // Only process data blocks that start with ':'
+....................                if (rBuffer[0].buffer[0] == ':')
+015A:  MOVF   07,W
+015C:  SUBLW  3A
+015E:  BTFSS  FD8.2
+0160:  BRA    0380
+....................                {
+....................                   count = atoi_b16 (&rBuffer[0].buffer[1]);  // Get the number of bytes from the buffer
+0162:  CLRF   x7F
+0164:  MOVLW  08
+0166:  MOVWF  x7E
+0168:  RCALL  005E
+016A:  MOVFF  01,59
+....................          
+....................                   // Get the lower 16 bits of address
+....................                   l_addr = make16(atoi_b16(&rBuffer[0].buffer[3]),atoi_b16(&rBuffer[0].buffer[5]));
+016E:  CLRF   x7F
+0170:  MOVLW  0A
+0172:  MOVWF  x7E
+0174:  RCALL  005E
+0176:  MOVFF  01,7A
+017A:  CLRF   x7F
+017C:  MOVLW  0C
+017E:  MOVWF  x7E
+0180:  RCALL  005E
+0182:  MOVFF  7A,4C
+0186:  MOVFF  01,4B
+....................          
+....................                   line_type = atoi_b16 (&rBuffer[0].buffer[7]);
+018A:  CLRF   x7F
+018C:  MOVLW  0E
+018E:  MOVWF  x7E
+0190:  RCALL  005E
+0192:  MOVFF  01,4A
+....................          
+....................                   addr = make32(h_addr,l_addr);
+0196:  MOVFF  4D,51
+019A:  MOVFF  4E,52
+019E:  MOVFF  4B,4F
+01A2:  MOVFF  4C,50
+....................          
+....................                  #if defined(__PCM__)  // PIC16 uses word addresses
+....................                   addr /= 2;
+....................                  #endif
+....................                   
+....................                   checksum = 0;  // Sum the bytes to find the check sum value
+01A6:  CLRF   49
+....................                   for (i=1; i<(rBuffer[0].idx-3); i+=2)
+01A8:  MOVLW  01
+01AA:  MOVWF  58
+01AC:  MOVLW  03
+01AE:  SUBWF  06,W
+01B0:  SUBWF  58,W
+01B2:  BC    01DC
+....................                      checksum += atoi_b16 (&rBuffer[0].buffer[i]);
+01B4:  CLRF   03
+01B6:  MOVF   58,W
+01B8:  ADDLW  07
+01BA:  MOVWF  01
+01BC:  MOVLW  00
+01BE:  ADDWFC 03,F
+01C0:  MOVFF  01,7A
+01C4:  MOVFF  03,7B
+01C8:  MOVFF  03,7F
+01CC:  MOVFF  01,7E
+01D0:  RCALL  005E
+01D2:  MOVF   01,W
+01D4:  ADDWF  49,F
+01D6:  MOVLW  02
+01D8:  ADDWF  58,F
+01DA:  BRA    01AC
+....................                   checksum = 0xFF - checksum + 1;
+01DC:  MOVLW  FF
+01DE:  BSF    FD8.0
+01E0:  SUBFWB 49,W
+01E2:  ADDLW  01
+01E4:  MOVWF  49
+....................          
+....................                   if (checksum != atoi_b16 (&rBuffer[0].buffer[rBuffer[0].idx-3]))
+01E6:  MOVLW  03
+01E8:  SUBWF  06,W
+01EA:  CLRF   03
+01EC:  ADDLW  07
+01EE:  MOVWF  01
+01F0:  MOVLW  00
+01F2:  ADDWFC 03,F
+01F4:  MOVFF  01,7A
+01F8:  MOVFF  03,7B
+01FC:  MOVFF  03,7F
+0200:  MOVFF  01,7E
+0204:  RCALL  005E
+0206:  MOVF   01,W
+0208:  SUBWF  49,W
+020A:  BZ    0210
+....................                      do_ACKLOD = FALSE;
+020C:  BCF    48.0
+020E:  BRA    0380
+....................                   else
+....................                   {
+....................                      // If the line type is 1, then data is done being sent
+....................                      if (line_type == 1)
+0210:  DECFSZ 4A,W
+0212:  BRA    0218
+....................                         done = TRUE;
+0214:  BSF    48.1
+0216:  BRA    0380
+....................                      else if (line_type == 4)
+0218:  MOVF   4A,W
+021A:  SUBLW  04
+021C:  BNZ   0240
+....................                         h_addr = make16(atoi_b16(&rBuffer[0].buffer[9]), atoi_b16(&rBuffer[0].buffer[11]));
+021E:  CLRF   x7F
+0220:  MOVLW  10
+0222:  MOVWF  x7E
+0224:  RCALL  005E
+0226:  MOVFF  01,7A
+022A:  CLRF   x7F
+022C:  MOVLW  12
+022E:  MOVWF  x7E
+0230:  RCALL  005E
+0232:  MOVFF  01,7B
+0236:  MOVFF  7A,4E
+023A:  MOVFF  01,4D
+023E:  BRA    0380
+....................                      else if (line_type == 0)
+0240:  MOVF   4A,F
+0242:  BTFSS  FD8.2
+0244:  BRA    0380
+....................                      {
+....................                         if ((addr < LOADER_ADDR || addr > LOADER_END) && addr < getenv("PROGRAM_MEMORY"))
+0246:  MOVF   52,F
+0248:  BNZ   0256
+024A:  MOVF   51,F
+024C:  BNZ   0256
+024E:  MOVF   50,W
+0250:  SUBLW  04
+0252:  BTFSC  FD8.0
+0254:  BRA    0380
+0256:  MOVF   52,F
+0258:  BTFSS  FD8.2
+025A:  BRA    0380
+025C:  MOVF   51,F
+025E:  BTFSS  FD8.2
+0260:  BRA    0380
+0262:  MOVF   50,W
+0264:  SUBLW  7F
+0266:  BTFSS  FD8.0
+0268:  BRA    0380
+....................                         {
+....................                            // Loops through all of the data and stores it in data
+....................                            // The last 2 bytes are the check sum, hence buffidx-3
+....................                            for (i = 9,dataidx=0; i < rBuffer[0].idx-3; i += 2)
+026A:  MOVLW  09
+026C:  MOVWF  58
+026E:  CLRF   57
+0270:  MOVLW  03
+0272:  SUBWF  06,W
+0274:  SUBWF  58,W
+0276:  BC    02BE
+....................                               data[dataidx++]=atoi_b16(&rBuffer[0].buffer[i]);
+0278:  MOVF   57,W
+027A:  INCF   57,F
+027C:  CLRF   03
+027E:  ADDLW  5A
+0280:  MOVWF  01
+0282:  MOVLW  00
+0284:  ADDWFC 03,F
+0286:  MOVFF  01,7A
+028A:  MOVFF  03,7B
+028E:  CLRF   03
+0290:  MOVF   58,W
+0292:  ADDLW  07
+0294:  MOVWF  01
+0296:  MOVLW  00
+0298:  ADDWFC 03,F
+029A:  MOVFF  01,7C
+029E:  MOVFF  03,7D
+02A2:  MOVFF  03,7F
+02A6:  MOVFF  01,7E
+02AA:  RCALL  005E
+02AC:  MOVFF  7B,FEA
+02B0:  MOVFF  7A,FE9
+02B4:  MOVFF  01,FEF
+....................          
+....................                            #if getenv("FLASH_ERASE_SIZE") > getenv("FLASH_WRITE_SIZE")
+02B8:  MOVLW  02
+02BA:  ADDWF  58,F
+02BC:  BRA    0270
+....................                               if ((addr!=next_addr) && (addr > (next_addr + (getenv("FLASH_ERASE_SIZE") - (next_addr % getenv("FLASH_ERASE_SIZE"))))) && ((addr & (getenv("FLASH_ERASE_SIZE")-1)) != 0))
+02BE:  MOVF   53,W
+02C0:  SUBWF  4F,W
+02C2:  BNZ   02D6
+02C4:  MOVF   54,W
+02C6:  SUBWF  50,W
+02C8:  BNZ   02D6
+02CA:  MOVF   55,W
+02CC:  SUBWF  51,W
+02CE:  BNZ   02D6
+02D0:  MOVF   56,W
+02D2:  SUBWF  52,W
+02D4:  BZ    0350
+02D6:  MOVF   53,W
+02D8:  ANDLW  3F
+02DA:  MOVWF  00
+02DC:  CLRF   01
+02DE:  CLRF   02
+02E0:  CLRF   03
+02E2:  MOVLW  40
+02E4:  BSF    FD8.0
+02E6:  SUBFWB 00,F
+02E8:  MOVLW  00
+02EA:  SUBFWB 01,F
+02EC:  SUBFWB 02,F
+02EE:  SUBFWB 03,F
+02F0:  MOVF   53,W
+02F2:  ADDWF  00,F
+02F4:  MOVF   54,W
+02F6:  ADDWFC 01,F
+02F8:  MOVF   55,W
+02FA:  ADDWFC 02,F
+02FC:  MOVF   56,W
+02FE:  ADDWFC 03,F
+0300:  MOVF   03,W
+0302:  SUBWF  52,W
+0304:  BNC   0350
+0306:  BNZ   031E
+0308:  MOVF   02,W
+030A:  SUBWF  51,W
+030C:  BNC   0350
+030E:  BNZ   031E
+0310:  MOVF   01,W
+0312:  SUBWF  50,W
+0314:  BNC   0350
+0316:  BNZ   031E
+0318:  MOVF   4F,W
+031A:  SUBWF  00,W
+031C:  BC    0350
+031E:  MOVF   4F,W
+0320:  ANDLW  3F
+0322:  MOVWF  x7A
+0324:  CLRF   x7B
+0326:  CLRF   x7C
+0328:  CLRF   x7D
+032A:  MOVF   x7A,F
+032C:  BNZ   033A
+032E:  MOVF   x7B,F
+0330:  BNZ   033A
+0332:  MOVF   x7C,F
+0334:  BNZ   033A
+0336:  MOVF   x7D,F
+0338:  BZ    0350
+....................                               {
+....................                                  #if defined(__PCH__) && defined(BOOTLOADER_AT_START)
+....................                                     #if ((getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE")) != 0)
+....................                                        if (addr > (getenv("PROGRAM_MEMORY") - (getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE"))))
+....................                                        {
+....................                                           read_program_memory(getenv("PROGRAM_MEMORY"), rBuffer[0].buffer, getenv("FLASH_ERASE_SIZE") - (getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE")));
+....................                                           erase_program_eeprom(addr);
+....................                                           write_program_memory(getenv("PROGRAM_MEMORY"), rBuffer[0].buffer, getenv("FLASH_ERASE_SIZE") - (getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE")));
+....................                                        }
+....................                                        else
+....................                                     #endif
+....................                                  #endif
+....................                                           erase_program_eeprom(addr);
+033A:  BSF    FD0.6
+033C:  MOVFF  51,FF8
+0340:  MOVFF  50,FF7
+0344:  MOVFF  4F,FF6
+0348:  BSF    FA6.4
+034A:  BCF    FA6.6
+034C:  RCALL  0036
+034E:  CLRF   FF8
+....................                               }
+....................                               #if defined(__PCM__)
+....................                                  next_addr = addr + count/2;
+....................                               #else
+....................                                  next_addr = addr + count;
+0350:  MOVF   59,W
+0352:  ADDWF  4F,W
+0354:  MOVWF  53
+0356:  MOVLW  00
+0358:  ADDWFC 50,W
+035A:  MOVWF  54
+035C:  MOVLW  00
+035E:  ADDWFC 51,W
+0360:  MOVWF  55
+0362:  MOVLW  00
+0364:  ADDWFC 52,W
+0366:  MOVWF  56
+....................                               #endif
+....................                            #endif
+....................                            
+....................                            #if defined(__PCH__) && defined(BOOTLOADER_AT_START)
+....................                               #if ((getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE")) != 0)
+....................                                  if (addr == (getenv("PROGRAM_MEMORY") - (getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE"))))
+....................                                  {
+....................                                     read_program_memory(getenv("PROGRAM_MEMORY"), rBuffer[0].buffer, getenv("FLASH_ERASE_SIZE") - (getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE")));
+....................                                     write_program_memory(addr, data, count);
+....................                                     write_program_memory(getenv("PROGRAM_MEMORY"), rBuffer[0].buffer, getenv("FLASH_ERASE_SIZE") - (getenv("PROGRAM_MEMORY") % getenv("FLASH_ERASE_SIZE")));
+....................                                  }
+....................                                  else
+....................                               #endif
+....................                            #endif
+....................                                     write_program_memory(addr, data, count);
+0368:  MOVFF  51,FF8
+036C:  MOVFF  50,FF7
+0370:  MOVFF  4F,FF6
+0374:  CLRF   FEA
+0376:  MOVLW  5A
+0378:  MOVWF  FE9
+037A:  MOVFF  59,7A
+037E:  BRA    00C4
+....................                         }
+....................                      }
+....................                   }
+....................                }
+....................         #ifdef BOOTLOADER_MODE2X
+....................             }
+....................          }
+....................          
+....................          buffidx = 0;
+....................         #endif
+.................... 
+....................          if (do_ACKLOD)
+0380:  BTFSS  48.0
+0382:  BRA    0388
+....................             BootLoaderPutc(ACKLOD);
+0384:  MOVLW  06
+0386:  RCALL  0056
+....................          
+....................          BootLoaderPutc(XON);
+0388:  MOVLW  11
+038A:  RCALL  0056
+....................          
+....................      #ifdef BOOTLOADER_MODE2X
+038C:  BRA    011C
+....................       } 
+....................      #endif
+....................    }
+.................... 
+....................    BootLoaderPutc(ACKLOD);
+038E:  MOVLW  06
+0390:  RCALL  0056
+....................    BootLoaderPutc(XON);
+0392:  MOVLW  11
+0394:  RCALL  0056
+.................... 
+....................    reset_cpu();
+0396:  RESET
+0398:  GOTO   039E (RETURN)
+.................... }
+.................... 
+.................... unsigned int atoi_b16(char *s) {  // Convert two hex characters to a int8
+*
+005E:  CLRF   x80
+....................    unsigned int result = 0;
+....................    int i;
+.................... 
+....................    for (i=0; i<2; i++,s++)  {
+0060:  CLRF   x81
+0062:  MOVF   x81,W
+0064:  SUBLW  01
+0066:  BNC   00BE
+....................       if (*s >= 'A')
+0068:  MOVFF  7F,03
+006C:  MOVFF  7E,FE9
+0070:  MOVFF  7F,FEA
+0074:  MOVF   FEF,W
+0076:  SUBLW  40
+0078:  BC    009A
+....................          result = 16*result + (*s) - 'A' + 10;
+007A:  MOVF   x80,W
+007C:  MULLW  10
+007E:  MOVFF  FF3,82
+0082:  MOVFF  7F,03
+0086:  MOVFF  7E,FE9
+008A:  MOVFF  7F,FEA
+008E:  MOVF   FEF,W
+0090:  ADDWF  x82,W
+0092:  ADDLW  BF
+0094:  ADDLW  0A
+0096:  MOVWF  x80
+0098:  BRA    00B2
+....................       else
+....................          result = 16*result + (*s) - '0';
+009A:  MOVF   x80,W
+009C:  MULLW  10
+009E:  MOVFF  FF3,82
+00A2:  MOVFF  7E,FE9
+00A6:  MOVFF  7F,FEA
+00AA:  MOVF   FEF,W
+00AC:  ADDWF  x82,W
+00AE:  ADDLW  D0
+00B0:  MOVWF  x80
+00B2:  MOVF   x81,W
+00B4:  INCF   x81,F
+00B6:  INCF   x7E,F
+00B8:  BTFSC  FD8.2
+00BA:  INCF   x7F,F
+00BC:  BRA    0062
+....................    }
+.................... 
+....................    return(result);
+00BE:  MOVFF  80,01
+00C2:  RETURN 0
+.................... }
+.................... 
+.................... #ifndef BOOTLOADER_AT_START
+....................  #ORG default
+....................  #ORG LOADER_ADDR, LOADER_ADDR+3
+.................... #endif
+.................... void load_program(void)
+.................... {
+....................    real_load_program();
+*
+039C:  BRA    0116
+039E:  GOTO   03F4 (RETURN)
+.................... }
+.................... 
+.................... 
+.................... #define PUSH_BUTTON PIN_A5
+.................... 
+.................... #INT_GLOBAL
+.................... void isr(void){
+....................    jump_to_isr(LOADER_END+9);
+*
+0008:  GOTO   0508
+000C:  NOP   
+000E:  NOP   
+0010:  NOP   
+0012:  NOP   
+0014:  NOP   
+0016:  NOP   
+0018:  GOTO   0518
+.................... }
+.................... 
+001C:  RETFIE 0
+.................... #org LOADER_END+2, LOADER_END+4
+.................... void application(void) {
+....................   while(TRUE);
+*
+0500:  BRA    0500
+0502:  RETURN 0
+.................... }
+.................... 
+.................... #include <lcd.c>
+.................... ///////////////////////////////////////////////////////////////////////////////
+.................... ////                             LCD.C                                     ////
+.................... ////                 Driver for common LCD modules                         ////
+.................... ////                                                                       ////
+.................... ////  lcd_init()   Must be called before any other function.               ////
+.................... ////                                                                       ////
+.................... ////  lcd_putc(c)  Will display c on the next position of the LCD.         ////
+.................... ////                 \a  Set cursor position to upper left                 ////
+.................... ////                 \f  Clear display, set cursor to upper left           ////
+.................... ////                 \n  Go to start of second line                        ////
+.................... ////                 \b  Move back one position                            ////
+.................... ////              If LCD_EXTENDED_NEWLINE is defined, the \n character     ////
+.................... ////              will erase all remanining characters on the current      ////
+.................... ////              line, and move the cursor to the beginning of the next   ////
+.................... ////              line.                                                    ////
+.................... ////              If LCD_EXTENDED_NEWLINE is defined, the \r character     ////
+.................... ////              will move the cursor to the start of the current         ////
+.................... ////              line.                                                    ////
+.................... ////                                                                       ////
+.................... ////  lcd_gotoxy(x,y) Set write position on LCD (upper left is 1,1)        ////
+.................... ////                                                                       ////
+.................... ////  lcd_getc(x,y)   Returns character at position x,y on LCD             ////
+.................... ////                                                                       ////
+.................... ////  lcd_cursor_on(int1 on)   Turn the cursor on (on=TRUE) or off         ////
+.................... ////              (on=FALSE).                                              ////
+.................... ////                                                                       ////
+.................... ////  lcd_set_cgram_char(w, *p)   Write a custom character to the CGRAM.   ////
+.................... ////                                                                       ////
+.................... ////                                                                       ////
+.................... ////  CONFIGURATION                                                        ////
+.................... ////  The LCD can be configured in one of two ways: a.) port access or     ////
+.................... ////  b.) pin access.  Port access requires the entire 7 bit interface     ////
+.................... ////  connected to one GPIO port, and the data bits (D4:D7 of the LCD)     ////
+.................... ////  connected to sequential pins on the GPIO.  Pin access                ////
+.................... ////  has no requirements, all 7 bits of the control interface can         ////
+.................... ////  can be connected to any GPIO using several ports.                    ////
+.................... ////                                                                       ////
+.................... ////  To use port access, #define LCD_DATA_PORT to the SFR location of     ////
+.................... ////  of the GPIO port that holds the interface, -AND- edit LCD_PIN_MAP    ////
+.................... ////  of this file to configure the pin order.  If you are using a         ////
+.................... ////  baseline PIC (PCB), then LCD_OUTPUT_MAP and LCD_INPUT_MAP also must  ////
+.................... ////  be defined.                                                          ////
+.................... ////                                                                       ////
+.................... ////  Example of port access:                                              ////
+.................... ////     #define LCD_DATA_PORT getenv("SFR:PORTD")                         ////
+.................... ////                                                                       ////
+.................... ////  To use pin access, the following pins must be defined:               ////
+.................... ////     LCD_ENABLE_PIN                                                    ////
+.................... ////     LCD_RS_PIN                                                        ////
+.................... ////     LCD_RW_PIN                                                        ////
+.................... ////     LCD_DATA4                                                         ////
+.................... ////     LCD_DATA5                                                         ////
+.................... ////     LCD_DATA6                                                         ////
+.................... ////     LCD_DATA7                                                         ////
+.................... ////                                                                       ////
+.................... ////  Example of pin access:                                               ////
+.................... ////     #define LCD_ENABLE_PIN  PIN_E0                                    ////
+.................... ////     #define LCD_RS_PIN      PIN_E1                                    ////
+.................... ////     #define LCD_RW_PIN      PIN_E2                                    ////
+.................... ////     #define LCD_DATA4       PIN_D4                                    ////
+.................... ////     #define LCD_DATA5       PIN_D5                                    ////
+.................... ////     #define LCD_DATA6       PIN_D6                                    ////
+.................... ////     #define LCD_DATA7       PIN_D7                                    ////
+.................... ////                                                                       ////
+.................... ///////////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996,2010 Custom Computer Services           ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... 
+.................... #ifndef __LCD_C__
+.................... #define __LCD_C__
+.................... 
+.................... // define the pinout.
+.................... // only required if port access is being used.
+.................... typedef struct  
+.................... {                            // This structure is overlayed
+....................    int1 enable;           // on to an I/O port to gain
+....................    int1 rs;               // access to the LCD pins.
+....................    int1 rw;               // The bits are allocated from
+....................    int1 unused;           // low order up.  ENABLE will
+....................    unsigned int     data : 4;         // be LSB pin of that port.
+....................   #if defined(__PCD__)       // The port used will be LCD_DATA_PORT.
+....................    unsigned int    reserved: 8;
+....................   #endif
+.................... } LCD_PIN_MAP;
+.................... 
+.................... // this is to improve compatability with previous LCD drivers that accepted
+.................... // a define labeled 'use_portb_lcd' that configured the LCD onto port B.
+.................... #if ((defined(use_portb_lcd)) && (use_portb_lcd==TRUE))
+....................  #define LCD_DATA_PORT getenv("SFR:PORTB")
+.................... #endif
+.................... 
+.................... #if defined(__PCB__)
+....................    // these definitions only need to be modified for baseline PICs.
+....................    // all other PICs use LCD_PIN_MAP or individual LCD_xxx pin definitions.
+.................... /*                                    EN, RS,   RW,   UNUSED,  DATA  */
+....................  const LCD_PIN_MAP LCD_OUTPUT_MAP =  {0,  0,    0,    0,       0};
+....................  const LCD_PIN_MAP LCD_INPUT_MAP =   {0,  0,    0,    0,       0xF};
+.................... #endif
+.................... 
+.................... ////////////////////// END CONFIGURATION ///////////////////////////////////
+.................... 
+.................... #ifndef LCD_ENABLE_PIN
+....................    #define lcd_output_enable(x) lcdlat.enable=x
+....................    #define lcd_enable_tris()   lcdtris.enable=0
+.................... #else
+....................    #define lcd_output_enable(x) output_bit(LCD_ENABLE_PIN, x)
+....................    #define lcd_enable_tris()  output_drive(LCD_ENABLE_PIN)
+.................... #endif
+.................... 
+.................... #ifndef LCD_RS_PIN
+....................    #define lcd_output_rs(x) lcdlat.rs=x
+....................    #define lcd_rs_tris()   lcdtris.rs=0
+.................... #else
+....................    #define lcd_output_rs(x) output_bit(LCD_RS_PIN, x)
+....................    #define lcd_rs_tris()  output_drive(LCD_RS_PIN)
+.................... #endif
+.................... 
+.................... #ifndef LCD_RW_PIN
+....................    #define lcd_output_rw(x) lcdlat.rw=x
+....................    #define lcd_rw_tris()   lcdtris.rw=0
+.................... #else
+....................    #define lcd_output_rw(x) output_bit(LCD_RW_PIN, x)
+....................    #define lcd_rw_tris()  output_drive(LCD_RW_PIN)
+.................... #endif
+.................... 
+.................... // original version of this library incorrectly labeled LCD_DATA0 as LCD_DATA4,
+.................... // LCD_DATA1 as LCD_DATA5, and so on.  this block of code makes the driver
+.................... // compatible with any code written for the original library
+.................... #if (defined(LCD_DATA0) && defined(LCD_DATA1) && defined(LCD_DATA2) && defined(LCD_DATA3) && !defined(LCD_DATA4) && !defined(LCD_DATA5) && !defined(LCD_DATA6) && !defined(LCD_DATA7))
+....................    #define  LCD_DATA4    LCD_DATA0
+....................    #define  LCD_DATA5    LCD_DATA1
+....................    #define  LCD_DATA6    LCD_DATA2
+....................    #define  LCD_DATA7    LCD_DATA3
+.................... #endif
+.................... 
+.................... #ifndef LCD_DATA4
+.................... #ifndef LCD_DATA_PORT
+....................    #if defined(__PCB__)
+....................       #define LCD_DATA_PORT      0x06     //portb
+....................       #define set_tris_lcd(x)   set_tris_b(x)
+....................    #else
+....................      #if defined(PIN_D0)
+....................       #define LCD_DATA_PORT      getenv("SFR:PORTD")     //portd
+....................      #else
+....................       #define LCD_DATA_PORT      getenv("SFR:PORTB")     //portb
+....................      #endif
+....................    #endif   
+.................... #endif
+.................... 
+.................... #if defined(__PCB__)
+....................    LCD_PIN_MAP lcd, lcdlat;
+....................    #byte lcd = LCD_DATA_PORT
+....................    #byte lcdlat = LCD_DATA_PORT
+.................... #elif defined(__PCM__)
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris;
+....................    #byte lcd = LCD_DATA_PORT
+....................    #byte lcdlat = LCD_DATA_PORT
+....................    #byte lcdtris = LCD_DATA_PORT+0x80
+.................... #elif defined(__PCH__)
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris;
+....................    #byte lcd = LCD_DATA_PORT
+....................    #byte lcdlat = LCD_DATA_PORT+9
+....................    #byte lcdtris = LCD_DATA_PORT+0x12
+.................... #elif defined(__PCD__)
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris;
+....................    #word lcd = LCD_DATA_PORT
+....................    #word lcdlat = LCD_DATA_PORT+2
+....................    #word lcdtris = LCD_DATA_PORT-0x02
+.................... #endif
+.................... #endif   //LCD_DATA4 not defined
+.................... 
+.................... #ifndef LCD_TYPE
+....................    #define LCD_TYPE 2           // 0=5x7, 1=5x10, 2=2 lines
+.................... #endif
+.................... 
+.................... #ifndef LCD_LINE_TWO
+....................    #define LCD_LINE_TWO 0x40    // LCD RAM address for the second line
+.................... #endif
+.................... 
+.................... #ifndef LCD_LINE_LENGTH
+....................    #define LCD_LINE_LENGTH 20
+.................... #endif
+.................... 
+.................... unsigned int8 lcd_read_nibble(void);
+.................... 
+.................... unsigned int8 lcd_read_byte(void)
+.................... {
+....................    unsigned int8 low,high;
+.................... 
+....................  #if defined(__PCB__)
+....................    set_tris_lcd(LCD_INPUT_MAP);
+....................  #else
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7))
+....................    output_float(LCD_DATA4);
+....................    output_float(LCD_DATA5);
+....................    output_float(LCD_DATA6);
+....................    output_float(LCD_DATA7);
+....................   #else
+....................    lcdtris.data = 0xF;
+....................   #endif
+....................  #endif
+....................         
+....................    lcd_output_rw(1);
+....................    delay_cycles(1);
+....................    lcd_output_enable(1);
+....................    delay_cycles(1);
+....................    high = lcd_read_nibble();
+....................       
+....................    lcd_output_enable(0);
+....................    delay_cycles(1);
+....................    lcd_output_enable(1);
+....................    delay_us(1);
+....................    low = lcd_read_nibble();
+....................       
+....................    lcd_output_enable(0);
+.................... 
+....................  #if defined(__PCB__)
+....................    set_tris_lcd(LCD_OUTPUT_MAP);
+....................  #else
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7))
+....................    output_drive(LCD_DATA4);
+....................    output_drive(LCD_DATA5);
+....................    output_drive(LCD_DATA6);
+....................    output_drive(LCD_DATA7);
+....................   #else
+....................    lcdtris.data = 0x0;
+....................   #endif
+....................  #endif
+.................... 
+....................    return( (high<<4) | low);
+.................... }
+.................... 
+.................... unsigned int8 lcd_read_nibble(void)
+.................... {
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7))
+....................    unsigned int8 n = 0x00;
+.................... 
+....................    /* Read the data port */
+....................    n |= input(LCD_DATA4);
+....................    n |= input(LCD_DATA5) << 1;
+....................    n |= input(LCD_DATA6) << 2;
+....................    n |= input(LCD_DATA7) << 3;
+....................    
+....................    return(n);
+....................   #else
+....................    return(lcd.data);
+....................   #endif
+.................... }
+.................... 
+.................... void lcd_send_nibble(unsigned int8 n)
+.................... {
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7))
+....................    /* Write to the data port */
+....................    output_bit(LCD_DATA4, bit_test(n, 0));
+....................    output_bit(LCD_DATA5, bit_test(n, 1));
+....................    output_bit(LCD_DATA6, bit_test(n, 2));
+....................    output_bit(LCD_DATA7, bit_test(n, 3));
+....................   #else      
+....................    lcdlat.data = n;
+....................   #endif
+....................       
+....................    delay_cycles(1);
+....................    lcd_output_enable(1);
+....................    delay_us(2);
+....................    lcd_output_enable(0);
+.................... }
+.................... 
+.................... void lcd_send_byte(unsigned int8 address, unsigned int8 n)
+.................... {
+....................   #if defined(__PCB__)
+....................    set_tris_lcd(LCD_OUTPUT_MAP);
+....................   #else
+....................    lcd_enable_tris();
+....................    lcd_rs_tris();
+....................    lcd_rw_tris();
+....................   #endif
+.................... 
+....................    lcd_output_rs(0);
+....................    while ( bit_test(lcd_read_byte(),7) ) ;
+....................    lcd_output_rs(address);
+....................    delay_cycles(1);
+....................    lcd_output_rw(0);
+....................    delay_cycles(1);
+....................    lcd_output_enable(0);
+....................    lcd_send_nibble(n >> 4);
+....................    lcd_send_nibble(n & 0xf);
+.................... }
+.................... 
+.................... #if defined(LCD_EXTENDED_NEWLINE)
+.................... unsigned int8 g_LcdX, g_LcdY;
+.................... #endif
+.................... 
+.................... void lcd_init(void) 
+.................... {
+....................    unsigned int8 i;
+....................    unsigned int8 LCD_INIT_STRING[4] = {0x20 | (LCD_TYPE << 2), 0xc, 1, 6};
+....................                              // These bytes need to be sent to the LCD
+....................                              // to start it up.
+....................    
+.................... 
+....................    lcd_output_enable(0);
+....................    lcd_output_rs(0);
+....................    lcd_output_rw(0);
+.................... 
+....................  #if defined(__PCB__)
+....................    set_tris_lcd(LCD_OUTPUT_MAP);
+....................  #else
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7))
+....................    output_drive(LCD_DATA4);
+....................    output_drive(LCD_DATA5);
+....................    output_drive(LCD_DATA6);
+....................    output_drive(LCD_DATA7);
+....................   #else
+....................    lcdtris.data = 0x0;
+....................   #endif
+....................    lcd_enable_tris();
+....................    lcd_rs_tris();
+....................    lcd_rw_tris();
+....................  #endif
+....................     
+....................    delay_ms(15);
+....................    for(i=1;i<=3;++i)
+....................    {
+....................        lcd_send_nibble(3);
+....................        delay_ms(5);
+....................    }
+....................    
+....................    lcd_send_nibble(2);
+....................    delay_ms(5);
+....................    for(i=0;i<=3;++i)
+....................       lcd_send_byte(0,LCD_INIT_STRING[i]);
+.................... 
+....................   #if defined(LCD_EXTENDED_NEWLINE)
+....................    g_LcdX = 0;
+....................    g_LcdY = 0;
+....................   #endif
+.................... }
+.................... 
+.................... void lcd_gotoxy(unsigned int8 x, unsigned int8 y)
+.................... {
+....................    unsigned int8 address;
+....................    
+....................    if(y!=1)
+....................       address=LCD_LINE_TWO;
+....................    else
+....................       address=0;
+....................      
+....................    address+=x-1;
+....................    lcd_send_byte(0,0x80|address);
+.................... 
+....................   #if defined(LCD_EXTENDED_NEWLINE)
+....................    g_LcdX = x - 1;
+....................    g_LcdY = y - 1;
+....................   #endif
+.................... }
+.................... 
+.................... void lcd_putc(char c)
+.................... {
+....................    switch (c)
+....................    {
+....................       case '\a'   :  lcd_gotoxy(1,1);     break;
+.................... 
+....................       case '\f'   :  lcd_send_byte(0,1);
+....................                      delay_ms(2);
+....................                     #if defined(LCD_EXTENDED_NEWLINE)
+....................                      g_LcdX = 0;
+....................                      g_LcdY = 0;
+....................                     #endif
+....................                      break;
+.................... 
+....................      #if defined(LCD_EXTENDED_NEWLINE)
+....................       case '\r'   :  lcd_gotoxy(1, g_LcdY+1);   break;
+....................       case '\n'   :
+....................          while (g_LcdX++ < LCD_LINE_LENGTH)
+....................          {
+....................             lcd_send_byte(1, ' ');
+....................          }
+....................          lcd_gotoxy(1, g_LcdY+2);
+....................          break;
+....................      #else
+....................       case '\n'   : lcd_gotoxy(1,2);        break;
+....................      #endif
+....................      
+....................       case '\b'   : lcd_send_byte(0,0x10);  break;
+....................      
+....................      #if defined(LCD_EXTENDED_NEWLINE)
+....................       default     : 
+....................          if (g_LcdX < LCD_LINE_LENGTH)
+....................          {
+....................             lcd_send_byte(1, c);
+....................             g_LcdX++;
+....................          }
+....................          break;
+....................      #else
+....................       default     : lcd_send_byte(1,c);     break;
+....................      #endif
+....................    }
+.................... }
+....................  
+.................... char lcd_getc(unsigned int8 x, unsigned int8 y)
+.................... {
+....................    char value;
+.................... 
+....................    lcd_gotoxy(x,y);
+....................    while ( bit_test(lcd_read_byte(),7) ); // wait until busy flag is low
+....................    lcd_output_rs(1);
+....................    value = lcd_read_byte();
+....................    lcd_output_rs(0);
+....................    
+....................    return(value);
+.................... }
+.................... 
+.................... // write a custom character to the ram
+.................... // which is 0-7 and specifies which character array we are modifying.
+.................... // ptr points to an array of 8 bytes, where each byte is the next row of
+.................... //    pixels.  only bits 0-4 are used.  the last row is the cursor row, and
+.................... //    usually you will want to leave this byte 0x00.
+.................... void lcd_set_cgram_char(unsigned int8 which, unsigned int8 *ptr)
+.................... {
+....................    unsigned int i;
+.................... 
+....................    which <<= 3;
+....................    which &= 0x38;
+.................... 
+....................    lcd_send_byte(0, 0x40 | which);  //set cgram address
+.................... 
+....................    for(i=0; i<8; i++)
+....................    {
+....................       lcd_send_byte(1, *ptr++);
+....................    }
+....................   
+....................    #if defined(LCD_EXTENDED_NEWLINE)
+....................     lcd_gotoxy(g_LcdX+1, g_LcdY+1);  //set ddram address
+....................    #endif
+.................... }
+.................... 
+.................... void lcd_cursor_on(int1 on)
+.................... {
+....................    if (on)
+....................    {
+....................       lcd_send_byte(0,0x0F);           //turn LCD cursor ON
+....................    }
+....................    else
+....................    {
+....................       lcd_send_byte(0,0x0C);           //turn LCD cursor OFF
+....................    }
+.................... }
+.................... 
+.................... #endif
+.................... 
+.................... 
+.................... void main()
+*
+03A2:  CLRF   FF8
+03A4:  BCF    FD0.7
+03A6:  BSF    FB8.3
+03A8:  MOVLW  08
+03AA:  MOVWF  FAF
+03AC:  MOVLW  02
+03AE:  MOVWF  FB0
+03B0:  MOVLW  A6
+03B2:  MOVWF  FAC
+03B4:  MOVLW  90
+03B6:  MOVWF  FAB
+03B8:  MOVF   FC1,W
+03BA:  ANDLW  C0
+03BC:  IORLW  0F
+03BE:  MOVWF  FC1
+03C0:  MOVLW  07
+03C2:  MOVWF  FB4
+.................... {
+....................    char k;
+.................... write_program_eeprom(0x0000,0x1234);    
+03C4:  BSF    FD0.6
+03C6:  CLRF   FF8
+03C8:  CLRF   FF7
+03CA:  CLRF   FF6
+03CC:  BRA    001E
+03CE:  CLRF   FF6
+03D0:  MOVLW  34
+03D2:  MOVWF  FF5
+03D4:  TBLWT*+
+03D6:  MOVLW  12
+03D8:  MOVWF  FF5
+03DA:  TBLWT*
+03DC:  BCF    FA6.6
+03DE:  RCALL  0036
+03E0:  CLRF   FF8
+03E2:  CLRF   FF8
+....................    setup_adc_ports(NO_ANALOGS, VSS_VDD);
+03E4:  MOVF   FC1,W
+03E6:  ANDLW  C0
+03E8:  IORLW  0F
+03EA:  MOVWF  FC1
+....................  
+....................    // Enter Bootloader if Pin A5 is low after a RESET
+....................    if(!input(PIN_A5))
+03EC:  BSF    F92.5
+03EE:  BTFSC  F80.5
+03F0:  BRA    03F4
+....................    {
+....................       load_program();
+03F2:  BRA    039C
+....................    }
+....................    
+....................    application();
+03F4:  RCALL  0500
+.................... 
+.................... }
+03F6:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC04   PLL5 CPUDIV1 NOUSBDIV HS FCMEN IESO
+   Word  2: 1E26   PUT BROWNOUT VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

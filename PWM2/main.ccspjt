@@ -1,0 +1,35 @@
+[PROJECT]
+Target=C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM2\main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.091
+Compiler=PCM
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM2\main]
+Type=4
+[mru-list]
+1=main.c
+[Units]
+Count=1
+1=main (main)
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=07-04-2025
+D1_L=2
+D1_L1=[59821]Project Opened.
+D1_L2=[59835]Project Closed.
+D2=24-05-2025
+D2_L=2
+D2_L1=[44882]Project Opened.
+D2_L2=[44935]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=1

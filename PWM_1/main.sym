@@ -27,19 +27,19 @@ ROM Allocation:
 000025  @cinit2
 
 Project Directory:
-    C:\Users\j_ari\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\
 
 Project Files:
-    main.c                                                  [24-may.-23 15:02  CRC=5D8D1BFA]
-    main.h                                                  [24-may.-23 14:29  CRC=00000000]
-    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 16:48  CRC=15D497A0]
+    main.c                                                  [19-mar.-25 13:03  CRC=5D8D1BFA]
+    main.h                                                  [19-jun.-24 11:55  CRC=00000000]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 15:48  CRC=15D497A0]
 
 Source signature=89364B3A
 Program memory checksum=0000
-Hex file CRC=602E
+Hex file CRC=978F
 
 Units:
-    C:\Users\j_ari\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\main (main)
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\PWM_1\main (main)
 
 Compiler Settings:
     Processor:      PIC16F877A

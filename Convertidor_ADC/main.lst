@@ -1,8 +1,8 @@
-CCS PCM C Compiler, Version 5.091, 13314               28-ago.-24 16:23
+CCS PCM C Compiler, Version 5.091, 13314               24-may.-25 12:45
 
                Filename:   C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\Convertidor_ADC\main.lst
 
-               ROM used:   1108 words (14%)
+               ROM used:   1109 words (14%)
                            Largest free fragment is 2048
                RAM used:   13 (4%) at main() level
                            35 (10%) worst case
@@ -386,7 +386,7 @@ CCS PCM C Compiler, Version 5.091, 13314               28-ago.-24 16:23
 020D:  CLRF   7A
 020E:  BCF    0A.3
 020F:  BCF    0A.4
-0210:  GOTO   42C (RETURN)
+0210:  GOTO   42D (RETURN)
 *
 024F:  MOVF   0B,W
 0250:  MOVWF  25
@@ -476,7 +476,7 @@ CCS PCM C Compiler, Version 5.091, 13314               28-ago.-24 16:23
 02A4:  GOTO   24F
 02A5:  BCF    0A.3
 02A6:  BCF    0A.4
-02A7:  GOTO   442 (RETURN)
+02A7:  GOTO   443 (RETURN)
 02A8:  BTFSC  03.1
 02A9:  GOTO   2AD
 02AA:  MOVLW  39
@@ -781,7 +781,7 @@ CCS PCM C Compiler, Version 5.091, 13314               28-ago.-24 16:23
 03D5:  GOTO   35F
 03D6:  BCF    0A.3
 03D7:  BCF    0A.4
-03D8:  GOTO   44F (RETURN)
+03D8:  GOTO   450 (RETURN)
 .................... 
 .................... #list
 .................... 
@@ -811,7 +811,7 @@ CCS PCM C Compiler, Version 5.091, 13314               28-ago.-24 16:23
 0020:  RETURN
 ....................   
 .................... 
-.................... //incluyo esta linea de código
+.................... //incluyo esta linea de codigo
 .................... #include <LCD.C>
 .................... ///////////////////////////////////////////////////////////////////////////////
 .................... ////                             LCD.C                                     ////
@@ -1519,7 +1519,7 @@ CCS PCM C Compiler, Version 5.091, 13314               28-ago.-24 16:23
 03F1:  MOVLW  32
 03F2:  MOVWF  32
 03F3:  CALL   00C
-....................    x=read_adc()* 1.0/1023;
+....................    x=read_adc()* 5.0/1023;
 03F4:  BSF    1F.2
 03F5:  BTFSC  1F.2
 03F6:  GOTO   3F5
@@ -1548,83 +1548,81 @@ CCS PCM C Compiler, Version 5.091, 13314               28-ago.-24 16:23
 040D:  MOVWF  31
 040E:  CLRF   38
 040F:  CLRF   37
-0410:  CLRF   36
-0411:  MOVLW  7F
-0412:  MOVWF  35
-0413:  CALL   0D0
-0414:  MOVF   7A,W
-0415:  MOVWF  27
-0416:  MOVF   79,W
-0417:  MOVWF  26
-0418:  MOVF   78,W
-0419:  MOVWF  25
-041A:  MOVF   77,W
-041B:  MOVWF  24
-041C:  MOVF   7A,W
-041D:  MOVWF  2B
-041E:  MOVF   79,W
-041F:  MOVWF  2A
-0420:  MOVF   78,W
-0421:  MOVWF  29
-0422:  MOVF   77,W
-0423:  MOVWF  28
-0424:  CLRF   2F
-0425:  MOVLW  C0
-0426:  MOVWF  2E
-0427:  MOVLW  7F
-0428:  MOVWF  2D
-0429:  MOVLW  88
-042A:  MOVWF  2C
-042B:  GOTO   145
-042C:  MOVF   7A,W
-042D:  MOVWF  23
-042E:  MOVF   79,W
-042F:  MOVWF  22
-0430:  MOVF   78,W
-0431:  MOVWF  21
-0432:  MOVF   77,W
-0433:  MOVWF  20
+0410:  MOVLW  20
+0411:  MOVWF  36
+0412:  MOVLW  81
+0413:  MOVWF  35
+0414:  CALL   0D0
+0415:  MOVF   7A,W
+0416:  MOVWF  27
+0417:  MOVF   79,W
+0418:  MOVWF  26
+0419:  MOVF   78,W
+041A:  MOVWF  25
+041B:  MOVF   77,W
+041C:  MOVWF  24
+041D:  MOVF   7A,W
+041E:  MOVWF  2B
+041F:  MOVF   79,W
+0420:  MOVWF  2A
+0421:  MOVF   78,W
+0422:  MOVWF  29
+0423:  MOVF   77,W
+0424:  MOVWF  28
+0425:  CLRF   2F
+0426:  MOVLW  C0
+0427:  MOVWF  2E
+0428:  MOVLW  7F
+0429:  MOVWF  2D
+042A:  MOVLW  88
+042B:  MOVWF  2C
+042C:  GOTO   145
+042D:  MOVF   7A,W
+042E:  MOVWF  23
+042F:  MOVF   79,W
+0430:  MOVWF  22
+0431:  MOVF   78,W
+0432:  MOVWF  21
+0433:  MOVF   77,W
+0434:  MOVWF  20
 ....................    lcd_gotoxy(1,1);
-0434:  MOVLW  01
-0435:  MOVWF  32
-0436:  MOVWF  33
-0437:  CALL   211
+0435:  MOVLW  01
+0436:  MOVWF  32
+0437:  MOVWF  33
+0438:  CALL   211
 ....................    printf(LCD_PUTC, " \r voltaje=%f ",x);
-0438:  MOVLW  04
-0439:  BSF    03.6
-043A:  MOVWF  0D
-043B:  MOVLW  00
-043C:  MOVWF  0F
-043D:  BCF    03.0
-043E:  MOVLW  0B
-043F:  BCF    03.6
-0440:  MOVWF  24
-0441:  GOTO   24F
-0442:  MOVLW  89
-0443:  MOVWF  04
-0444:  MOVF   23,W
-0445:  MOVWF  27
-0446:  MOVF   22,W
-0447:  MOVWF  26
-0448:  MOVF   21,W
-0449:  MOVWF  25
-044A:  MOVF   20,W
-044B:  MOVWF  24
-044C:  MOVLW  02
-044D:  MOVWF  28
-044E:  GOTO   2F7
-044F:  MOVLW  20
-0450:  MOVWF  31
-0451:  CALL   223
-0452:  GOTO   3F1
-.................... 
-.................... 
-.................... 
+0439:  MOVLW  04
+043A:  BSF    03.6
+043B:  MOVWF  0D
+043C:  MOVLW  00
+043D:  MOVWF  0F
+043E:  BCF    03.0
+043F:  MOVLW  0B
+0440:  BCF    03.6
+0441:  MOVWF  24
+0442:  GOTO   24F
+0443:  MOVLW  89
+0444:  MOVWF  04
+0445:  MOVF   23,W
+0446:  MOVWF  27
+0447:  MOVF   22,W
+0448:  MOVWF  26
+0449:  MOVF   21,W
+044A:  MOVWF  25
+044B:  MOVF   20,W
+044C:  MOVWF  24
+044D:  MOVLW  02
+044E:  MOVWF  28
+044F:  GOTO   2F7
+0450:  MOVLW  20
+0451:  MOVWF  31
+0452:  CALL   223
+0453:  GOTO   3F1
 ....................       //TODO: User Code
 ....................    }
 .................... 
 .................... }
-0453:  SLEEP
+0454:  SLEEP
 
 Configuration Fuses:
    Word  1: 3F71   XT NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

@@ -28,7 +28,7 @@ delay_ms(1500);
 
 
 set_pwm1_duty((int16)1000);
-delay_ms(200);
+delay_ms(1500);
       //TODO: User Code
    }
 

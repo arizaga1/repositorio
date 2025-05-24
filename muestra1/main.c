@@ -1,0 +1,37 @@
+#include <main.h>
+ 
+#define _bootloader
+
+// NOTE - User must include bootloader.h in application program
+#include <bootloader.h>
+#include <loader.c>
+
+#define PUSH_BUTTON PIN_A5
+
+#INT_GLOBAL
+void isr(void){
+   jump_to_isr(LOADER_END+9);
+}
+
+#org LOADER_END+2, LOADER_END+4
+void application(void) {
+  while(TRUE);
+}
+
+#include <lcd.c>
+
+void main()
+{
+   char k;
+write_program_eeprom(0x1000,0x1234);    
+   setup_adc_ports(NO_ANALOGS, VSS_VDD);
+ 
+   // Enter Bootloader if Pin A5 is low after a RESET
+   if(!input(PIN_A5))
+   {
+      load_program();
+   }
+   
+   application();
+
+}

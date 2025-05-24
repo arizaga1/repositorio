@@ -51,20 +51,20 @@ ROM Allocation:
 0001A9  @cinit2
 
 Project Directory:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Motor_pwm\PWM_1\
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\Motor_pwm\PWM_1\
 
 Project Files:
-    main.c                                                  [25-may.-23 12:54  CRC=46489F69]
-    main.h                                                  [24-may.-23 14:29  CRC=00000000]
-    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 16:48  CRC=15D497A0]
-    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h [22-sep.-16 10:36  CRC=9CF8C837]
+    main.c                                                  [19-mar.-25 13:21  CRC=1FD4084B]
+    main.h                                                  [19-jun.-24 11:55  CRC=00000000]
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [30-oct.-19 15:48  CRC=15D497A0]
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h [22-sep.-16 09:36  CRC=9CF8C837]
 
-Source signature=960EC777
+Source signature=6F9A3059
 Program memory checksum=0000
 Hex file CRC=C4FB
 
 Units:
-    C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Motor_pwm\PWM_1\main (main)
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\Motor_pwm\PWM_1\main (main)
 
 Compiler Settings:
     Processor:      PIC16F877A

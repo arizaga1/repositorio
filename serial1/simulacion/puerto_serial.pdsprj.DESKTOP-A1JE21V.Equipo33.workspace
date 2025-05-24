@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c0000000200000003000000fffffffffffffffffffffffffffffffff7fffffff7ffffff880700000f040000</PLACEMENT>
+  <PLACEMENT>2c00000002000000030000000083ffff0083fffffffffffffffffffff7fffffff7ffffff880700000f040000</PLACEMENT>
   <WINDOW type="default" module="ISIS">
-   <editor metric="0" gridmajor="2540000" mode="00000016" zoom="-1" scale="122" flipped="0" gridminor="254000" gridmode="32" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="127000">
+   <editor metric="0" gridmajor="2540000" mode="00000000" zoom="-1" scale="211" flipped="0" gridminor="254000" gridmode="32" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="127000">
     <world y1="-55880000" x1="-40640000" y2="55880000" x2="40640000"/>
-    <centre x="-5124050" y="39414049"/>
+    <centre x="-11182019" y="40392019"/>
     <origin x="0" y="0"/>
    </editor>
   </WINDOW>
@@ -19,15 +19,15 @@
   </editor>
  </MODULE>
  <MODULE name="ISIS">
-  <editor metric="0" gridmajor="2540000" mode="00000016" zoom="-1" scale="122" flipped="0" gridminor="254000" gridmode="32" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="127000">
+  <editor metric="0" gridmajor="2540000" mode="00000000" zoom="-1" scale="211" flipped="0" gridminor="254000" gridmode="32" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="127000">
    <world y1="-55880000" x1="-40640000" y2="55880000" x2="40640000"/>
-   <centre x="-5124050" y="39414049"/>
+   <centre x="-11182019" y="40392019"/>
    <origin x="0" y="0"/>
   </editor>
  </MODULE>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="800" x="1083" flags="00000003" y="0" h="200" pid="0" iid="-1">
+   <POPUP w="800" x="1083" flags="00000002" y="0" h="200" pid="0" iid="-1">
     <PROPERTIES>
      <ITEM name="Message Column Width">661</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
@@ -56,7 +56,7 @@
    <POPUP w="1384" x="403" flags="00000000" y="100" h="883" pid="0" iid="3">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="1190" x="937" flags="00000023" y="77" h="447" pid="0" iid="2">
+   <POPUP w="1190" x="937" flags="00000022" y="77" h="447" pid="0" iid="2">
     <PROPERTIES>
      <ITEM name="AutoEcho">1</ITEM>
      <ITEM name="HexMode">0</ITEM>
@@ -128,7 +128,7 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="939" x="-23" flags="00008023" y="80" h="429" pid="0" iid="4">
+   <POPUP w="939" x="-23" flags="00000022" y="80" h="429" pid="0" iid="4">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>

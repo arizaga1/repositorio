@@ -15,12 +15,14 @@ Type=4
 
 [Opened Files]
 1=main.c
-t1=21
-Count=3
+t1=1
+Count=4
 2=main.h
-t2=21
+t2=1
 3=..\segundo\main.c
 t3=1
+4=main.lst
+t4=1
 [main.c]
 Type=4
 
@@ -31,13 +33,13 @@ buildcount=21
 forcecoff=0
 
 [ProjectLog]
-Days=8
+Days=11
 D1=28-02-2022
 D1_L=4
 D1_L1=[49161]Project Opened.
 D1_L2=[49482]Started Editing.
 D1_L3=[49784]Stopped Editing.
-TotalEdit=42
+TotalEdit=53
 TotalDebug=0
 D1_E=1
 D1_D=0
@@ -82,6 +84,19 @@ D8_L2=[44097]Started Editing.
 D8_L3=[44398]Stopped Editing.
 D8_L4=[44520]Started Editing.
 D8_L5=[45430]Stopped Editing.
+D9=20-02-2025
+D9_E=11
+D9_D=0
+D9_L=1
+D9_L1=[70877]Project Closed.
+D10=24-02-2025
+D10_L=2
+D10_L1=[49296]Project Opened.
+D10_L2=[49924]Project Closed.
+D11=07-04-2025
+D11_L=2
+D11_L1=[59835]Project Opened.
+D11_L2=[59872]Project Closed.
 [Units]
 Count=1
 1=main (main)

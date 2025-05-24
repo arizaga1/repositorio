@@ -1,6 +1,6 @@
 
-ROM used:   1108/8192 (14%)
-            1108/8192 (14%) including unused fragments
+ROM used:   1109/8192 (14%)
+            1109/8192 (14%) including unused fragments
 
             0.9 Average locations per line
             11.9 Average locations per statement
@@ -13,12 +13,12 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   24     9  10  main.c
+   21     9  10  main.c
     5     0   0  main.h
   694     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h
   456    84  90  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
 ----- -----
- 1179    93 Total
+ 1176    93 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -30,7 +30,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0     62   6    6    814  7.2  lcd_init
 0     18   2    4    208  6.3  lcd_gotoxy
 0     44   4    1    354  4.7  lcd_putc
-0    123  11    4    218  3.3  MAIN
+0    124  11    4    218  3.3  MAIN
 0     31   3    2             @ITOF
 0    117  11   13             @MULFF
 0    204  18   14             @DIVFF
@@ -56,7 +56,7 @@ Program metrics:
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF  1104  940  
+00004-007FF  1105  939  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

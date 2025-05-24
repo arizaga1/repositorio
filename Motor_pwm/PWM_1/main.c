@@ -1,4 +1,4 @@
-#include <main.h> //se agrregan funciones o variables a programas
+#include <main.h> //se agregan funciones o variables a programas
 #include <math.h> //se agregan funciones matemáticas 
 //PWM  Modulación por ancho de Pulso
 //se utiliza para control de velocidad 

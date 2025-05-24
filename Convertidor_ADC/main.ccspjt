@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=19
+Days=25
 D1=04-03-2022
 D1_L=5
 D1_L1=[59977]Project Opened.
@@ -25,7 +25,7 @@ D1_L2=[59985]Started Editing.
 D1_L3=[60987]Stopped Editing.
 D1_L4=[61084]Started Editing.
 D1_L5=[61394]Stopped Editing.
-TotalEdit=199
+TotalEdit=244
 TotalDebug=0
 D2=05-03-2022
 D2_E=12
@@ -151,22 +151,54 @@ D19_L1=[58664]Project Opened.
 D19_L2=[58812]Started Editing.
 D19_L3=[58846]Stopped Editing.
 D19_L4=[59249]Stopped Editing.
+D20=05-03-2025
+D20_L=3
+D20_L1=[46553]Project Opened.
+D20_L2=[47185]Started Editing.
+D20_L3=[47485]Stopped Editing.
+D21=06-03-2025
+D21_L=6
+D21_L1=[47255]Started Editing.
+D21_L2=[47914]Stopped Editing.
+D21_L3=[47927]Started Editing.
+D21_L4=[48433]Stopped Editing.
+D21_L5=[49672]Started Editing.
+D21_L6=[50001]Stopped Editing.
+D22=07-03-2025
+D22_E=10
+D22_D=0
+D22_L=1
+D22_L1=[56011]Project Closed.
+D23=19-03-2025
+D23_L=2
+D23_L1=[46155]Project Opened.
+D23_L2=[46187]Project Closed.
+D24=07-04-2025
+D24_L=1
+D24_L1=[59872]Project Opened.
+D25=24-05-2025
+D25_L=5
+D25_L1=[44935]Project Opened.
+D25_L2=[45406]Started Editing.
+D25_L3=[45709]Stopped Editing.
+D25_L4=[45799]Started Editing.
+D25_L5=[46212]Stopped Editing.
 
 [Opened Files]
 1=main.c
-t1=1
+t1=9
 Count=4
 2=..\serial1\main.h
 t2=1
 3=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C
 t3=1
 4=..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h
-t4=1
+t4=234
 [main.c]
 Type=4
 
 [defines]
-buildcount=31
+buildcount=38
 [Units]
 Count=1
 1=main (main)

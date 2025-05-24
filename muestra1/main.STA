@@ -1,0 +1,60 @@
+
+ROM used:   1016/32768 (3%)
+            1284/32768 (4%) including unused fragments
+
+            0.6 Average locations per line
+            7.0 Average locations per statement
+
+RAM used:   72/2048 (4%) at main() level
+            131/2048 (6%) worst case
+
+Stack used: 2 worst case (1 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   38     9   6  main.c
+    9     0   0  main.h
+  863     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  107     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\bootloader.h
+  276    49  34  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\loader.c
+  456    87  60  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c
+----- -----
+ 1749   145 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     32   2    0             @FLASHWR
+0     82   4    7             @WRITE_PROGRAM_MEMORY
+0      8   0    0             @PUTCHARI_BIU_1
+0    646  32   54   3644 13.8  real_load_program
+0    102   5    5    368  7.0  atoi_b16
+0      6   0    0     17  0.8  load_program
+0     22   1    0     30  1.3  isr
+0      4   0    0     21  1.0  application
+0     86   4    1    130  2.6  MAIN
+0     24   1    0             @FLASHLOAD
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               6
+    Statements              145
+    Comments                316
+    Volume (V)              4867
+    Difficulty (D)          28.3
+    Effort to implement (E) 137717
+    Time to implement (T)   2 hours, 8 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   14
+    Maintainability (MI)    36
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00006     4  4  
+00008-0001C    22  0  
+0001E-004FE   986  264  
+00500-00502     4  0  
+00504-07FFE     0  31484  
+
+
+

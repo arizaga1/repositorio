@@ -1,5 +1,5 @@
 #include <main.h>
-//incluyo esta linea de código
+//incluyo esta linea de codigo
 #include <LCD.C>
 float  x;  //el resultado del convertidor
 void main()
@@ -11,12 +11,9 @@ void main()
    while(TRUE)
    {
    delay_ms(50);
-   x=read_adc()* 1.0/1023;
+   x=read_adc()* 5.0/1023;
    lcd_gotoxy(1,1);
    printf(LCD_PUTC, " \r voltaje=%f ",x);
-
-
-
       //TODO: User Code
    }
 

@@ -106,14 +106,14 @@ Project Directory:
     C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\Convertidor_ADC\
 
 Project Files:
-    main.c                                                  [06-jul.-24 11:59  CRC=C095AA0E]
+    main.c                                                  [24-may.-25 12:45  CRC=25CA7D86]
     main.h                                                  [19-jun.-24 11:55  CRC=00000000]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [30-oct.-19 15:48  CRC=15D497A0]
     ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [22-feb.-16 10:05  CRC=D1A6378A]
 
-Source signature=79B6B0C2
+Source signature=DEEB843A
 Program memory checksum=0000
-Hex file CRC=2E68
+Hex file CRC=D91F
 
 Units:
     C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\Convertidor_ADC\main (main)

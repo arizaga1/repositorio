@@ -1,0 +1,103 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006-046 rBuffer
+047     MAIN.k
+048.0   real_load_program.do_ACKLOD
+048.1   real_load_program.done
+049     real_load_program.checksum
+04A     real_load_program.line_type
+04B-04C real_load_program.l_addr
+04D-04E real_load_program.h_addr
+04F-052 real_load_program.addr
+053-056 real_load_program.next_addr
+057     real_load_program.dataidx
+058     real_load_program.i
+059     real_load_program.count
+05A-079 real_load_program.data
+07A     @WRITE_PROGRAM_MEMORY.P1
+07A     real_load_program.@SCRATCH1
+07B     real_load_program.@SCRATCH2
+07C     real_load_program.@SCRATCH3
+07D     real_load_program.@SCRATCH4
+07E-07F atoi_b16.s
+080     atoi_b16.result
+081     atoi_b16.i
+082     atoi_b16.@SCRATCH1
+F83     lcd
+F83     PSP_DATA
+F8C     lcdlat
+F95     lcdtris
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000008  isr
+00001E  @FLASHLOAD
+000036  @FLASHWR
+000056  @PUTCHARI_BIU_1
+00005E  atoi_b16
+0000C4  @WRITE_PROGRAM_MEMORY
+000116  real_load_program
+00039C  load_program
+0003A2  @cinit1
+0003A2  MAIN
+0003C4  @cinit2
+000500  application
+
+Project Directory:
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\muestra1\
+
+Project Files:
+    main.c                                                  [24-feb.-25 13:56  CRC=E82F9654]
+    main.h                                                  [24-feb.-25 13:51  CRC=D872A938]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [30-oct.-19 15:52  CRC=B77A8E99]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\bootloader.h [17-abr.-14 12:29  CRC=10C6F83E]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\loader.c [16-jun.-15 18:52  CRC=6EA5BD02]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [22-feb.-16 10:05  CRC=D1A6378A]
+
+Source signature=9AD5F279
+Program memory checksum=0000
+Hex file CRC=29F4
+
+Units:
+    C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\muestra1\main (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

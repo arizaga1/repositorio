@@ -1,6 +1,6 @@
-CCS PCM C Compiler, Version 5.091, 13314               25-may.-23 12:54
+CCS PCM C Compiler, Version 5.091, 13314               19-mar.-25 13:21
 
-               Filename:   C:\Users\j_ari\Dropbox\Curso Primavera 2022\Uppuebla\Sistemas de computo\repositorio\Motor_pwm\PWM_1\main.lst
+               Filename:   C:\Users\Equipo33\Dropbox\Curso Verano 2022\UPPuebla\Sistemas de computo\repositorio\Motor_pwm\PWM_1\main.lst
 
                ROM used:   522 words (6%)
                            Largest free fragment is 2048
@@ -13,7 +13,7 @@ CCS PCM C Compiler, Version 5.091, 13314               25-may.-23 12:54
 0001:  MOVWF  0A
 0002:  GOTO   199
 0003:  NOP
-.................... #include <main.h> //se agrregan funciones o variables a programas
+.................... #include <main.h> //se agregan funciones o variables a programas
 .................... #include <16F877A.h>
 .................... //////////// Standard Header file for the PIC16F877A device ////////////////
 .................... ///////////////////////////////////////////////////////////////////////////
