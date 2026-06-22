@@ -12,4 +12,6 @@
 
 **Agregada carpeta de proyecto de puerto serial  RS232**
 
-**Agregado proyecto de COnvertidor ADC**
+**Agregado proyecto de Convertidor ADC**
+
+**Agregado proyecto de Control de Motores via PWM**
